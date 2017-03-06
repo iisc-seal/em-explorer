@@ -960,7 +960,6 @@ bool execute(int state, vector<int> enabledThreads, bool isDPOR){
 		return false;
 	}
 	else{
-		Debug(cerr<<"execute() :: chk 4"<<endl);
 		return true;
 	}
 }

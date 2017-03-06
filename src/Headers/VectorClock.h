@@ -298,7 +298,6 @@ int getLastDependentHeapAccessInstIndexWithWrite(pair<long,int> key, int writeAc
 		Debug(cerr<<"case :: !readIndices.empty() && !writeIndices.empty()"<<endl);
 		for(vector<int>::reverse_iterator it = readIndices.rbegin(); it != readIndices.rend(); ++it){
 			int i = *it;
-			Debug(cerr<<"chk 1.1"<<endl);
 			int lastThreadId=-1;
 			Operation *op = getOperation(i);
 			if(op!=NULL){
@@ -320,7 +319,6 @@ int getLastDependentHeapAccessInstIndexWithWrite(pair<long,int> key, int writeAc
 
 		for(vector<int>::reverse_iterator it = writeIndices.rbegin(); it != writeIndices.rend(); ++it){
 			int i = *it;
-			Debug(cerr<<"chk 1.2"<<endl);
 			int lastThreadId=-1;
 			Operation *op = getOperation(i);
 			if(op!=NULL){
@@ -372,7 +370,6 @@ int getLastDependentHeapAccessInstIndexWithWrite(pair<long,int> key, int writeAc
 		Debug(cerr<<"case :: !writeIndices.empty()"<<endl);
 		for(vector<int>::reverse_iterator it = writeIndices.rbegin(); it != writeIndices.rend(); ++it){
 			int i = *it;
-			Debug(cerr<<"chk 1.2"<<endl);
 			int lastThreadId=-1;
 			Operation *op = getOperation(i);
 			if(op!=NULL){
@@ -408,7 +405,6 @@ int getLastDependentHeapAccessInstIndexWithRead(pair<long,int> key, int readAcce
 		int lastWrite=-1;
 		for(vector<int>::reverse_iterator it = writeIndices.rbegin(); it != writeIndices.rend(); ++it){
 			int i = *it;
-			Debug(cerr<<"chk 1.2"<<endl);
 			int lastThreadId=-1;
 			Operation *op = getOperation(i);
 			if(op!=NULL){
@@ -442,7 +438,6 @@ int getLastDependentStackAccessInstIndexWithWrite(pair<string,int> key, int writ
 		Debug(cerr<<"case :: !readIndices.empty() && !writeIndices.empty()"<<endl);
 		for(vector<int>::reverse_iterator it = readIndices.rbegin(); it != readIndices.rend(); ++it){
 			int i = *it;
-			Debug(cerr<<"chk 1.1"<<endl);
 			int lastThreadId=-1;
 			Operation *op = getOperation(i);
 			if(op!=NULL){
@@ -464,7 +459,6 @@ int getLastDependentStackAccessInstIndexWithWrite(pair<string,int> key, int writ
 
 		for(vector<int>::reverse_iterator it = writeIndices.rbegin(); it != writeIndices.rend(); ++it){
 			int i = *it;
-			Debug(cerr<<"chk 1.2"<<endl);
 			int lastThreadId=-1;
 			Operation *op = getOperation(i);
 			if(op!=NULL){
@@ -516,7 +510,6 @@ int getLastDependentStackAccessInstIndexWithWrite(pair<string,int> key, int writ
 		Debug(cerr<<"case :: !writeIndices.empty()"<<endl);
 		for(vector<int>::reverse_iterator it = writeIndices.rbegin(); it != writeIndices.rend(); ++it){
 			int i = *it;
-			Debug(cerr<<"chk 1.2"<<endl);
 			int lastThreadId=-1;
 			Operation *op = getOperation(i);
 			if(op!=NULL){
@@ -553,7 +546,6 @@ int getLastDependentStackAccessInstIndexWithRead(pair<string,int> key, int readA
 		int lastWrite=-1;
 		for(vector<int>::reverse_iterator it = writeIndices.rbegin(); it != writeIndices.rend(); ++it){
 			int i = *it;
-			Debug(cerr<<"chk 1.2"<<endl);
 			int lastThreadId=-1;
 			Operation *op = getOperation(i);
 			if(op!=NULL){
