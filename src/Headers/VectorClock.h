@@ -26,16 +26,18 @@
 #include <Entities.h>
 #include <BookKeeping.h>
 
+
 using namespace std;
 using namespace emdpor_bookKeeper;
 
 namespace dpor_vc{
 
+
 int **threadClock, **indexClock;
 int MAX_THREADS=0, MAX_INDICES=0;
 int *backupThreadClockVector, *backupIndexClockVector;
 
-void resetClock(){
+void eraseClock(){
 	for(int i=0;i<MAX_THREADS;i++)
 		for(int j=0;j<MAX_THREADS;j++)
 			threadClock[i][j]=0;
@@ -57,7 +59,7 @@ void initClock(int programLength, int noOfThreads){
 	for(int i = 0; i < programLength; i++)
 		indexClock[i] = new int[noOfThreads];
 	MAX_THREADS=noOfThreads, MAX_INDICES=programLength;
-	resetClock();
+	eraseClock();
 }
 
 void deleteClock(){
@@ -103,13 +105,13 @@ void dumpThreadClock(){
 }
 
 void dumpClock(){
-	dumpThreadClock();
-	dumpIndexClock();
+	DumpClock(dumpThreadClock();
+	dumpIndexClock());
 }
 
 
 vector<int> getDependentOpIndices(Operation *op){
-	int optype = op->getOpType();
+	int opId = op->getOpId();
 	vector<int> resultVector;
 	vector<int> readIndices;
 	vector<int> writeIndices;
@@ -120,7 +122,7 @@ vector<int> getDependentOpIndices(Operation *op){
 	PostOperation *postOp;
 	pair<int, int> aPair;
 	int index;
-	switch(optype){
+	switch(opId){
 	case READ:
 		mOp = dynamic_cast<MemoryAccessOperation *>(op);
 		writeIndices = getHeapWriteIndices(make_pair(mOp->getObjectId(), mOp->getField()));
@@ -437,6 +439,7 @@ int getLastDependentStackAccessInstIndexWithWrite(pair<string,int> key, int writ
 	vector<int> readIndices = getStackReadIndices(key);
 	vector<int> writeIndices = getStackWriteIndices(key);
 
+
 	int lastRead=-1, lastWrite=-1;
 	if(!readIndices.empty() && !writeIndices.empty()){
 		Debug(cerr<<"case :: !readIndices.empty() && !writeIndices.empty()"<<endl);
@@ -579,7 +582,7 @@ int getLastDependentStackAccessInstIndexWithRead(pair<string,int> key, int readA
 // do not return an index which is on same threadId as we are not considering two lock ops on same thread as dependent.
 int getLastDependentLockInstIndex(long objId, int lockIndex, int threadId, int opProgramIndex){
 	vector<int> lockIndices = getLocksOnId(objId);
-
+//	int j = lockIndex;
 	if(!lockIndices.empty()){
 		for(vector<int>::reverse_iterator it = lockIndices.rbegin(); it != lockIndices.rend(); ++it){
 			int i = *it;
@@ -669,7 +672,7 @@ set<int> findTaskExecutableHappenedBeforeThread(int stateIndex, int jOpIndex, in
 			}
 		}
 	}
-
+	//	Debug(cerr<<" nightmare..."<<endl);
 	return resultSet;			// signifies no such thread found!
 }
 
@@ -691,7 +694,7 @@ set<int> findHappenedBeforeEnabledThreads(int stateIndex, int jOpIndex, int thre
 			}
 		}
 	}
-
+	//	Debug(cerr<<" nightmare..."<<endl);
 	return resultSet;			// signifies no such thread found!
 }
 
@@ -726,7 +729,7 @@ map<int, set<int> > findHappenedBeforeEnqueuedTasks(int stateIndex, int jOpIndex
 					Debug(cerr<<" where..."<<endl);
 				}
 			}
-
+			//			}
 		}
 	}
 	return taskIds;

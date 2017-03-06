@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 #ifndef BOOKKEEPING_H_
 #define BOOKKEEPING_H_
 
@@ -93,37 +92,37 @@ struct compareStaticAccessKey {						//comparison class for above key:returns tr
 };
 
 
+
 /******* Data Structures *******/
 
 map< pair<int, long>, int > lockState;		// key: <index, lock-object id>, value : threadId which holds this lock at this index(state)
-map<int, vector<int> > threadIndicesMap;	// key - threadId, values - vector of operation indices executed on that thread.
-map<int, Thread> threadMap;					// Set of threads which have executed threadinit but not yet executed threadexit
-map<long, int> locker;						//key: locked object id, Value : thread that took the lock
-map<int, Operation*> traceMap;			int traceLength=0;				// Book-keeping for Trace
+map<int, vector<int> > threadIndicesMap;		// key - threadId, values - vector of operation indices executed on that thread.
+map<int, Thread> threadMap;
+map<long, int> locker;		//key: locked object id, Value : thread that took the lock
+map<int, Operation*> traceMap;			int traceLength=0;			// Book-keeping for Trace
 map<int, map<int, Thread> > stateMap;		//key: Index in Trace, Value: map<threadId, thread Object>
-map<int, ExplicitDependencies> explicitDependenciesStateMap;			//key: Index(control location) in trace, value : ExplicitDependencies object as state of these dependencies.
-map<int,int>forkMap;						//Not saving fork info in threadMap until I see a threadInit to be able to answer backtracking questions!
-map<int,int>postMap;						//1. postedMessageId, 2. postOperationIndex
-map<int,int>postHookMap;					//1. postedMessageId, 2. postOperationIndex
-map < int, vector < pair<int, int> > > threadPostMap;					// key - TargetThreadId, value - pair ( postIndex, threadFromWherePost was made)
-map< pair<long, string>, int, compareEnableKey >enableMap;				//key: pair of 1. id, 2. state, value: index of Enable Operation
+map<int, ExplicitDependencies> explicitDependenciesStateMap;		//key: Index(control location) in trace, value : ExplicitDependencies object as state of these dependencies.
+map<int,int>forkMap;	//Not saving fork info in threadMap until I see a threadInit to be able to answer backtracking questions!
+map<int,int>postMap;			//1. postedMessageId, 2. postOperationIndex
+map<int,int>postHookMap;			//1. postedMessageId, 2. postOperationIndex
+map < int, vector < pair<int, int> > > threadPostMap;			// key - TargetThreadId, value - pair ( postIndex, threadFromWherePost was made)
+map< pair<long, string>, int, compareEnableKey >enableMap;		//key: pair of 1. id, 2. state, value: index of Enable Operation
 map< pair<long,int>, vector<int>, compareReadWrtieKey > heapReadMap;	// key : < object id, offset>, Value: vector<heapAccessIndices>
 map< pair<long,int>, vector<int>, compareReadWrtieKey > heapWriteMap;	// key : < object id, offset>, Value: vector<heapAccessIndices>
 map< pair<string,int>, vector<int>, compareStaticAccessKey > stackReadMap;	//key : <className, offset>, Value: vector<memAccessIndices>
 map< pair<string,int>, vector<int>, compareStaticAccessKey > stackWriteMap;
-map<int,int> taskLastOpMap;					// 1. int taskId 2. int lastOpIndex. ||| remove entry after seeing END operation
-map<int,int> threadLastOpMap;				// 1. int threadId 2. int lastOpIndex. ||| remove entry after seeing END operation
-map<int,int> attachQIndexMap;				// 1. Thread ID, 2. attachQ operation index for this thread ID.
-map<long,int> lockUnlockMap;				// key : object id, Value: Index of last lock or unlock operation for particular lock object.
-map<int,int> loopIndexMap;					// 1. Thread ID, 2. attachQ operation index for this thread ID.
-map<int,vector<int> > notifyIndexMap;		// key : NotifiedThreadId, Value: vector of Indices of Notify Operations
+map<int,int> taskLastOpMap;	// 1. int taskId 2. int lastOpIndex. ||| remove entry after seeing END operation
+map<int,int> threadLastOpMap;	// 1. int threadId 2. int lastOpIndex. ||| remove entry after seeing END operation
+map<int,int> attachQIndexMap;		// 1. Thread ID, 2. attachQ operation index for this thread ID.
+map<long,int> lockUnlockMap;	// key : object id, Value: Index of last lock or unlock operation for particular lock object.
+map<int,int> loopIndexMap;		// 1. Thread ID, 2. attachQ operation index for this thread ID.
+map<int,vector<int> > notifyIndexMap;	// key : NotifiedThreadId, Value: vector of Indices of Notify Operations
 map<long, vector<int> > lockMap;			// key: lock obj id, Value: vector<lock op index with same key>-	Used to store all locations where lock was taken!
-map< long, vector<int>  > unlockMap;		// key - objectId, value - index
+map< long, vector<int>  > unlockMap;	// key - objectId, value - index
 
 
 
-
-/****** lockMap auxiliary functions *******/
+/******* lockMap auxiliary functions *******/
 
 void addLock(long id, int index){
 	map<long, vector<int> >::iterator it = lockMap.find(id);
@@ -142,7 +141,8 @@ vector<int> getLocksOnId(long id){
 	return lockIndices;
 }
 
-/****** eraser function *******/
+/******* eraser function *******/
+
 void eraseBookKeeper(){
 	lockState.erase(lockState.begin(), lockState.end());
 	threadIndicesMap.erase(threadIndicesMap.begin(), threadIndicesMap.end());
@@ -178,8 +178,7 @@ void eraseBookKeeper(){
 }
 
 
-/****** Book-Keeping for WAIT/NOTIFY Operations *******/
-
+/******* Book-Keeping for WAIT/NOTIFY Operations *******/
 void addNotifyOperation(int notifiedThreadId, int index){
 	map<int, vector<int> >::iterator it = notifyIndexMap.find(notifiedThreadId);
 	vector<int> notifyOps;
@@ -213,7 +212,7 @@ bool isWaitNotified(int threadId){
 }
 
 
-/****** Book-Keeping for maintaining Lock states. *******/
+/******* Book-Keeping for maintaining Lock states. *******/
 
 void addLockState(pair<int, long> key, int threadId){			//Key consists of index(state) and lock object Id
 	map < pair<int, long>, int >::iterator it = lockState.find(key);
@@ -241,7 +240,7 @@ int getLockHolderThreadId(pair<int, long> key){
 	return -1;
 }
 
-/****** Book-keeping for Threads *******/
+/******* Book-keeping for Threads *******/
 
 void addInstruction(int threadId, int index){
 	map<int, vector<int> >::iterator it = threadIndicesMap.find(threadId);
@@ -259,6 +258,8 @@ void addInstruction(int threadId, int index){
  * NOTE that it is NOT a CONTROL LOCATION and it should be mapped to CL before execution.
  */
 int getNextInstructionForExecution(Thread threadState, int afterIndex){		//returns next instruction index of a thread which has not been executed yet
+	//	Debug(cerr<<"fn:getNextInstructionForExecution() - Beginning, afterIndex = "<<afterIndex<<endl);
+	//	Debug(cerr<<"afterIndex : "<<afterIndex<<endl);
 	int result = -1;
 	if(threadState.isLooping()){									// Thread is looping
 		if(threadState.getTaskId() != -1){							// Thread is running some task
@@ -283,19 +284,15 @@ int getNextInstructionForExecution(Thread threadState, int afterIndex){		//retur
 /*
  * Here what you get (return value) is Next control location of a thread in some state (afterIndex)
  */
-int getNextInstruction(int threadId, int state){		//returns next instruction index of a thread in some state(afterIndex)
+int getNextInstruction(int threadId, int state, Thread threadState){		//returns next instruction index of a thread in some state(afterIndex)
 	map<int, vector<int> >::iterator it = threadIndicesMap.find(threadId);
 	if(it == threadIndicesMap.end())
 		return -1;
 	vector<int> threadIndices = it->second;
 	int lastThreadIndex = *(threadIndices.rbegin());
-	DebugSelective(cerr<<"fn:getNextInstruction() :: lastThreadIndex : "<<lastThreadIndex<<endl);
+	Debug(cerr<<"fn:getNextInstruction() :: lastThreadIndex : "<<lastThreadIndex<<endl);
 	int afterIndex = state + 1;
 	while(afterIndex <= lastThreadIndex){
-		/* the next instruction on threadId at the given state is the immediate operation executed
-		 * by threadId. This can be identified by returning the first index between state+1 and
-		 * lastThreadIndex which was assigned to an operation on this thread.
-		 */
 		vector<int>::iterator vit = find(threadIndices.begin(), threadIndices.end(), afterIndex);
 		if(vit != threadIndices.end())
 			return *vit;
@@ -304,7 +301,8 @@ int getNextInstruction(int threadId, int state){		//returns next instruction ind
 	return -1;
 }
 
-// returns instruction of a thread on or before input state. threadState should not be null.
+// returns instruction of a thread on or before input state.
+// threadState should not be null.
 int getPreviousInstruction(int threadId, int state, Thread threadState){
 	if(threadState.isNullThread()){
 		cerr<<"ERROR :: fn:getPreviousInstruction() called with null threadState"<<endl;
@@ -346,6 +344,7 @@ void addThread(int threadId, int parentThreadId){
 }
 
 Thread & getThread(int threadId){
+	//	Thread nullThread;
 	map<int, Thread>::iterator it = threadMap.find(threadId);
 	if(it == threadMap.end())
 		return nullThread;
@@ -401,6 +400,7 @@ void stopLocker(long objectId){
 /******* Book-keeping for Trace *******/
 
 void addOperation(int index, Operation *op){
+	//	Debug(if(op==NULL) cerr<<"Attempt to store a Null operation in traceMap, BookKeeping.h:addOperation()"<<endl);
 	traceMap[index]=op;
 	traceLength++;
 	map<int, Thread> aState = map<int, Thread>(threadMap);
@@ -483,25 +483,32 @@ void dumpThreadState(int index, int threadId){
 }
 
 map<int, Thread>  getState(int index){
+	//	Debug(cerr<<"fn:getState() : begin "<<endl);
 	map<int, map<int, Thread> >::iterator it = stateMap.find(index);
 	map<int, Thread> emptyState;
 	if(it==stateMap.end()){
 		return emptyState;
+		//		Debug(cerr<<"fn:getState() : End :: NULL returned "<<endl);
 	}
+	//	Debug(cerr<<"fn:getState() : End :: state returned "<<endl);
 	return it->second;
 }
 
 Thread getThreadState(int stateIndex, int threadId){
+	//	Debug(cerr<<"fn:getThreadState() : begin, Inputs:: stateIndex : "<<stateIndex<<" threadID : "<<threadId<<endl);
 	//	Debug(dumpThreadState(stateIndex,threadId));
 	Thread nullThread;
 	map<int, Thread> threadStateMap = getState(stateIndex);
 	if(threadStateMap.empty()){
+		//		Debug(cerr<<"fn:getThreadState() : end :: NULL 1 returned "<<endl);
 		return nullThread;
 	}
 	map<int, Thread>::iterator it = threadStateMap.find(threadId);
 	if(it==threadStateMap.end()){
+		//		Debug(cerr<<"fn:getThreadState() : end :: NULL 2 returned "<<endl);
 		return nullThread;
 	}
+	//	Debug(cerr<<"fn:getThreadState() : end :: A Thread returned "<<endl);
 	return it->second;
 }
 
@@ -511,33 +518,33 @@ bool isThreadEnabledForExecution(int stateIndex, int threadId, Thread threadStat
 
 //checks if an operation is executable on a thread in given state(index).
 bool isThreadEnabled(int stateIndex, int threadId, Thread threadState){
-	DebugSelective(cerr<<"fn:isThreadEnabled :: beginning, state : "<<stateIndex<<", threadId : "<<threadId<<endl);
+	Debug(cerr<<"fn:isThreadEnabled :: beginning, state : "<<stateIndex<<", threadId : "<<threadId<<endl);
 	if(threadState.isNullThread())
 		return false;
 	if(threadState.isLooping() && threadState.getExecutableTask() == -1)
 		return false;
 
-	int nextInstructionIndex = getNextInstruction(threadId, stateIndex);
-	DebugSelective(cerr<<"fn:isThreadEnabled() :: nextInstructionIndex "<<nextInstructionIndex<<endl);
+	int nextInstructionIndex = getNextInstruction(threadId, stateIndex, threadState);
+	Debug(cerr<<"fn:isThreadEnabled() :: nextInstructionIndex "<<nextInstructionIndex<<endl);
 
 
 	if(nextInstructionIndex != -1){
 		Operation *op = getOperation(nextInstructionIndex);
-		if(op->getOpType() == LOCK){
-			DebugSelective(cerr<<"fn:isThreadEnabled(): nextInst is lock"<<endl);
+		if(op->getOpId() == LOCK){
+			Debug(cerr<<"fn:isThreadEnabled(): nextInst is lock"<<endl);
 			LockOperation *lop = dynamic_cast<LockOperation *>(op);
 			Debug(cerr<<"lock obj : "<<lop->getObjectId()<<endl);
 			int lockHolderThreadId = getLockHolderThreadId(make_pair(stateIndex, lop->getObjectId()));
-			DebugSelective(cerr<<"fn:isThreadEnabled() ::  lockHolderThreadId :  "<< lockHolderThreadId <<endl);
+			Debug(cerr<<"fn:isThreadEnabled() ::  lockHolderThreadId :  "<< lockHolderThreadId <<endl);
 			if(lockHolderThreadId != -1 && lockHolderThreadId != threadId){
 				return false;
 			}
 		}
-		else if(op->getOpType() == WAIT){
+		else if(op->getOpId() == WAIT){
 			Thread thread = getThreadState(stateIndex, op->getThreadId());
 			return (!thread.getNotifyCount() <= 0);
 		}
-		else if(op->getOpType() == POST || op->getOpType() == DELAY_POST || op->getOpType() == NATIVE_POST || op->getOpType() == UI_POST){
+		else if(op->getOpId() == POST || op->getOpId() == DELAY_POST || op->getOpId() == NATIVE_POST || op->getOpId() == UI_POST){
 			PostOperation *pop = dynamic_cast<PostOperation *>(op);
 			int targetThreadId = pop->getDestThreadId();
 			Thread targetThread = getThreadState(stateIndex, targetThreadId);
@@ -549,7 +556,7 @@ bool isThreadEnabled(int stateIndex, int threadId, Thread threadState){
 				return false;
 			}
 		}
-		else if(op->getOpType() == NOP){
+		else if(op->getOpId() == NOP){
 			int opIndex = mapContolLocationToProgramIndex(op->getOpIndex());
 			if(getExplicitDependenciesState(stateIndex).isDependent(opIndex)){
 				return false;
@@ -559,35 +566,35 @@ bool isThreadEnabled(int stateIndex, int threadId, Thread threadState){
 	else{
 		int prevInstIndexBeforeInputState = getPreviousInstruction(threadId, stateIndex, threadState);
 
-		// below index is a program index, not a control location (because this operation is not yet executed in the current sequence)
+		// below index is a program index, not a control location.
 		int nextProgInst = getNextInstructionForExecution(threadState, prevInstIndexBeforeInputState);
 
 		if(nextProgInst == -1)
 			return false;
 		else{
 			Operation *op = getOperationClone(nextProgInst);
-			DebugSelective(cerr<<"dumping dependent operation info : "<<endl);
-			DebugSelective(op->dumpOpInfo());
-			if(op->getOpType() == LOCK){
-				DebugSelective(cerr<<"fn:isThreadEnabled(): nextInst is lock"<<endl);
+			Debug(cerr<<"dumping dependent operation info : "<<endl);
+			Debug(op->dumpOpInfo());
+			if(op->getOpId() == LOCK){
+				Debug(cerr<<"fn:isThreadEnabled(): nextInst is lock"<<endl);
 				LockOperation *lop = dynamic_cast<LockOperation *>(op);
-				DebugSelective(cerr<<"lock obj : "<<lop->getObjectId()<<endl);
+				Debug(cerr<<"lock obj : "<<lop->getObjectId()<<endl);
 				int lockHolderThreadId = getLockHolderThreadId(make_pair(stateIndex, lop->getObjectId()));
-				DebugSelective(cerr<<"fn:isThreadEnabled() ::  lockHolderThreadId :  "<< lockHolderThreadId <<endl);
+				Debug(cerr<<"fn:isThreadEnabled() ::  lockHolderThreadId :  "<< lockHolderThreadId <<endl);
 				if(lockHolderThreadId != -1 && lockHolderThreadId != threadId){
-					DebugSelective(cerr<<endl<<"-----Lock Blocked Thread-----"<<endl;
+					Debug(cerr<<endl<<"-----Lock Blocked Thread-----"<<endl;
 					cerr<<"Thread id : "<<op->getThreadId()<<" is blocked as lock is held by thread id : "<<lockHolderThreadId<<endl;
 					cerr<<"Next Operation index : "<<op->getOpIndex()<<endl);
 					delete op;
 					return false;
 				}
 			}
-			else if(op->getOpType() == WAIT){
+			else if(op->getOpId() == WAIT){
 				int waitingThreadId = op->getThreadId();
 				delete op;
 				return isWaitNotified(waitingThreadId);
 			}
-			else if(op->getOpType() == POST || op->getOpType() == DELAY_POST || op->getOpType() == NATIVE_POST || op->getOpType() == UI_POST){
+			else if(op->getOpId() == POST || op->getOpId() == DELAY_POST || op->getOpId() == NATIVE_POST || op->getOpId() == UI_POST){
 				PostOperation *pop = dynamic_cast<PostOperation *>(op);
 				int targetThreadId = pop->getDestThreadId();
 				Thread targetThread = getThreadState(stateIndex, targetThreadId);
@@ -600,7 +607,7 @@ bool isThreadEnabled(int stateIndex, int threadId, Thread threadState){
 					return false;
 				}
 			}
-			else if(op->getOpType() == NOP){
+			else if(op->getOpId() == NOP){
 				if(getExplicitDependenciesState(stateIndex).isDependent(op->getOpIndex())){
 					delete op;
 					return false;
@@ -630,6 +637,7 @@ vector<int> getEnabledThreadsInBacktrackCall(int stateIndex){
 
 // to be used in fn:Execute()
 bool isThreadEnabledForExecution(int stateIndex, int threadId, Thread threadState){
+	//	Debug(cerr<<"fn:isThreadEnabledForExecution() - Beginning"<<endl);
 	if(threadState.isNullThread())
 		return false;
 	int nextInstructionIndex=-1;
@@ -655,32 +663,32 @@ bool isThreadEnabledForExecution(int stateIndex, int threadId, Thread threadStat
 			nextInstructionIndex = getNextInstructionForExecution(threadState, stateIndex);	
 		}
 	}
-	DebugSelective(cerr<<"fn:isThreadEnabledForExecution() :: nextInstructionIndex "<<nextInstructionIndex<<endl);
+	Debug(cerr<<"fn:isThreadEnabledForExecution() :: nextInstructionIndex "<<nextInstructionIndex<<endl);
 	if(nextInstructionIndex == -1)
 		return false;
 	else{
 		Operation *op = getOperationClone(nextInstructionIndex);
-		DebugSelective(op->dumpOpInfo());
-		if(op->getOpType() == LOCK){
-			DebugSelective(cerr<<"fn:isThreadEnabled(): nextInst is lock"<<endl);
+		Debug(op->dumpOpInfo());
+		if(op->getOpId() == LOCK){
+			Debug(cerr<<"fn:isThreadEnabled(): nextInst is lock"<<endl);
 			LockOperation *lop = dynamic_cast<LockOperation *>(op);
-			DebugSelective(cerr<<"lock obj : "<<lop->getObjectId()<<endl);
+			Debug(cerr<<"lock obj : "<<lop->getObjectId()<<endl);
 			int lockHolderThreadId = getLockHolderThreadId(make_pair(stateIndex, lop->getObjectId()));
-			DebugSelective(cerr<<"fn:isThreadEnabled() ::  lockHolderThreadId :  "<< lockHolderThreadId <<endl);
+			Debug(cerr<<"fn:isThreadEnabled() ::  lockHolderThreadId :  "<< lockHolderThreadId <<endl);
 			if(lockHolderThreadId != -1 && lockHolderThreadId != threadId){
-				DebugSelective(cerr<<endl<<"-----Lock Blocked Thread-----"<<endl;
+				Debug(cerr<<endl<<"-----Lock Blocked Thread-----"<<endl;
 				cerr<<"Thread id : "<<op->getThreadId()<<" is blocked as lock is held by thread id : "<<lockHolderThreadId<<endl;
 				cerr<<"Next Operation index : "<<op->getOpIndex()<<endl);
 				delete op;
 				return false;
 			}
 		}
-		else if(op->getOpType() == WAIT){
+		else if(op->getOpId() == WAIT){
 			int waitingThreadId = op->getThreadId();
 			delete op;
 			return isWaitNotified(waitingThreadId);
 		}
-		else if(op->getOpType() == POST || op->getOpType() == DELAY_POST || op->getOpType() == NATIVE_POST || op->getOpType() == UI_POST){
+		else if(op->getOpId() == POST || op->getOpId() == DELAY_POST || op->getOpId() == NATIVE_POST || op->getOpId() == UI_POST){
 			PostOperation *pop = dynamic_cast<PostOperation *>(op);
 			int targetThreadId = pop->getDestThreadId();
 			Thread targetThread = getThreadState(stateIndex, targetThreadId);
@@ -693,12 +701,16 @@ bool isThreadEnabledForExecution(int stateIndex, int threadId, Thread threadStat
 				return false;
 			}
 		}
-		else if(op->getOpType() == NOP){
+		else if(op->getOpId() == NOP){
 			if(getExplicitDependenciesState(stateIndex).isDependent(op->getOpIndex())){
 				delete op;
 				return false;
 			}
 		}
+
+		// Confirm Which operations need to be checked for dependencies.
+		//if(getExplicitDependenciesState(stateIndex).isDependent(op->getOpIndex()))
+		//return false;
 
 		delete op;
 	}
@@ -712,9 +724,9 @@ vector<int> getEnabledThreads(int stateIndex){
 	if(state.empty())
 		return resultVector;
 	for(map<int, Thread>::iterator it = state.begin(); it != state.end(); ++it){
-		DebugSelective(cerr<<"fn:getEnabledThreads() :: cheking if threadId "<<it->first<<" is enabled ?? "<<endl);
+		Debug(cerr<<"fn:getEnabledThreads() :: cheking if threadId "<<it->first<<" is enabled ?? "<<endl);
 		if(isThreadEnabledForExecution(stateIndex, it->first, it->second)){
-			DebugSelective(cerr<<"fn:getEnabledThreads() :: threadId "<<it->first<<" is enabled !!! "<<endl);
+			Debug(cerr<<"fn:getEnabledThreads() :: threadId "<<it->first<<" is enabled !!! "<<endl);
 			resultVector.push_back(it->first);
 		}
 	}
@@ -736,6 +748,7 @@ bool isThreadLooping(Thread threadState){
 }
 
 bool isTaskExecutable(int taskId, Thread threadState){
+	//	Debug(cerr<<"fn:isTaskExecutable() : begin :: taskId : "<<taskId<<endl);
 	//	threadState.dumpThread();
 	if(taskId == -1 && !threadState.isLooping())
 		return true;
@@ -743,7 +756,7 @@ bool isTaskExecutable(int taskId, Thread threadState){
 		return true;
 	if(threadState.getTaskId() == -1 && threadState.isLooping() && taskId == threadState.getFrontOfQueue())
 		return true;
-
+	//	Debug(cerr<<"fn:isTaskExecutable() : end "<<endl);
 	return false;
 }
 
@@ -755,30 +768,26 @@ void updateThreadQ(int index, int threadId, int taskId){
 		return;
 	}
 	t.insertIntoQ(taskId);
-
 	return;
 }
 
-
-
 /******* Book-Keeping for Fork Operations *******/
 
-//arguments: 1-thread id of the new thread, 2-index of fork operation
-void addFork(int forkedThreadId, int forkOpIndex){
+
+void addFork(int forkedThreadId, int forkOpIndex){	//arguments: 1-thread id of the new thread, 2-index of fork operation
 	forkMap[forkedThreadId]=forkOpIndex;
 }
 
 int getParentForkIndex(int threadId){
 	map<int,int>::iterator it= forkMap.find(threadId);
 	if(it == forkMap.end())
-		return -1;									//Not found
+		return -1;
 	return it->second;
 }
 
 void removeFork(int threadId){
 	forkMap.erase(threadId);
 }
-
 
 
 /******* Book-Keeping for Post Operations *******/
@@ -793,10 +802,18 @@ int getParentPostIndex(int msgId){
 	//	Debug(cerr<<"fn:getParentPostIndex(), Input recieved : "<<msgId<<endl);
 	map<int,int>::iterator it = postMap.find(msgId);
 	if(it==postMap.end()){
+		//	Debug(if(!postMap.empty()) cerr<<"postMap is not empty!"<<endl);
 		return -1;
 	}
 	return it->second;
 }
+/*
+void removePost(int msgId){
+	postMap.erase(msgId);
+}*/
+
+///
+
 
 
 /******* Post-ops & their target Threads *******/
@@ -820,14 +837,17 @@ void addToThreadPostMap(int targetThreadId, int postOpIndex, int postingThreadId
 /******* Book-Keeping for Post-Hook Operations - Hooks are removed in END operation handler. *******/
 
 void addPostHook(int postedMessageId, int postOpIndex, int destThreadId, int postingThreadId){
+	//	Debug(cerr<<"fn:getParentPostIndex(), Input recieved:: msgId : "<<postedMessageId<<" index : "<<postOpIndex<<endl);
 	postHookMap[postedMessageId]=postOpIndex;
 	addPost(postedMessageId, postOpIndex);
 	addToThreadPostMap(destThreadId, postOpIndex, postingThreadId);
 }
 
 int getParentPostHookIndex(int msgId){
+	//	Debug(cerr<<"fn:getParentPostIndex(), Input recieved : "<<msgId<<endl);
 	map<int,int>::iterator it = postHookMap.find(msgId);
 	if(it==postHookMap.end()){
+		//	Debug(if(!postMap.empty()) cerr<<"postMap is not empty!"<<endl);
 		return -1;
 	}
 	return it->second;
@@ -842,11 +862,13 @@ void removePostHook(int msgId){
 
 void addEnable(const pair<long, string> key, int enableOpIndex){
 	enableMap.insert(pair<pair<long, string>, int> (key, enableOpIndex));
+	//	Debug(cerr<<"addEnable() - adding :: id : "<<key.first<<" State : "<<key.second<<" index : "<<enableOpIndex<<endl);
 }
 
 int getParentEnableIndex(pair<long, string> key){
 	map< pair<long, string>, int, compareEnableKey >::iterator it = enableMap.find(key);
 	if(it==enableMap.end()){
+		//		Debug(if(!enableMap.empty()) cerr<<"enableMap is not empty!"<<endl);
 		return -1;
 	}
 	return it->second;
@@ -876,6 +898,9 @@ vector<int> getHeapReadIndices(pair<long,int> key){			//if key not present, retu
 	}
 	return it->second;
 }
+
+
+
 
 void addHeapWrite(pair<long,int> key, int memAccessIndex){
 	map< pair<long,int>, vector<int>, compareReadWrtieKey>::iterator it = heapWriteMap.find(key);
@@ -962,6 +987,8 @@ vector<int> getStackWriteIndices(pair<string,int> key){			//if key not present, 
 
 /******* Book-Keeping last operation index of a task for same task HB edges. *******/
 
+
+
 void addLastOpIndex(int taskId, int lastOpIndex){			//also used for updating!
 	taskLastOpMap[taskId]=lastOpIndex;
 }
@@ -984,6 +1011,7 @@ void addThreadLastOpIndex(int threadId, int lastOpIndex){			//also used for upda
 }
 
 int getThreadLastOpIndex(int threadId){
+	//	Debug(cerr<<"Input thread id is : "<<threadId<<endl);
 	map<int,int>::iterator it = threadLastOpMap.find(threadId);
 	if(it==threadLastOpMap.end()){
 		Debug(if(!threadLastOpMap.empty()) cerr<<"Map is not empty"<<endl);
@@ -996,8 +1024,9 @@ void removeThreadLastOpIndex(int threadId){
 	threadLastOpMap.erase(threadId);
 }
 
-
 /******* Book-Keeping attachQ operation index of a thread for attachQ to Post HB edges. *******/
+
+
 
 void addAttachQIndex(int threadId, int index){
 	attachQIndexMap[threadId]=index;
@@ -1014,6 +1043,7 @@ int getAttachQIndex(int threadId){
 void removeAttachQIndex(int threadId){
 	attachQIndexMap.erase(threadId);
 }
+
 
 
 /******* Book-Keeping attachQ operation index of a thread for LOOP to BEGIN HB edges. *******/
@@ -1033,6 +1063,7 @@ int getLoopIndex(int threadId){
 void removeLoopIndex(int threadId){
 	loopIndexMap.erase(threadId);
 }
+
 
 
 /******* Book-Keeping for LOCK/UNLOCK Operations *******/

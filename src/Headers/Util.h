@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 #ifndef UTIL_H_
 #define UTIL_H_
 
@@ -104,43 +105,28 @@ void cleanFile(string filename){
 template <typename T>
 void dumpSet(const set<T> & s){
 	if(s.empty()){
-		Debug(cerr<<"empty"<<endl);
+		cerr<<"empty"<<endl;
 		return;
 	}
 	typename set<T>::iterator it;
 	for(it = s.begin(); it != s.end(); ++it)
-		Debug(cerr<<*it<<endl);
+		cerr<<*it<<endl;
 }
 
 template <typename T>
 void dumpVector(const vector<T> & s){
 	if(s.empty()){
-		Debug(cerr<<"empty"<<endl);
+		cerr<<"empty"<<endl;
 		return;
 	}
 	typename vector<T>::iterator it;
 	for(it = s.begin(); it != s.end(); ++it)
-		Debug(cerr<<*it<<endl);
+		cerr<<*it<<endl;
 }
 
 void initializeArray(int array[], int size, int value=0){
 	for(int i = 0; i < size; i++){
 		array[i] = value;
-	}
-}
-
-void dumpIntMapToSet(const map<int, set<int> > &s){
-	if(s.empty()){
-		Debug(cerr<<"empty"<<endl);
-		return;
-	}
-
-	for(map<int, set<int> >::const_iterator it = s.begin(); it != s.end(); ++it){
-		int i = it->first;
-		set<int> set = it->second;
-		Debug(cerr<<"dumping set for index: "<<i<<endl);
-		dumpSet(set);
-		Debug(cerr<<endl);
 	}
 }
 

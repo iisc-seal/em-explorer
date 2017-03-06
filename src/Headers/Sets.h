@@ -19,6 +19,7 @@
  * done set, backtracking set etc. at each state visited by the sequence being explored.
  */
 
+
 #ifndef SETS_H_
 #define SETS_H_
 
@@ -33,8 +34,6 @@ private:
 	set<int> sleepSet;
 	set<int> doneSet;
 	bool dporRunStatus;
-	set<pair<int, int> > reorderedPosts;
-
 public:
 
 	Sets(){
@@ -53,10 +52,6 @@ public:
 		return sleepSet;
 	}
 
-	const set<pair<int, int> >& getImmutableReorderedPostSet() const {
-		return reorderedPosts;
-	}
-
 	set<int>& getMutableBacktrackingSet() {
 		return backtrackingSet;
 	}
@@ -67,14 +62,6 @@ public:
 
 	set<int>& getMutableSleepSet() {
 		return sleepSet;
-	}
-
-	set<pair<int, int> >& getmutableReorderedPostSet() {
-		return reorderedPosts;
-	}
-
-	void addReorderedSets(int src, int dest){
-		reorderedPosts.insert(make_pair(src,dest));
 	}
 
 	bool hasDporRun() const {
@@ -95,9 +82,6 @@ public:
 		cerr<<endl<<"Sleep Set        : ";
 		for(set<int>::iterator vit = sleepSet.begin(); vit != sleepSet.end(); ++vit)
 			cerr<<*vit<<", ";
-		cerr<<endl<<"ReorderedPosts Set        : ";
-		for(set<pair<int,int> >::iterator vit = reorderedPosts.begin(); vit != reorderedPosts.end(); ++vit)
-			cerr<<vit->first<<" --> "<<vit->second<<", ";
 		cerr<<endl;
 	}
 

@@ -17,12 +17,13 @@
 #ifndef COMPUTEBACKTRACKDPOR_H_
 #define COMPUTEBACKTRACKDPOR_H_
 
-#include <EmdporVectorClock.h>
+
+#include <VectorClock.h>
 
 using namespace std;
 using namespace emdpor_bookKeeper;
 using namespace emdpor_Entities;
-using namespace emdpor_vc;
+using namespace dpor_vc;
 
 namespace dpor_backtrack{
 
@@ -49,18 +50,17 @@ pair< set<int>, int> computeBacktrack(int i, Operation* opJ){		// should satisfy
 
 	i = op1->getOpIndex();
 	int threadIdOfI = op1->getThreadId();
-//	Debug(cerr<<endl<<endl<<" state :  "<<getState(i)<<endl);
-//	Debug(cerr<<" Thread ID2 :  "<< op2->getThreadId() <<", Task Id2 : "<< op2->getTaskId() <<endl);
 
 	Thread threadState = getThreadState(getState(i), op2->getThreadId());
 
-//	threadState.dumpThread();
+
 	if(isThreadEnabled(getState(i), op2->getThreadId(), threadState) && isTaskExecutable(op2->getTaskId(), threadState)){
 		Debug(cerr<<"Inserting thread id : "<<op2->getThreadId()<<endl);
 		resultSet.insert(op2->getThreadId());
 	}
 
-	set<int> happenedBeforeThreadIds = findTaskExecutableHappenedBeforeThread(getState(i), op2, threadIdOfI, true);
+
+	set<int> happenedBeforeThreadIds = findTaskExecutableHappenedBeforeThread(getState(i), op2->getOpIndex(), op2->getThreadId(), threadIdOfI);
 
 	for(set<int>::iterator sit = happenedBeforeThreadIds.begin(); sit != happenedBeforeThreadIds.end(); ++sit)
 		resultSet.insert(*sit);

@@ -28,6 +28,7 @@
 
 #include <Debug.h>
 
+
 using namespace std;
 
 struct ExplicitDependencies{
@@ -39,7 +40,7 @@ public:
 	bool isDependent(int dest);
 	bool isSource(int source);
 	void removeSourceFromTargetToSourceMap(int dest, int source);
-	void resolveDependency(int source); //to unblock a destination operation for which explicit source dependent operation (as give in dependence.txt) has been executed.
+	void resolveDependency(int source);
 	void dumpSourceToTargetMap();
 	void dumpTargetToSourceMap();
 	void dumpDependencies();
@@ -92,7 +93,6 @@ void ExplicitDependencies::removeSourceFromTargetToSourceMap(int target, int sou
 	}
 }
 
-//to unblock a destination operation for which explicit source dependent operation (as given in dependence.txt) has been executed.
 void ExplicitDependencies::resolveDependency(int source){
 	map < int, set<int> > :: iterator it = sourceToTargetMap.find(source);
 	if(it != sourceToTargetMap.end()){

@@ -18,6 +18,7 @@
  * Defines important structures such as Thread, Task and all types of Operations.
  */
 
+
 #ifndef ENTITIES_H_
 #define ENTITIES_H_
 
@@ -334,20 +335,20 @@ static const char * enumOpName[] = {"START", "THREADINIT", "THREADEXIT", "ENABLE
 
 struct Operation{
 protected:
-	int opIndex;			//indicates the index of the operation in the current sequence
-	int opType;				//indicates the type of operation
-	int threadId;			//thread on which the operation is executed
-	int taskId;				//ID of the event (msg) to whose handler the operation belongs. This is -1 for an operation executed outside event handler
+	int opIndex;
+	int opId;
+	int threadId;
+	int taskId;
 public:
 	Operation(int index, int opId, int threadId){
 		this->opIndex=index;
-		this->opType=opId;
+		this->opId=opId;
 		this->threadId=threadId;
 		this->taskId=-1;
 	}
 	Operation(int index, int opId, int threadId, int taskId){
 		this->opIndex=index;
-		this->opType=opId;
+		this->opId=opId;
 		this->threadId=threadId;
 		this->taskId=taskId;
 	}
@@ -356,8 +357,8 @@ public:
 
 	virtual void dumpOpInfo(){
 		cerr<<"Operation Index : "<<opIndex<<endl;
-		cerr<<"Operation ID : "<<opType<<endl;
-		cerr<<"Operation Name : "<<enumOpName[opType]<<endl;
+		cerr<<"Operation ID : "<<opId<<endl;
+		cerr<<"Operation Name : "<<enumOpName[opId]<<endl;
 		cerr<<"Thread ID : "<<threadId<<endl;
 		cerr<<"Task ID : "<<taskId<<endl;
 	}
@@ -366,20 +367,20 @@ public:
 		std::stringstream sstm;
 		for(int i=1; i<threadId; i++)
 				sstm << "\t";
-		if(opType == THREAD_INIT || opType == THREAD_EXIT || opType == NOP)
-			sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId;
+		if(opId == THREAD_INIT || opId == THREAD_EXIT || opId == NOP)
+			sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId;
 		else
-			sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" msg:"<<taskId;
+			sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" msg:"<<taskId;
 		
 		return sstm.str();
 	}
 
 	virtual string writeToLog(){
 		std::stringstream sstm;
-		if(opType == THREAD_INIT || opType == THREAD_EXIT || opType == NOP)
-			sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId;
+		if(opId == THREAD_INIT || opId == THREAD_EXIT || opId == NOP)
+			sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId;
 		else
-			sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" msg:"<<taskId;
+			sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" msg:"<<taskId;
 		
 		return sstm.str();
 	}
@@ -389,12 +390,12 @@ public:
 		return opClone;
 	}
 
-	int getOpType() const {
-		return opType;
+	int getOpId() const {
+		return opId;
 	}
 
-	void setOpType(int optype) {
-		this->opType = optype;
+	void setOpId(int opId) {
+		this->opId = opId;
 	}
 
 	int getOpIndex() const {
@@ -458,14 +459,14 @@ public:
 		std::stringstream sstm;
 		for(int i=1; i<threadId; i++)
 			sstm << "\t";
-		sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" obj:"<<objectId<<" class:"<<className<<"; field:"<<field;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" obj:"<<objectId<<" class:"<<className<<"; field:"<<field;
 		return sstm.str();
 	}
 
 	virtual string writeToLog(){
 		std::stringstream sstm;
 		
-		sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" obj:"<<objectId<<" class:"<<className<<"; field:"<<field;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" obj:"<<objectId<<" class:"<<className<<"; field:"<<field;
 		return sstm.str();
 	}
 
@@ -522,14 +523,14 @@ public:
 		std::stringstream sstm;
 		for(int i=1; i<threadId; i++)
 			sstm << "\t";
-		sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" lock-obj:"<<objectId;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" lock-obj:"<<objectId;
 		return sstm.str();
 	}
 
 	virtual string writeToLog(){
 		std::stringstream sstm;
 		
-		sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" lock-obj:"<<objectId;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" lock-obj:"<<objectId;
 		return sstm.str();
 	}
 
@@ -567,7 +568,7 @@ public:
 
 	virtual string writeToLog(){
 		std::stringstream sstm;
-		sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" binder#"<<binderThreadId;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" binder#"<<binderThreadId;
 		return sstm.str();
 	}
 
@@ -608,14 +609,14 @@ public:
 		std::stringstream sstm;
 		for(int i=1; i<threadId; i++)
 			sstm << "\t";
-		sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" target:"<<notifyTagetThreadId;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" target:"<<notifyTagetThreadId;
 		return sstm.str();
 	}
 
 	virtual string writeToLog(){
 		std::stringstream sstm;
 		
-		sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" target:"<<notifyTagetThreadId;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" target:"<<notifyTagetThreadId;
 		return sstm.str();
 	}
 
@@ -652,14 +653,14 @@ public:
 		std::stringstream sstm;
 		for(int i=1; i<threadId; i++)
 			sstm << "\t";
-		sstm << opIndex<<" "<<enumOpName[opType]<<" par-tid:"<<threadId<<" child-tid:"<<childThreadId;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" par-tid:"<<threadId<<" child-tid:"<<childThreadId;
 		return sstm.str();
 	}
 
 	virtual string writeToLog(){
 		std::stringstream sstm;
 		
-		sstm << opIndex<<" "<<enumOpName[opType]<<" par-tid:"<<threadId<<" child-tid:"<<childThreadId;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" par-tid:"<<threadId<<" child-tid:"<<childThreadId;
 		return sstm.str();
 	}
 
@@ -704,14 +705,14 @@ public:
 		std::stringstream sstm;
 		for(int i=1; i<threadId; i++)
 			sstm << "\t";
-		sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" component:"<<component<<" id:"<<id<<" state:"<<state;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" component:"<<component<<" id:"<<id<<" state:"<<state;
 		return sstm.str();
 	}
 
 	virtual string writeToLog(){
 		std::stringstream sstm;
 		
-		sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" component:"<<component<<" id:"<<id<<" state:"<<state;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" component:"<<component<<" id:"<<id<<" state:"<<state;
 		return sstm.str();
 	}
 
@@ -765,14 +766,14 @@ public:
 		std::stringstream sstm;
 		for(int i=1; i<threadId; i++)
 			sstm << "\t";
-		sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" queue:"<<queueId;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" queue:"<<queueId;
 		return sstm.str();
 	}
 
 	virtual string writeToLog(){
 		std::stringstream sstm;
 		
-		sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" queue:"<<queueId;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" queue:"<<queueId;
 		return sstm.str();
 	}
 
@@ -821,14 +822,14 @@ public:
 		std::stringstream sstm;
 		for(int i=1; i<threadId; i++)
 			sstm << "\t";
-		sstm << opIndex<<" "<<enumOpName[opType]<<" src:"<<threadId<<" msg:"<<postedTaskId<<" dest:"<<destThreadId;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" src:"<<threadId<<" msg:"<<postedTaskId<<" dest:"<<destThreadId;
 		return sstm.str();
 	}
 
 	virtual string writeToLog(){
 		std::stringstream sstm;
 		
-		sstm << opIndex<<" "<<enumOpName[opType]<<" src:"<<threadId<<" msg:"<<postedTaskId<<" dest:"<<destThreadId;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" src:"<<threadId<<" msg:"<<postedTaskId<<" dest:"<<destThreadId;
 		return sstm.str();
 	}
 
@@ -889,14 +890,14 @@ public:
 		std::stringstream sstm;
 		for(int i=1; i<threadId; i++)
 			sstm << "\t";
-		sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" WindowHash:"<<windowHash;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" WindowHash:"<<windowHash;
 		return sstm.str();
 	}
 
 	virtual string writeToLog(){
 		std::stringstream sstm;
 		
-		sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" WindowHash:"<<windowHash;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" WindowHash:"<<windowHash;
 		return sstm.str();
 	}
 
@@ -940,14 +941,14 @@ public:
 		std::stringstream sstm;
 		for(int i=1; i<threadId; i++)
 			sstm << "\t";
-		sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" view:"<<view<<" event:"<<event;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" view:"<<view<<" event:"<<event;
 		return sstm.str();
 	}
 
 	virtual string writeToLog(){
 		std::stringstream sstm;
 		
-		sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" view:"<<view<<" event:"<<event;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" view:"<<view<<" event:"<<event;
 		return sstm.str();
 	}
 
@@ -1011,14 +1012,14 @@ public:
 		std::stringstream sstm;
 		for(int i=1; i<threadId; i++)
 			sstm << "\t";
-		sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" action:"<<action<<" component:"<<component<<" intent:"<<intent<<" onRecLater:"<<onRecLater<<" state:"<<state;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" action:"<<action<<" component:"<<component<<" intent:"<<intent<<" onRecLater:"<<onRecLater<<" state:"<<state;
 		return sstm.str();
 	}
 
 	virtual string writeToLog(){
 		std::stringstream sstm;
 		
-		sstm << opIndex<<" "<<enumOpName[opType]<<" tid:"<<threadId<<" action:"<<action<<" component:"<<component<<" intent:"<<intent<<" onRecLater:"<<onRecLater<<" state:"<<state;
+		sstm << opIndex<<" "<<enumOpName[opId]<<" tid:"<<threadId<<" action:"<<action<<" component:"<<component<<" intent:"<<intent<<" onRecLater:"<<onRecLater<<" state:"<<state;
 		return sstm.str();
 	}
 
@@ -1062,18 +1063,6 @@ public:
 		this->component = component;
 	}
 };
-
-inline bool isPostOperation(int operationId){
-	if(operationId >= POST && operationId <= DELAY_POST)
-		return true;
-	else
-		return false;
-}
-
-inline bool isPostOperation(Operation *op){
-	int operationId = op->getOpType();
-	return isPostOperation(operationId);
-}
 
 }
 #endif /* ENTITIES_H_ */

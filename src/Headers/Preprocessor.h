@@ -43,24 +43,16 @@ enum ConfigType {
 namespace emdpor_preprocessor_private{
 
 
-
 map<int, vector<int> > threadCode;								// key - threadId, values - vector of operation indices executed on that thread.
-map<int, vector<int> > taskCode;								// key - taskId, values - vector of operation indices executed in that event handler.
-/* key - operation index, Value - pointer to Operation Object.
- * contains the indices in the input trace as keys. This data structure
- * once populated does not get modified.
- */
-map<int, Operation *>  programCode;
-/* field sequence always holds the sequence explored upto the current state.
- * It is a vector containing indices of operations as given in the input trace.
- * We call these program indices.
- */
+map<int, vector<int> > taskCode;									// key - taskId, values - vector of operation indices executed on that thread.
+map<int, Operation *>  programCode;										// key - operation index, Value - pointer to Operation Object.
+//map<int, int> controlLocToProgIndexMap;									// Key: control location, Value: Program Index
 vector<int> sequence;
 map<int, int> programIndexToControlLocationMap;					// key - program index, Value- Control location
 map<long,int> preprocessingLockMap;
 map<long,int> preprocessingBadUnLockMap;
 int programLength = 0;
-int configId=EMDPOR_MODE; 	//hardcoding since this repo branch is dedicated for emdpor algorithm
+int configId=DPOR_MODE;	//hardcoding since this repo branch is dedicated for emdpor algorithm
 
 /* explicitDependenciesBackup - contains info about HB info  explicitly provided by dependence.txt.
  * explicitDependencies - An operation appearing as dest in dependence.txt can be enabled only when
@@ -71,15 +63,16 @@ int configId=EMDPOR_MODE; 	//hardcoding since this repo branch is dedicated for 
 ExplicitDependencies explicitDependencies, explicitDependenciesBackup;
 
 
+
 // Private Declarations & Definitions
+
 Thread useLess;
 Thread & nullThread = useLess;
-map<int, Thread> *threadStateMap = new map<int, Thread>();
-
-
+map<int, Thread> *threadStateMap = new map<int, Thread>();		// deleting in fn:preProcess()
 
 
 // Auxiliary Functions for "sequence"
+
 int getLastControlLocation(){
 	if(sequence.empty())
 		return -1;
@@ -87,9 +80,6 @@ int getLastControlLocation(){
 		return sequence.size()-1;
 }
 
-/* programIndex    - Index of the operation as in the input trace (since we see input trace as a program we call this as program index)
- * controlLocation - index indicating the state at which the operation is executed in the current sequence
- */
 inline void addIntoSequence(int programIndex, int controlLocation){
 	sequence.push_back(programIndex);
 	programIndexToControlLocationMap[programIndex] = controlLocation;
@@ -134,6 +124,7 @@ void pruneProgramIndexToControlLocationMap(int index){
 
 
 //	Thread state maintenance
+
 inline void addThreadState(int threadId){
 	map<int, Thread>::iterator it = threadStateMap->find(threadId);
 	if(it == threadStateMap->end()){
@@ -144,6 +135,7 @@ inline void addThreadState(int threadId){
 }
 
 inline Thread & getThreadState(int threadId){
+	//	Thread nullThread;
 	map<int, Thread>::iterator it = threadStateMap->find(threadId);
 	if(it == threadStateMap->end())
 		return nullThread;
@@ -155,12 +147,9 @@ inline void removeThreadState(int threadId){
 	threadStateMap->erase(threadId);
 }
 
-//void deleteThreadStateMap(){
-//	delete threadStateMap;
-//}
-
 
 //	Save Thread & Task Indices
+
 void addThreadCode(int threadId, int index){
 	map<int, vector<int> >::iterator it = threadCode.find(threadId);
 	vector<int> threadIndices;
@@ -193,9 +182,8 @@ void addCode(int threadId, int index){
 
 }
 
-/* returns next instruction index of a thread after input Index (afterIndex).
- * afterIndex should be the index of an operation belonging to the same threadId as passed.
- */
+// returns next instruction index of a thread after input Index (afterIndex).
+// afterIndex should be the index of an operation belonging to the same threadId as passed.
 int getNextThreadInstruction(int threadId, int afterIndex){
 	//	Debug(cerr<<"fn:getNextThreadInstruction() - Beginning"<<endl);
 	map<int, vector<int> >::iterator it = threadCode.find(threadId);
@@ -265,7 +253,7 @@ void dumptaskIndicesMap(){
 
 /*
  * Input :: afterIndex
- * pass -1, if you want begin operation which is the 1st operation of the task, for which no afterIndex is possible
+ * pass -1, if want begin operation(1st operation of the task, for which no afterIndex is possible
  *
  */
 int getNextTaskInstruction(int taskId, int afterIndex){		//returns next instruction index of a thread in some state(afterIndex)
@@ -289,7 +277,9 @@ int getNextTaskInstruction(int taskId, int afterIndex){		//returns next instruct
 
 
 //	Trace auxiliary functions
+
 void addOperationInTrace(int index, Operation *op){
+	//	Debug(if(op==NULL) cerr<<"Attempt to store a Null operation in traceMap, BookKeeping.h:addOperation()"<<endl);
 	programCode[index]=op;
 	programLength++;
 }
@@ -318,7 +308,9 @@ Operation * getOperationClone(int index){
 	return opClone;
 }
 
+
 // String Processing
+
 string getFirstToken(string str, string delimiter){  //returns string upto delimiter
 	//	Debug(cerr<<"Inside getFirstToken(), input string is : "<<str<<endl);
 	string token;
@@ -349,9 +341,12 @@ string getLeftOverString(string str, string delimiter){
 	return leftOver;
 }
 
-//we use key passed only for debug purpose. We read the config file in a crude manner line by line.
 string getKeyValue(string key, string str){
-    return str.substr(str.find(":")+1);
+//	int index=str.find(key);
+	//	if(index==-1)
+	//		Debug(cerr<<"trying to find invalid key : "<<key<<" in string : "<<str<<endl);
+
+	return str.substr(str.find(":")+1);
 }
 
 bool isNumber(char c){
@@ -371,19 +366,7 @@ int getLong(string str){
 }
 
 
-/// Auxiliary Functions for "controlLocToProgIndexMap"
-/*
-int mapContolLocationToProgramIndex(int cl){
-	map<int,int>::iterator it = controlLocToProgIndexMap.find(cl);
-	if(it != controlLocToProgIndexMap.end())
-		return it->second;
-	return -1;
 }
- */
-
-}
-
-
 
 namespace emdpor_preprocessor{
 
@@ -398,6 +381,7 @@ void deleteThreadStateMap(){
 }
 
 // preprocessing
+
 void preprocessOperation(Operation *op){
 	if(op == NULL)
 		return;
@@ -405,7 +389,7 @@ void preprocessOperation(Operation *op){
 	Thread &t = getThreadState(op->getThreadId());
 	LockOperation *lop;
 
-	switch(op->getOpType()){
+	switch(op->getOpId()){
 	case NATIVE_ENTRY:
 	case THREAD_INIT:
 		addThreadState(op->getThreadId());
@@ -471,8 +455,8 @@ void preprocessOperation(Operation *op){
 }
 
 
-
 // reads configuration information from config.cfg file
+
 void getConfig(const char *pathFile){
 	string line;
 	ifstream pathFileStream (pathFile);
@@ -499,7 +483,7 @@ void getConfig(const char *pathFile){
 		}
 		if( getline (pathFileStream,line)){
 			configId = getInt(getKeyValue("whichConfig", line));
-			configId = EMDPOR_MODE; //hardcoding as this repo branch is dedicated for emdpor
+			configId=DPOR_MODE;
 		}
 		if( getline (pathFileStream,line)){
 			reportFilePath = getKeyValue("report", line);
@@ -512,18 +496,19 @@ void getConfig(const char *pathFile){
 			reportfile.open (reportFilePath.c_str(), ios::app);
 			reportfile<<"Reporting frequency : "<<frequencyInMins<<" minutes."<<endl;
 			switch(configId){
-			case DPOR_MODE: reportfile<<"Configuration : DPOR"<<endl; break;
-			case EMDPOR_MODE: reportfile<<"Configuration : EM-DPOR"<<endl; break;
-			default:reportfile<<"Configuration : EM-DPOR"<<endl;
+			case DPOR_MODE: reportfile<<"Configuration : DPOR + Vector Clock"<<endl; break;
+			case EMDPOR_MODE: reportfile<<"Configuration : EM-DPOR-Recursive"<<endl; break;
+			default:reportfile<<"Configuration : EM-DPOR-Recursive"<<endl;
 			}
 			reportfile.close();
 		}
 		if(fileOrFolderOption){
-			Report(cleanFile(exploredTraceFile));
+			Write(cleanFile(exploredTraceFile));
 			Debug(cerr<<"fileORfolderOption = 1"<<endl);
 		}
 		else
 			Debug(cerr<<"fileORfolderOption = 2"<<endl);
+
 		Debug(cerr<<traceFileName<<endl;
 		cerr<<dependenceFileName<<endl;
 		cerr<<exploredTraceFile<<endl<<exploredTraceFolder<<endl;
@@ -536,14 +521,18 @@ void getConfig(const char *pathFile){
 
 
 // returns a pointer to newly created Operation object for each line of log processed, returns null for don't care Ops.
+
 Operation * processLine(string str){
+	//	Debug(cerr<<"Inside processLine(), input string is : "<<str<<endl);
 	if((str.length()<=2) || !isNumber(str[0])){
+		//		Debug(cerr<<"Invalid String, returning NULL at 1"<<endl);
 		return NULL;
 	}
 
 	Operation *retOp = NULL;
 	string indexString = getFirstToken(str, " ");
 	str = getLeftOverString(str, " ");
+	//	int index = std::atoi(indexString);
 	int index = getInt(indexString);
 	string operationName =  getFirstToken(str, " ");
 	str = getLeftOverString(str, " ");
