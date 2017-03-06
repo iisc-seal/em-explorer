@@ -124,7 +124,6 @@ pair< set<int>, int> computeBacktrackRecursive(int i, Operation* opJ, bool isRec
 
 	Thread threadState = getThreadState(getState(i), op2->getThreadId());
 
-	Debug(cerr<<" chk 1 "<<endl);
 	if(isThreadEnabled(getState(i), op2->getThreadId(), threadState)/* && isTaskExecutable(op2->getTaskId(), threadState) */ ){
 		Debug(cerr<<"Inserting thread id : "<<op2->getThreadId()<<endl);
 		resultSet.insert(op2->getThreadId());
