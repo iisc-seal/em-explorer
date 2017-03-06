@@ -61,7 +61,7 @@ int reschedulePendingWorklistCounter = 0;
 pair< set<int>, int> computeBacktrack(int i, Operation* opJ, bool isRecursiveCall){		// should satisfy i<j
 	set<int> resultSet;
 	if(i==-1 || opJ == NULL){
-		cerr<<"Error : in fn:computeBacktrackEmdpor, invalid arguments passed!"<<endl;
+		cerr<<"Error : in fn:computeBacktrack, invalid arguments passed!"<<endl;
 		throw error;
 		return make_pair(resultSet,i);
 	}
@@ -80,10 +80,6 @@ pair< set<int>, int> computeBacktrack(int i, Operation* opJ, bool isRecursiveCal
 		op1 = post(taskId1);
 		op2 = post(taskId2);
 	}
-
-	// op2 != opJ means lock-step progressed and hence op2 is a post operation.
-//	if(!isRecursiveCall && op2!=opJ)
-//		HBGraphUtility::addPostDependenceHook(op1->getOpIndex(), op2->getOpIndex());
 
 	i = op1->getOpIndex();
 	int threadIdOfI = op1->getThreadId();
@@ -223,7 +219,7 @@ set< pair< set<int>, int> > findTarget(int i, Operation* opJ, map<int, Sets> &ma
 	set< pair< set<int>, int> > returnValue;
 	set<int> resultSet;
 	if(i==-1 || opJ == NULL){
-		cerr<<"ERROR : in fn:computeBacktrackRecursive, invalid arguments passed!"<<endl;
+		cerr<<"ERROR : in fn:findTarget, invalid arguments passed!"<<endl;
 		throw error;
 		returnValue.insert(make_pair(resultSet,i));
 		return returnValue;

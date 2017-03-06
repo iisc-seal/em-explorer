@@ -312,7 +312,6 @@ bool preProcess(const char* configFile){
 	if (traceFile.is_open() && dependenceFile.is_open())
 	{
 		while ( getline (traceFile,line) ){
-			//			Debug(cerr<<line<<endl);
 			Operation *op = processLine(line);
 			if(op!=NULL)
 				preprocessOperation(op);
@@ -342,7 +341,6 @@ bool preProcess(const char* configFile){
 				break;
 		}
 		dependenceFile.close();
-		//		explicitDependencies.dumpDependencies();
 		return true;
 	}
 	else cerr << "Unable to open file"<<endl;
@@ -416,12 +414,9 @@ void replay(bool isDPOR){
 	trace_index++;
 	Write(cerr<<"									 ---| TRACE - "<<trace_index<<" |----  "<<endl);
 	Debug(cerr<<"replay() :: begin "<<endl);
-	//	explicitDependencies.dumpDependencies();
 	Debug(dumpSets());
 	Debug(dumpSequence());
-//	Debug(dumpHBGraph());
 	for(unsigned i = 0; i < sequence.size(); i++){
-		//Operation *op = getOperationClone(mapContolLocationToProgramIndex(sequence.at(i)));
 		Operation *op = getOperationClone(sequence.at(i));
 		op->setOpIndex(i);
 		Debug(cerr<<endl<<"replaying control location__________________________ : "<<i<<" Operation : ");
@@ -433,12 +428,10 @@ void replay(bool isDPOR){
 		else
 			processOperation(op, isDPOR, true);
 		explicitDependencies.resolveDependency(mapContolLocationToProgramIndex(op->getOpIndex()));
-		//		Debug(dumpDependencies(explicitDependencies));
 		addExplicitDependenciesState(op->getOpIndex(), explicitDependencies);
 		addExplicitHBEdges(mapContolLocationToProgramIndex(op->getOpIndex()), op->getThreadId(), isDPOR);
 		addReorderedPostsHBEdges(op);
 	}
-	//dumpHBGraph();
 	Debug(cerr<<"replay() :: end "<<endl);
 }
 
@@ -474,10 +467,8 @@ void backtrackEager(int dporIndex, int emdporIndex){
 	cerr<<"									 ---| TRACE (Adding Eager choices adding replay) - "<<trace_index<<" |----  "<<endl;
 	Debug(cerr<<"overloaded replay(int) :: begin; dporIndex = "<< dporIndex <<"sequence.size() = "<< sequence.size() <<endl);
 	if(sequence.size() < (unsigned)dporIndex) { cerr << "ERROR :: dporIndex should be less than size of sequence"<<endl; throw error;};
-	//	explicitDependencies.dumpDependencies();
 	Debug(dumpSets());
 	Debug(dumpSequence());
-	//	Debug(dumpHBGraph());
 	unsigned i;
 
 	// this loop does replay with adding backtracking choices dpor way
@@ -501,7 +492,6 @@ void backtrackEager(int dporIndex, int emdporIndex){
 		Sets obj = getSets(i);
 		obj.setDporRunStatus(true);
 		addSets(i, obj);
-		//		Debug(dumpDependencies(explicitDependencies));
 		explicitDependencies.resolveDependency(mapContolLocationToProgramIndex(op->getOpIndex()));
 		addExplicitDependenciesState(op->getOpIndex(), explicitDependencies);
 		addExplicitHBEdges(mapContolLocationToProgramIndex(op->getOpIndex()), op->getThreadId(), false);
@@ -518,19 +508,15 @@ void backtrackEager(int dporIndex, int emdporIndex){
 		Operation *op = getOperationClone(sequence.at(i));
 		op->setOpIndex(i);
 		Debug(cerr<<endl<<"replaying control location__________________________ : "<<i<<endl);
-		//		Debug(op->dumpOpInfo());
-		//		Debug(cerr<<endl);
 		eagerReplay_transition_count++;
 		// this function is always run with dpor, but need to reconstruct the HBGraph in this case, so passing isCalledFromReplay=false
 		processOperation(op, true, false);
-		//		Debug(dumpDependencies(explicitDependencies));
 		explicitDependencies.resolveDependency(mapContolLocationToProgramIndex(op->getOpIndex()));
 		addExplicitDependenciesState(op->getOpIndex(), explicitDependencies);
 		addExplicitHBEdges(mapContolLocationToProgramIndex(op->getOpIndex()), op->getThreadId(), false);
 		addReorderedPostsHBEdges(op);
 	}
 
-	//dumpHBGraph();
 	Debug(cerr<<"replay() :: end "<<endl);
 }
 
@@ -720,7 +706,7 @@ void addBacktrackingChoicesEmdpor(int state){
 	Debug(cerr<<"addBacktrackingChoices() :: end"<<endl);
 }
 
-// this one should be called from replay(dpor_until_i, emdpor_until_j)
+// this one should be called from backtrackEager(dpor_until_i, emdpor_until_j)
 void addBacktrackingChoicesEmdpor_v2(int state){
 	Debug(cerr<<"addBacktrackingChoicesEmdpor() :: begin"<<endl);
 	if(state == -1)
@@ -839,10 +825,6 @@ int getMax_j_forWhichFindTargetFailed(){
 	Debug(cerr<<"fn : getMax_j_forWhichFindTargetFailed() :: beginning"<<endl);
 	int maxJ = -1;
 
-//	for(set<int>::iterator it = findTargetFailed_state.begin(); it != findTargetFailed_state.end(); ++it){
-//		Debug(cerr<<"state : "<<*it<<endl);
-//	}
-
 //	dumpSequence();
 
 	for(set<int>::iterator it = findTargetFailed_state.begin(); it != findTargetFailed_state.end(); ++it){
@@ -945,9 +927,8 @@ bool execute(int state, vector<int> enabledThreads, bool isDPOR){
 		choicesLeftSet = setIntersection(choicesLeftSet, getSetForVector(enabledThreads));
 
 		if(choicesLeftSet.empty()){
-			//			threadIdToExecute = enabledThreads.at(scheduler(enabledThreads.size()));
-			threadIdToExecute = *(getSetForVector(enabledThreads).begin());
-			addBacktrackingChoice(state+1, threadIdToExecute);
+		    threadIdToExecute = *(getSetForVector(enabledThreads).begin());
+		    addBacktrackingChoice(state+1, threadIdToExecute);
 		}
 		else{
 			set<int>::iterator iit = choicesLeftSet.begin();
@@ -1123,7 +1104,6 @@ void explore(int configId){
 				Debug(cerr<<"max index where computeBacktrack failed : "<< maxIndexWhereComputeBacktrackFailed <<endl);
 				int replayWithDPOR_until_i_Value = maxIndexWhereComputeBacktrackFailed;
 				int replayWithEmdpor_until_j_Value = getMax_j_forWhichFindTargetFailed();
-				Debug(cerr<<"case 2"<<endl);
 				// run dpor to add eager choices till fail point
 				resetDataStructuresBeforeReplay(replayWithEmdpor_until_j_Value);
 				backtrackEager(replayWithDPOR_until_i_Value,replayWithEmdpor_until_j_Value);
@@ -1163,7 +1143,7 @@ int main(int argc, char *argv[])
 		if(configId==DPOR_MODE){
 			initClock(programLength, getMaxThreadId(), getMaxTaskId(), true);
 			reportProgramDetails();
-			explore(2);
+			explore(DPOR_MODE);
 			writeReport(tStart,true);
 			cerr<<endl<<endl<<"\t\t---- DPOR + Vector Clock ----"<<endl<<endl;
 			cerr<<"#findTarget called \t\t\t"<< findtarget_call_count << endl;
@@ -1178,7 +1158,7 @@ int main(int argc, char *argv[])
 		else if(configId==EMDPOR_MODE){
 			initClock(programLength, getMaxThreadId(), getMaxTaskId(), false);
 			reportProgramDetails();
-			explore(3);
+			explore(EMDPOR_MODE);
 			writeReport(tStart,true);
 			cerr<<endl<<endl<<"\t\t---- EM-DPOR ----"<<endl<<endl;
 
