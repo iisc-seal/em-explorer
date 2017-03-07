@@ -1,0 +1,456 @@
+1 START
+2 THREADINIT tid:1
+3 FORK par-tid:1 child-tid:11
+4 THREADINIT tid:11
+5 FORK par-tid:1 child-tid:12
+6 THREADINIT tid:12
+7 FORK par-tid:1 child-tid:13
+8 THREADINIT tid:13
+9 FORK par-tid:1 child-tid:14
+10 THREADINIT tid:14
+11 FORK par-tid:1 child-tid:15
+12 THREADINIT tid:15
+13 FORK par-tid:1 child-tid:16
+14 THREADINIT tid:16
+15 FORK par-tid:1 child-tid:17
+16 THREADINIT tid:17
+17 FORK par-tid:1 child-tid:18
+18 THREADINIT tid:18
+19 FORK par-tid:1 child-tid:19
+20 THREADINIT tid:19
+21 ENABLE-LIFECYCLE tid:1 component:dummy id:0 state:BIND-APP
+22 FORK par-tid:1 child-tid:2
+23 THREADINIT tid:2
+24 ATTACH-Q tid:1 queue:1090971440
+25 NOP tid:11
+26 THREADEXIT tid:11
+27 NOP tid:12
+28 NATIVE-POST src:12 msg:1 dest:1
+29 THREADEXIT tid:12
+30 NOP tid:13
+31 NATIVE-POST src:13 msg:2 dest:1
+32 THREADEXIT tid:13
+33 LOOP tid:1
+34 CALL tid:1 msg:1
+35 TRIGGER-LIFECYCLE tid:1 component:dummy id:0 state:BIND-APP
+36 LOCK tid:1 lock-obj:0x4107a698
+37 UNLOCK tid:1 lock-obj:0x4107a698
+38 WRITE tid:1 obj:0x41079088 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:36
+39 READ tid:1 obj:0x41079088 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:36
+40 ENABLE-LIFECYCLE tid:1 component:dummy id:0 state:BINDAPP-DONE
+41 ENABLE-LIFECYCLE tid:1 component:dummy id:1 state:LAUNCH-ACT
+42 RET tid:1 msg:1
+43 CALL tid:1 msg:2
+44 TRIGGER-LIFECYCLE tid:1 component:dummy id:1 state:LAUNCH-ACT
+45 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+46 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:436
+47 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:436
+48 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:436
+49 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:436
+50 WRITE-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+51 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+52 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/Api9Adapter; field:3433
+53 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/content/MyTracksProviderUtils$Factory; field:2093
+54 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:312
+55 FORK par-tid:1 child-tid:3
+56 THREADINIT tid:3
+57 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:344
+58 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:276
+59 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:288
+60 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:288
+61 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:320
+62 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:328
+63 THREADEXIT tid:3
+64 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:308
+65 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:300
+66 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:300
+67 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:300
+68 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:336
+69 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:300
+70 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:336
+71 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/SectionResourceCursorAdapter$ItemType; field:1910
+72 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+73 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+74 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:300
+75 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:280
+76 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:304
+77 READ tid:1 obj:0x410b9738 class:Lcom/google/android/apps/mytracks/TrackListActivity$6; field:8
+78 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/TrackListActivity$6; field:2266
+79 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:2022
+80 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/TrackListActivity$6; field:3574
+81 FORK par-tid:1 child-tid:4
+82 LOCK tid:1 lock-obj:0x410f69a8
+83 THREADINIT tid:4
+84 UNLOCK tid:1 lock-obj:0x410f69a8
+85 NOTIFY tid:4 notifiedTid:1
+86 WAIT tid:1
+87 LOCK tid:1 lock-obj:0x410f69a8
+88 UNLOCK tid:1 lock-obj:0x410f69a8
+89 LOCK tid:1 lock-obj:0x410e04d8
+90 THREADEXIT tid:4
+91 UNLOCK tid:1 lock-obj:0x410e04d8
+92 FORK par-tid:1 child-tid:5
+93 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:344
+94 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:340
+95 LOCK tid:1 lock-obj:0x410e04d8
+96 UNLOCK tid:1 lock-obj:0x410e04d8
+97 THREADINIT tid:5
+98 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:340
+99 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+100 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+101 LOCK tid:1 lock-obj:0x410e04d8
+102 UNLOCK tid:1 lock-obj:0x410e04d8
+103 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:372
+104 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+105 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+106 LOCK tid:1 lock-obj:0x410e04d8
+107 UNLOCK tid:1 lock-obj:0x410e04d8
+108 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:352
+109 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+110 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+111 LOCK tid:1 lock-obj:0x410e04d8
+112 UNLOCK tid:1 lock-obj:0x410e04d8
+113 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:364
+114 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+115 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+116 LOCK tid:1 lock-obj:0x410e04d8
+117 UNLOCK tid:1 lock-obj:0x410e04d8
+118 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:376
+119 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:288
+120 READ tid:1 obj:0x410e0e70 class:Lcom/google/android/apps/mytracks/services/TrackRecordingServiceConnection; field:24
+121 READ tid:1 obj:0x410e0e70 class:Lcom/google/android/apps/mytracks/services/TrackRecordingServiceConnection; field:12
+122 READ tid:1 obj:0x410897a8 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+123 READ tid:1 obj:0x410844b8 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+124 READ tid:1 obj:0x41081678 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+125 READ tid:1 obj:0x4107fab0 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+126 READ tid:1 obj:0x4107ed30 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+127 READ tid:1 obj:0x41072970 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+128 READ tid:1 obj:0x410a8550 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+129 READ tid:1 obj:0x410a7e08 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+130 READ tid:1 obj:0x410a6948 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+131 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/services/TrackRecordingServiceConnection; field:3140
+132 READ tid:1 obj:0x410a28a8 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+133 READ tid:1 obj:0x4109e3c0 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+134 READ tid:1 obj:0x4109cba0 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+135 READ tid:1 obj:0x4109bfc0 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+136 READ tid:1 obj:0x4109b6f0 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+137 READ tid:1 obj:0x4109a0d0 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+138 READ tid:1 obj:0x41096558 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+139 READ tid:1 obj:0x410957a8 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+140 READ tid:1 obj:0x41092008 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+141 LOCK tid:1 lock-obj:0x410e04d8
+142 UNLOCK tid:1 lock-obj:0x410e04d8
+143 LOCK tid:1 lock-obj:0x410e04d8
+144 UNLOCK tid:1 lock-obj:0x410e04d8
+145 LOCK tid:1 lock-obj:0x4109a578
+146 UNLOCK tid:1 lock-obj:0x4109a578
+147 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+148 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+149 LOCK tid:1 lock-obj:0x4109a578
+150 UNLOCK tid:1 lock-obj:0x4109a578
+151 FORK par-tid:1 child-tid:6
+152 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+153 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+154 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+155 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+156 LOCK tid:1 lock-obj:0x410e04d8
+157 THREADINIT tid:6
+158 UNLOCK tid:1 lock-obj:0x410e04d8
+159 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:352
+160 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+161 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:352
+162 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+163 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+164 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+165 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+166 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+167 READ tid:1 obj:0x4107de20 class:Lcom/google/android/apps/mytracks/TrackListActivity$2$1; field:8
+168 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+169 READ-STATIC tid:5 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:2087
+170 READ-STATIC tid:5 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider$UrlType; field:2080
+171 READ-STATIC tid:5 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:2081
+172 READ-STATIC tid:5 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:2082
+173 READ-STATIC tid:5 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:2083
+174 READ-STATIC tid:5 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:2084
+175 READ-STATIC tid:5 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:2085
+176 READ-STATIC tid:5 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:2086
+177 WRITE-STATIC tid:5 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:2087
+178 READ-STATIC tid:5 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider$UrlType; field:2080
+179 READ tid:5 obj:0x41079088 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:40
+180 READ tid:5 obj:0x41079088 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:36
+181 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+182 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+183 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:332
+184 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+185 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+186 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:332
+187 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:308
+188 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:348
+189 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:316
+190 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:324
+191 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:272
+192 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:292
+193 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:296
+194 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:284
+195 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+196 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+197 READ tid:1 obj:0x41062010 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+198 READ tid:1 obj:0x41062780 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+199 READ tid:1 obj:0x41075950 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+200 READ tid:1 obj:0x41075ab8 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+201 READ tid:1 obj:0x4107ce18 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+202 READ tid:1 obj:0x410b8380 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+203 READ tid:1 obj:0x410b8570 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+204 READ tid:1 obj:0x4110aad0 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+205 READ tid:1 obj:0x410aa8c0 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+206 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:352
+207 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:300
+208 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:300
+209 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:348
+210 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:348
+211 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:348
+212 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:348
+213 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:348
+214 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+215 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+216 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:316
+217 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:316
+218 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:324
+219 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:324
+220 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:376
+221 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:272
+222 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:272
+223 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:292
+224 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:292
+225 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:296
+226 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:296
+227 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:284
+228 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:284
+229 READ tid:1 obj:0x4107de20 class:Lcom/google/android/apps/mytracks/TrackListActivity$2$1; field:8
+230 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+231 READ tid:1 obj:0x4107de20 class:Lcom/google/android/apps/mytracks/TrackListActivity$2$1; field:8
+232 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+233 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:304
+234 READ tid:1 obj:0x410b9738 class:Lcom/google/android/apps/mytracks/TrackListActivity$6; field:8
+235 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/TrackListActivity$6; field:2266
+236 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:2022
+237 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/TrackListActivity$6; field:3574
+238 FORK par-tid:1 child-tid:7
+239 THREADINIT tid:7
+240 READ tid:1 obj:0x4107de20 class:Lcom/google/android/apps/mytracks/TrackListActivity$2$1; field:8
+241 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+242 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:352
+243 READ tid:1 obj:0x4107de20 class:Lcom/google/android/apps/mytracks/TrackListActivity$2$1; field:8
+244 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+245 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:308
+246 READ tid:1 obj:0x4107de20 class:Lcom/google/android/apps/mytracks/TrackListActivity$2$1; field:8
+247 READ tid:1 obj:0x410699c0 class:Lcom/google/android/apps/mytracks/TrackListActivity$2; field:8
+248 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:364
+249 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:44
+250 LOCK tid:1 lock-obj:0x410e04d8
+251 UNLOCK tid:1 lock-obj:0x410e04d8
+252 READ-STATIC tid:7 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:2087
+253 READ-STATIC tid:7 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider$UrlType; field:2080
+254 READ tid:7 obj:0x41079088 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:40
+255 READ tid:7 obj:0x41079088 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:36
+256 POST src:7 msg:3 dest:1
+257 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/AnalyticsUtils; field:3420
+258 WRITE-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/AnalyticsUtils; field:3420
+259 FORK par-tid:1 child-tid:8
+260 THREADINIT tid:8
+261 ATTACH-Q tid:8 queue:1091794952
+262 LOOP tid:8
+263 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/AnalyticsUtils; field:3420
+264 READ tid:1 obj:0x41137b80 class:Landroid/content/pm/PackageInfo; field:20
+265 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/AnalyticsUtils; field:3420
+266 TRIGGER-LIFECYCLE tid:1 component:dummy id:1090944040 state:RESUME-ACT
+267 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+268 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+269 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+270 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+271 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:332
+272 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+273 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+274 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:332
+275 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:308
+276 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:348
+277 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:316
+278 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:324
+279 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:272
+280 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:292
+281 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:296
+282 WRITE tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:284
+283 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+284 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+285 FORK par-tid:1 child-tid:9
+286 THREADINIT tid:9
+287 ATTACH-Q tid:9 queue:1091183120
+288 NOTIFY tid:9 notifiedTid:1
+289 WAIT tid:1
+290 LOOP tid:9
+291 READ tid:1 obj:0x41151168 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+292 READ tid:1 obj:0x41144dd0 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+293 READ tid:1 obj:0x41143b28 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+294 READ tid:1 obj:0x411374d8 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+295 READ tid:1 obj:0x41135660 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+296 READ tid:1 obj:0x4111f618 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+297 READ tid:1 obj:0x41117110 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+298 READ tid:1 obj:0x4110a920 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+299 READ tid:1 obj:0x410ff4f0 class:Landroid/app/ActivityManager$RunningServiceInfo; field:8
+300 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:352
+301 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:300
+302 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:300
+303 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:348
+304 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:348
+305 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:348
+306 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:348
+307 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:348
+308 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+309 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+310 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:316
+311 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:316
+312 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:324
+313 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:324
+314 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:376
+315 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:272
+316 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:272
+317 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:292
+318 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:292
+319 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:296
+320 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:296
+321 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:284
+322 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:284
+323 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:304
+324 READ tid:1 obj:0x410b9738 class:Lcom/google/android/apps/mytracks/TrackListActivity$6; field:8
+325 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/TrackListActivity$6; field:2266
+326 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:2022
+327 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/TrackListActivity$6; field:3574
+328 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:352
+329 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:308
+330 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:364
+331 WRITE tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:44
+332 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:44
+333 WRITE tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:64
+334 WRITE tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:68
+335 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:72
+336 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:16
+337 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:36
+338 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:64
+339 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:36
+340 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:8
+341 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:64
+342 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:32
+343 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:64
+344 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:32
+345 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:64
+346 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:40
+347 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:64
+348 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:64
+349 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:20
+350 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:12
+351 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:28
+352 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:64
+353 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:64
+354 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091281392
+355 RET tid:1 msg:2
+356 CALL tid:1 msg:3
+357 FORK par-tid:1 child-tid:10
+358 RET tid:1 msg:3
+359 THREADINIT tid:10
+360 NOP tid:14
+361 THREADEXIT tid:14
+362 NOP tid:15
+363 NATIVE-POST src:15 msg:4 dest:1
+364 THREADEXIT tid:15
+365 CALL tid:1 msg:4
+366 TRIGGER-WINDOW-FOCUS tid:1 windowHash:1091281392
+367 NOP tid:16
+368 THREADEXIT tid:16
+369 NOP tid:17
+370 THREADEXIT tid:17
+371 NOP tid:18
+372 THREADEXIT tid:18
+373 ENABLE-EVENT tid:1 view:1091490784 event:0
+374 RET tid:1 msg:4
+375 NOP tid:2
+376 UI-POST src:2 msg:5 dest:1
+377 CALL tid:1 msg:5
+378 TRIGGER-EVENT tid:1 view:1091490784 event:0
+379 FORK par-tid:1 child-tid:20
+380 THREADINIT tid:20
+381 DELAY-POST src:20 msg:6 dest:1
+382 POST src:1 msg:7 dest:1
+383 RET tid:1 msg:5
+384 CALL tid:1 msg:6
+385 POST src:1 msg:8 dest:1
+386 RET tid:1 msg:6
+387 CALL tid:1 msg:7
+388 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+389 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/ApiAdapterFactory; field:3434
+390 READ tid:1 obj:0x411513f0 class:Lcom/google/android/apps/mytracks/util/Api11Adapter$2; field:12
+391 READ tid:1 obj:0x411513f0 class:Lcom/google/android/apps/mytracks/util/Api11Adapter$2; field:12
+392 READ tid:1 obj:0x410eaba0 class:Lcom/google/android/apps/mytracks/TrackController; field:16
+393 READ-STATIC tid:10 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:2087
+394 READ-STATIC tid:10 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider$UrlType; field:2080
+395 READ tid:10 obj:0x41079088 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:40
+396 READ tid:10 obj:0x41079088 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:36
+397 POST src:10 msg:9 dest:1
+398 NOP tid:19
+399 THREADEXIT tid:19
+400 RET tid:1 msg:7
+401 CALL tid:1 msg:8
+402 READ tid:1 obj:0x410f1920 class:Lcom/google/android/apps/mytracks/TrackListActivity$9; field:64
+403 READ tid:1 obj:0x410f1920 class:Lcom/google/android/apps/mytracks/TrackListActivity$9; field:64
+404 READ tid:1 obj:0x410f1920 class:Lcom/google/android/apps/mytracks/TrackListActivity$9; field:64
+405 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/SectionResourceCursorAdapter; field:1912
+406 READ tid:1 obj:0x410f1920 class:Lcom/google/android/apps/mytracks/TrackListActivity$9; field:64
+407 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/SectionResourceCursorAdapter; field:1912
+408 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/SectionResourceCursorAdapter; field:1912
+409 READ tid:1 obj:0x410f1920 class:Lcom/google/android/apps/mytracks/TrackListActivity$9; field:64
+410 READ tid:1 obj:0x410f1920 class:Lcom/google/android/apps/mytracks/TrackListActivity$9; field:68
+411 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:352
+412 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/util/StringUtils; field:15327
+413 READ tid:1 obj:0x410f1920 class:Lcom/google/android/apps/mytracks/TrackListActivity$9; field:68
+414 READ tid:1 obj:0x410f1920 class:Lcom/google/android/apps/mytracks/TrackListActivity$9; field:68
+415 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:372
+416 READ tid:1 obj:0x410f1920 class:Lcom/google/android/apps/mytracks/TrackListActivity$9; field:68
+417 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:312
+418 READ tid:1 obj:0x410dfed8 class:Lcom/google/android/apps/mytracks/content/MyTracksProviderUtilsImpl; field:8
+419 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/content/MyTracksProviderUtilsImpl; field:2337
+420 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:2087
+421 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider$UrlType; field:2080
+422 READ tid:1 obj:0x41079088 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:40
+423 READ tid:1 obj:0x41079088 class:Lcom/google/android/apps/mytracks/content/MyTracksProvider; field:36
+424 READ tid:1 obj:0x410f1920 class:Lcom/google/android/apps/mytracks/TrackListActivity$9; field:68
+425 READ tid:1 obj:0x410f1920 class:Lcom/google/android/apps/mytracks/TrackListActivity$9; field:68
+426 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:364
+427 LOCK tid:1 lock-obj:0x410b28b8
+428 UNLOCK tid:1 lock-obj:0x410b28b8
+429 LOCK tid:1 lock-obj:0x410b28b8
+430 UNLOCK tid:1 lock-obj:0x410b28b8
+431 LOCK tid:1 lock-obj:0x410b28b8
+432 UNLOCK tid:1 lock-obj:0x410b28b8
+433 LOCK tid:1 lock-obj:0x410b28b8
+434 UNLOCK tid:1 lock-obj:0x410b28b8
+435 WRITE tid:1 obj:0x4106b2c8 class:Landroid/widget/LinearLayout$LayoutParams; field:16
+436 WRITE tid:1 obj:0x4106b2c8 class:Landroid/widget/LinearLayout$LayoutParams; field:12
+437 WRITE tid:1 obj:0x410a8fb0 class:Landroid/widget/TableRow$LayoutParams; field:44
+438 READ tid:1 obj:0x410f1920 class:Lcom/google/android/apps/mytracks/TrackListActivity$9; field:64
+439 READ-STATIC tid:1 class:Lcom/google/android/apps/mytracks/SectionResourceCursorAdapter; field:1912
+440 RET tid:1 msg:8
+441 CALL tid:1 msg:9
+442 READ tid:1 obj:0x410b9738 class:Lcom/google/android/apps/mytracks/TrackListActivity$6; field:8
+443 READ tid:1 obj:0x41067c28 class:Lcom/google/android/apps/mytracks/TrackListActivity; field:336
+444 READ tid:1 obj:0x410f1920 class:Lcom/google/android/apps/mytracks/TrackListActivity$9; field:64
+445 READ tid:1 obj:0x410f1920 class:Lcom/google/android/apps/mytracks/TrackListActivity$9; field:64
+446 READ tid:1 obj:0x410f1920 class:Lcom/google/android/apps/mytracks/TrackListActivity$9; field:64
+447 WRITE tid:1 obj:0x410f1920 class:Lcom/google/android/apps/mytracks/TrackListActivity$9; field:64
+448 RET tid:1 msg:9
+449 THREADEXIT tid:10
+450 THREADEXIT tid:2
+451 THREADEXIT tid:5
+452 THREADEXIT tid:6
+453 THREADEXIT tid:7
+454 THREADEXIT tid:20
+
+End of trace!!

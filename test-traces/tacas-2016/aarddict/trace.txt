@@ -1,0 +1,603 @@
+1 START
+2 THREADINIT tid:1
+3 FORK par-tid:1 child-tid:6
+4 THREADINIT tid:6
+5 FORK par-tid:1 child-tid:7
+6 THREADINIT tid:7
+7 FORK par-tid:1 child-tid:8
+8 THREADINIT tid:8
+9 FORK par-tid:1 child-tid:9
+10 THREADINIT tid:9
+11 FORK par-tid:1 child-tid:10
+12 THREADINIT tid:10
+13 FORK par-tid:1 child-tid:11
+14 THREADINIT tid:11
+15 FORK par-tid:1 child-tid:12
+16 THREADINIT tid:12
+17 FORK par-tid:1 child-tid:13
+18 THREADINIT tid:13
+19 FORK par-tid:1 child-tid:14
+20 THREADINIT tid:14
+21 FORK par-tid:1 child-tid:15
+22 THREADINIT tid:15
+23 FORK par-tid:1 child-tid:16
+24 THREADINIT tid:16
+25 FORK par-tid:1 child-tid:17
+26 THREADINIT tid:17
+27 FORK par-tid:1 child-tid:18
+28 THREADINIT tid:18
+29 FORK par-tid:1 child-tid:19
+30 THREADINIT tid:19
+31 FORK par-tid:1 child-tid:20
+32 THREADINIT tid:20
+33 FORK par-tid:1 child-tid:21
+34 THREADINIT tid:21
+35 FORK par-tid:1 child-tid:22
+36 THREADINIT tid:22
+37 FORK par-tid:1 child-tid:23
+38 THREADINIT tid:23
+39 FORK par-tid:1 child-tid:24
+40 THREADINIT tid:24
+41 FORK par-tid:1 child-tid:25
+42 THREADINIT tid:25
+43 FORK par-tid:1 child-tid:26
+44 THREADINIT tid:26
+45 FORK par-tid:1 child-tid:27
+46 THREADINIT tid:27
+47 FORK par-tid:1 child-tid:28
+48 THREADINIT tid:28
+49 FORK par-tid:1 child-tid:29
+50 THREADINIT tid:29
+51 FORK par-tid:1 child-tid:30
+52 THREADINIT tid:30
+53 FORK par-tid:1 child-tid:31
+54 THREADINIT tid:31
+55 FORK par-tid:1 child-tid:32
+56 THREADINIT tid:32
+57 FORK par-tid:1 child-tid:33
+58 THREADINIT tid:33
+59 FORK par-tid:1 child-tid:34
+60 THREADINIT tid:34
+61 FORK par-tid:1 child-tid:35
+62 THREADINIT tid:35
+63 FORK par-tid:1 child-tid:36
+64 THREADINIT tid:36
+65 FORK par-tid:1 child-tid:37
+66 THREADINIT tid:37
+67 FORK par-tid:1 child-tid:38
+68 THREADINIT tid:38
+69 FORK par-tid:1 child-tid:39
+70 THREADINIT tid:39
+71 FORK par-tid:1 child-tid:40
+72 THREADINIT tid:40
+73 FORK par-tid:1 child-tid:41
+74 THREADINIT tid:41
+75 FORK par-tid:1 child-tid:42
+76 THREADINIT tid:42
+77 FORK par-tid:1 child-tid:43
+78 THREADINIT tid:43
+79 FORK par-tid:1 child-tid:44
+80 THREADINIT tid:44
+81 FORK par-tid:1 child-tid:45
+82 THREADINIT tid:45
+83 FORK par-tid:1 child-tid:46
+84 THREADINIT tid:46
+85 FORK par-tid:1 child-tid:47
+86 THREADINIT tid:47
+87 ENABLE-LIFECYCLE tid:1 component:dummy id:0 state:BIND-APP
+88 FORK par-tid:1 child-tid:2
+89 THREADINIT tid:2
+90 ATTACH-Q tid:1 queue:1090941208
+91 NOP tid:6
+92 THREADEXIT tid:6
+93 NOP tid:7
+94 NATIVE-POST src:7 msg:1 dest:1
+95 THREADEXIT tid:7
+96 NOP tid:8
+97 NATIVE-POST src:8 msg:2 dest:1
+98 THREADEXIT tid:8
+99 LOOP tid:1
+100 CALL tid:1 msg:1
+101 TRIGGER-LIFECYCLE tid:1 component:dummy id:0 state:BIND-APP
+102 ENABLE-LIFECYCLE tid:1 component:dummy id:0 state:BINDAPP-DONE
+103 ENABLE-LIFECYCLE tid:1 component:dummy id:1 state:LAUNCH-ACT
+104 RET tid:1 msg:1
+105 CALL tid:1 msg:2
+106 TRIGGER-LIFECYCLE tid:1 component:dummy id:1 state:LAUNCH-ACT
+107 READ-STATIC tid:1 class:Laarddict/android/BaseDictionaryActivity; field:439
+108 WRITE tid:1 obj:0x410be000 class:Laarddict/android/LookupActivity; field:212
+109 READ tid:1 obj:0x410be000 class:Laarddict/android/LookupActivity; field:212
+110 TRIGGER-BROADCAST tid:1 action:aarddict.android.DictionaryService.DICT_OPEN_FAILED component:1091304568 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+111 TRIGGER-BROADCAST tid:1 action:aarddict.android.DictionaryService.DISCOVERY_STARTED component:1091304568 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+112 TRIGGER-BROADCAST tid:1 action:aarddict.android.DictionaryService.DISCOVERY_FINISHED component:1091304568 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+113 TRIGGER-BROADCAST tid:1 action:aarddict.android.DictionaryService.OPEN_FINISHED component:1091304568 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+114 TRIGGER-BROADCAST tid:1 action:aarddict.android.DictionaryService.OPEN_STARTED component:1091304568 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+115 TRIGGER-BROADCAST tid:1 action:aarddict.android.DictionaryService.OPENED_DICT component:1091304568 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+116 READ-STATIC tid:1 class:Laarddict/android/LookupActivity; field:179
+117 WRITE tid:1 obj:0x410be000 class:Laarddict/android/LookupActivity; field:232
+118 FORK par-tid:1 child-tid:3
+119 THREADINIT tid:3
+120 WRITE tid:1 obj:0x410be000 class:Laarddict/android/LookupActivity; field:240
+121 WRITE tid:1 obj:0x410be000 class:Laarddict/android/LookupActivity; field:224
+122 WRITE tid:1 obj:0x410be000 class:Laarddict/android/LookupActivity; field:236
+123 READ tid:1 obj:0x410be000 class:Laarddict/android/LookupActivity; field:224
+124 READ tid:1 obj:0x410be000 class:Laarddict/android/LookupActivity; field:236
+125 READ tid:1 obj:0x410be000 class:Laarddict/android/LookupActivity; field:224
+126 READ tid:1 obj:0x410be000 class:Laarddict/android/LookupActivity; field:224
+127 READ-STATIC tid:1 class:Laarddict/android/BaseDictionaryActivity; field:439
+128 TRIGGER-SERVICE tid:1 component:aarddict.android.DictionaryService id:2 state:REQUEST_START_SERVICE
+129 NOP tid:9
+130 NATIVE-POST src:9 msg:3 dest:1
+131 THREADEXIT tid:9
+132 NOP tid:10
+133 NATIVE-POST src:10 msg:4 dest:1
+134 THREADEXIT tid:10
+135 READ tid:1 obj:0x410be000 class:Laarddict/android/LookupActivity; field:216
+136 TRIGGER-SERVICE tid:1 component:aarddict.android.DictionaryService id:1091298944 state:REQUEST_BIND_SERVICE
+137 NOP tid:11
+138 NATIVE-POST src:11 msg:5 dest:1
+139 THREADEXIT tid:11
+140 TRIGGER-LIFECYCLE tid:1 component:dummy id:1091297280 state:RESUME-ACT
+141 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091307288
+142 RET tid:1 msg:2
+143 CALL tid:1 msg:3
+144 TRIGGER-SERVICE tid:1 component:aarddict.android.DictionaryService id:0 state:CREATE-SERVICE
+145 WRITE tid:1 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:60
+146 WRITE tid:1 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:40
+147 READ tid:1 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:40
+148 TRIGGER-BROADCAST tid:1 action:android.intent.action.MEDIA_EJECT component:1091029144 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+149 TRIGGER-BROADCAST tid:1 action:android.intent.action.MEDIA_BAD_REMOVAL component:1091029144 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+150 TRIGGER-BROADCAST tid:1 action:android.intent.action.MEDIA_REMOVED component:1091029144 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+151 RET tid:1 msg:3
+152 CALL tid:1 msg:4
+153 TRIGGER-SERVICE tid:1 component:aarddict.android.DictionaryService id:2 state:SERVICE-ARGS
+154 RET tid:1 msg:4
+155 CALL tid:1 msg:5
+156 TRIGGER-SERVICE tid:1 component:aarddict.android.DictionaryService id:0 state:BIND-SERVICE
+157 NOP tid:12
+158 NATIVE-POST src:12 msg:6 dest:1
+159 THREADEXIT tid:12
+160 READ tid:1 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:36
+161 RET tid:1 msg:5
+162 NOP tid:13
+163 THREADEXIT tid:13
+164 NOP tid:14
+165 NATIVE-POST src:14 msg:7 dest:1
+166 THREADEXIT tid:14
+167 CALL tid:1 msg:6
+168 TRIGGER-SERVICE tid:1 component:aarddict.android.DictionaryService id:1091298944 state:SERVICE_CONNECT
+169 READ tid:1 obj:0x410be680 class:Laarddict/android/BaseDictionaryActivity$1; field:8
+170 READ tid:1 obj:0x410be410 class:Laarddict/android/DictionaryService$LocalBinder; field:20
+171 WRITE tid:1 obj:0x410be000 class:Laarddict/android/LookupActivity; field:220
+172 READ-STATIC tid:1 class:Laarddict/android/BaseDictionaryActivity; field:171
+173 READ tid:1 obj:0x410be680 class:Laarddict/android/BaseDictionaryActivity$1; field:8
+174 READ tid:1 obj:0x410be000 class:Laarddict/android/LookupActivity; field:220
+175 READ tid:1 obj:0x410be680 class:Laarddict/android/BaseDictionaryActivity$1; field:8
+176 READ tid:1 obj:0x410be000 class:Laarddict/android/LookupActivity; field:220
+177 READ tid:1 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:60
+178 LOCK tid:1 lock-obj:0x410bcd78
+179 FORK par-tid:1 child-tid:4
+180 UNLOCK tid:1 lock-obj:0x410bcd78
+181 RET tid:1 msg:6
+182 THREADINIT tid:4
+183 READ tid:4 obj:0x410bd058 class:Laarddict/android/BaseDictionaryActivity$3; field:8
+184 READ tid:4 obj:0x410be000 class:Laarddict/android/LookupActivity; field:220
+185 LOCK tid:4 lock-obj:0x410c0038
+186 READ tid:4 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:48
+187 UNLOCK tid:4 lock-obj:0x410c0038
+188 READ-STATIC tid:4 class:Laarddict/android/BaseDictionaryActivity; field:171
+189 READ tid:4 obj:0x410bd058 class:Laarddict/android/BaseDictionaryActivity$3; field:8
+190 READ tid:4 obj:0x410be000 class:Laarddict/android/LookupActivity; field:220
+191 READ tid:4 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:60
+192 READ tid:4 obj:0x410bd058 class:Laarddict/android/BaseDictionaryActivity$3; field:8
+193 READ tid:4 obj:0x410be000 class:Laarddict/android/LookupActivity; field:220
+194 READ tid:4 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:60
+195 READ tid:4 obj:0x410bd058 class:Laarddict/android/BaseDictionaryActivity$3; field:8
+196 POST src:4 msg:8 dest:1
+197 THREADEXIT tid:4
+198 CALL tid:1 msg:7
+199 TRIGGER-WINDOW-FOCUS tid:1 windowHash:1091307288
+200 NOP tid:15
+201 THREADEXIT tid:15
+202 NOP tid:16
+203 THREADEXIT tid:16
+204 NOP tid:17
+205 THREADEXIT tid:17
+206 RET tid:1 msg:7
+207 CALL tid:1 msg:8
+208 READ tid:1 obj:0x410c8ae0 class:Laarddict/android/BaseDictionaryActivity$3$1; field:8
+209 READ tid:1 obj:0x410bd058 class:Laarddict/android/BaseDictionaryActivity$3; field:8
+210 READ-STATIC tid:1 class:Laarddict/android/BaseDictionaryActivity; field:171
+211 READ tid:1 obj:0x410c8ae0 class:Laarddict/android/BaseDictionaryActivity$3$1; field:8
+212 READ tid:1 obj:0x410bd058 class:Laarddict/android/BaseDictionaryActivity$3; field:8
+213 ENABLE-LIFECYCLE tid:1 component:dummy id:1091297280 state:PAUSE-ACT
+214 NOP tid:18
+215 NATIVE-POST src:18 msg:9 dest:1
+216 THREADEXIT tid:18
+217 READ tid:1 obj:0x410c8ae0 class:Laarddict/android/BaseDictionaryActivity$3$1; field:8
+218 READ tid:1 obj:0x410bd058 class:Laarddict/android/BaseDictionaryActivity$3; field:8
+219 LOCK tid:1 lock-obj:0x410be000
+220 UNLOCK tid:1 lock-obj:0x410be000
+221 ENABLE-LIFECYCLE tid:1 component:dummy id:1091297280 state:PAUSE-ACT
+222 ENABLE-LIFECYCLE tid:1 component:dummy id:1091297280 state:DESTROY-ACT
+223 NOP tid:19
+224 NATIVE-POST src:19 msg:10 dest:1
+225 THREADEXIT tid:19
+226 RET tid:1 msg:8
+227 CALL tid:1 msg:9
+228 TRIGGER-LIFECYCLE tid:1 component:dummy id:1091297280 state:PAUSE-ACT
+229 NOP tid:20
+230 NATIVE-POST src:20 msg:11 dest:1
+231 THREADEXIT tid:20
+232 ENABLE-LIFECYCLE tid:1 component:dummy id:3 state:LAUNCH-ACT
+233 ENABLE-LIFECYCLE tid:1 component:dummy id:3 state:RESUME-ACT
+234 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091307288
+235 RET tid:1 msg:9
+236 CALL tid:1 msg:10
+237 TRIGGER-WINDOW-FOCUS tid:1 windowHash:1091307288
+238 RET tid:1 msg:10
+239 CALL tid:1 msg:11
+240 TRIGGER-LIFECYCLE tid:1 component:dummy id:3 state:LAUNCH-ACT
+241 READ-STATIC tid:1 class:Laarddict/android/BaseDictionaryActivity; field:439
+242 WRITE tid:1 obj:0x41061160 class:Laarddict/android/DictionariesActivity; field:212
+243 READ tid:1 obj:0x41061160 class:Laarddict/android/DictionariesActivity; field:212
+244 TRIGGER-BROADCAST tid:1 action:aarddict.android.DictionaryService.DICT_OPEN_FAILED component:1090919384 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+245 TRIGGER-BROADCAST tid:1 action:aarddict.android.DictionaryService.DISCOVERY_STARTED component:1090919384 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+246 TRIGGER-BROADCAST tid:1 action:aarddict.android.DictionaryService.DISCOVERY_FINISHED component:1090919384 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+247 TRIGGER-BROADCAST tid:1 action:aarddict.android.DictionaryService.OPEN_FINISHED component:1090919384 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+248 TRIGGER-BROADCAST tid:1 action:aarddict.android.DictionaryService.OPEN_STARTED component:1090919384 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+249 TRIGGER-BROADCAST tid:1 action:aarddict.android.DictionaryService.OPENED_DICT component:1090919384 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+250 WRITE tid:1 obj:0x41061160 class:Laarddict/android/DictionariesActivity; field:232
+251 READ-STATIC tid:1 class:Laarddict/android/BaseDictionaryActivity; field:439
+252 TRIGGER-SERVICE tid:1 component:aarddict.android.DictionaryService id:4 state:REQUEST_START_SERVICE
+253 NOP tid:21
+254 NATIVE-POST src:21 msg:12 dest:1
+255 THREADEXIT tid:21
+256 READ tid:1 obj:0x41061160 class:Laarddict/android/DictionariesActivity; field:216
+257 TRIGGER-SERVICE tid:1 component:aarddict.android.DictionaryService id:1090917208 state:REQUEST_BIND_SERVICE
+258 NOP tid:22
+259 NATIVE-POST src:22 msg:13 dest:1
+260 THREADEXIT tid:22
+261 TRIGGER-LIFECYCLE tid:1 component:dummy id:1090916704 state:RESUME-ACT
+262 ENABLE-EVENT tid:1 view:0 event:3
+263 ENABLE-EVENT tid:1 view:0 event:4
+264 ENABLE-WINDOW-FOCUS tid:1 windowHash:1090920184
+265 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091307288
+266 POST src:1 msg:14 dest:1
+267 ENABLE-LIFECYCLE tid:1 component:dummy id:1091297280 state:STOP-ACT
+268 RET tid:1 msg:11
+269 CALL tid:1 msg:12
+270 TRIGGER-SERVICE tid:1 component:aarddict.android.DictionaryService id:4 state:SERVICE-ARGS
+271 RET tid:1 msg:12
+272 CALL tid:1 msg:13
+273 TRIGGER-SERVICE tid:1 component:aarddict.android.DictionaryService id:1090917208 state:SERVICE_CONNECT
+274 READ tid:1 obj:0x41061358 class:Laarddict/android/BaseDictionaryActivity$1; field:8
+275 READ tid:1 obj:0x410be410 class:Laarddict/android/DictionaryService$LocalBinder; field:20
+276 WRITE tid:1 obj:0x41061160 class:Laarddict/android/DictionariesActivity; field:220
+277 READ-STATIC tid:1 class:Laarddict/android/BaseDictionaryActivity; field:171
+278 READ tid:1 obj:0x41061358 class:Laarddict/android/BaseDictionaryActivity$1; field:8
+279 READ tid:1 obj:0x41061160 class:Laarddict/android/DictionariesActivity; field:220
+280 READ tid:1 obj:0x41061358 class:Laarddict/android/BaseDictionaryActivity$1; field:8
+281 READ tid:1 obj:0x41061160 class:Laarddict/android/DictionariesActivity; field:232
+282 RET tid:1 msg:13
+283 CALL tid:1 msg:14
+284 POST src:1 msg:15 dest:1
+285 NOP tid:23
+286 THREADEXIT tid:23
+287 NOP tid:24
+288 NATIVE-POST src:24 msg:16 dest:1
+289 THREADEXIT tid:24
+290 RET tid:1 msg:14
+291 CALL tid:1 msg:15
+292 READ tid:1 obj:0x41061160 class:Laarddict/android/DictionariesActivity; field:232
+293 RET tid:1 msg:15
+294 CALL tid:1 msg:16
+295 TRIGGER-WINDOW-FOCUS tid:1 windowHash:1090920184
+296 NOP tid:25
+297 THREADEXIT tid:25
+298 ENABLE-EVENT tid:1 view:1091112248 event:0
+299 RET tid:1 msg:16
+300 NOP tid:26
+301 THREADEXIT tid:26
+302 NOP tid:27
+303 NATIVE-POST src:27 msg:17 dest:1
+304 THREADEXIT tid:27
+305 CALL tid:1 msg:17
+306 TRIGGER-LIFECYCLE tid:1 component:dummy id:1091297280 state:STOP-ACT
+307 TRIGGER-LIFECYCLE tid:1 component:dummy id:1091297280 state:DESTROY-ACT
+308 READ tid:1 obj:0x410be000 class:Laarddict/android/LookupActivity; field:212
+309 TRIGGER-BROADCAST tid:1 action: component:1091304568 intent:0 onRecLater:-1 state:ABC_UNREGISTER_RECEIVER
+310 READ tid:1 obj:0x410be000 class:Laarddict/android/LookupActivity; field:216
+311 TRIGGER-SERVICE tid:1 component: id:1091298944 state:REQUEST_UNBIND_SERVICE
+312 READ tid:1 obj:0x410be000 class:Laarddict/android/LookupActivity; field:240
+313 NOTIFY tid:1 notifiedTid:3
+314 WAIT tid:3
+315 THREADEXIT tid:3
+316 ENABLE-WINDOW-FOCUS tid:1 windowHash:1090920184
+317 RET tid:1 msg:17
+318 NOP tid:2
+319 UI-POST src:2 msg:18 dest:1
+320 CALL tid:1 msg:18
+321 TRIGGER-EVENT tid:1 view:1091112248 event:0
+322 POST src:1 msg:19 dest:1
+323 RET tid:1 msg:18
+324 CALL tid:1 msg:19
+325 READ tid:1 obj:0x41094468 class:Laarddict/android/DictionariesActivity$2; field:8
+326 LOCK tid:1 lock-obj:0x410da608
+327 FORK par-tid:1 child-tid:5
+328 UNLOCK tid:1 lock-obj:0x410da608
+329 RET tid:1 msg:19
+330 THREADINIT tid:5
+331 READ tid:5 obj:0x410ba320 class:Laarddict/android/DictionariesActivity$3; field:8
+332 READ tid:5 obj:0x41061160 class:Laarddict/android/DictionariesActivity; field:220
+333 LOCK tid:5 lock-obj:0x410c0038
+334 TRIGGER-BROADCAST tid:5 action:aarddict.android.DictionaryService.DISCOVERY_STARTED component:0 intent:5 onRecLater:-1 state:ABC_SEND_BROADCAST
+335 NOP tid:28
+336 NATIVE-POST src:28 msg:20 dest:1
+337 THREADEXIT tid:28
+338 CALL tid:1 msg:20
+339 TRIGGER-BROADCAST tid:1 action:aarddict.android.DictionaryService.DISCOVERY_STARTED component:1090919384 intent:5 onRecLater:343 state:ABC_ONRECEIVE
+340 READ-STATIC tid:1 class:Laarddict/android/BaseDictionaryActivity; field:171
+341 READ tid:1 obj:0x41061bd8 class:Laarddict/android/BaseDictionaryActivity$2; field:16
+342 WRITE tid:1 obj:0x41061bd8 class:Laarddict/android/BaseDictionaryActivity$2; field:16
+343 READ tid:1 obj:0x41061bd8 class:Laarddict/android/BaseDictionaryActivity$2; field:16
+344 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091096344
+345 ENABLE-WINDOW-FOCUS tid:1 windowHash:1090920184
+346 NOP tid:29
+347 NATIVE-POST src:29 msg:21 dest:1
+348 THREADEXIT tid:29
+349 RET tid:1 msg:20
+350 NOP tid:30
+351 THREADEXIT tid:30
+352 CALL tid:1 msg:21
+353 TRIGGER-WINDOW-FOCUS tid:1 windowHash:1091096344
+354 RET tid:1 msg:21
+355 NOP tid:31
+356 NATIVE-POST src:31 msg:22 dest:1
+357 THREADEXIT tid:31
+358 CALL tid:1 msg:22
+359 TRIGGER-WINDOW-FOCUS tid:1 windowHash:1090920184
+360 RET tid:1 msg:22
+361 NOP tid:2
+362 UI-POST src:2 msg:23 dest:1
+363 CALL tid:1 msg:23
+364 TRIGGER-EVENT tid:1 view:0 event:4
+365 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091593120
+366 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091096344
+367 RET tid:1 msg:23
+368 NOP tid:32
+369 THREADEXIT tid:32
+370 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+371 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+372 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+373 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+374 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+375 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+376 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+377 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+378 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+379 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+380 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+381 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+382 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+383 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+384 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+385 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+386 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+387 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+388 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+389 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+390 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+391 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+392 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+393 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+394 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+395 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+396 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+397 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+398 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+399 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+400 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+401 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+402 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+403 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+404 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+405 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+406 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+407 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+408 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+409 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+410 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+411 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+412 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+413 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+414 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+415 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+416 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+417 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+418 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+419 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+420 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+421 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+422 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+423 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+424 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+425 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+426 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+427 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+428 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+429 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+430 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+431 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+432 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+433 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+434 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+435 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+436 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+437 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+438 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+439 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+440 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+441 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+442 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+443 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+444 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+445 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+446 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+447 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+448 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+449 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+450 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+451 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+452 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+453 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+454 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+455 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+456 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+457 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+458 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+459 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+460 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+461 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+462 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+463 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+464 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+465 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+466 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+467 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+468 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+469 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+470 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+471 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+472 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+473 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+474 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+475 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+476 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+477 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+478 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+479 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+480 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+481 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+482 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+483 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+484 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+485 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+486 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+487 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+488 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+489 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+490 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+491 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+492 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+493 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+494 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+495 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+496 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+497 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+498 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+499 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+500 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+501 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+502 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+503 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+504 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+505 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+506 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+507 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+508 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+509 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+510 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+511 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+512 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:56
+513 READ tid:5 obj:0x410c0038 class:Laarddict/android/DictionaryService; field:52
+514 TRIGGER-BROADCAST tid:5 action:aarddict.android.DictionaryService.DISCOVERY_FINISHED component:0 intent:6 onRecLater:-1 state:ABC_SEND_BROADCAST
+515 NOP tid:33
+516 NATIVE-POST src:33 msg:24 dest:1
+517 THREADEXIT tid:33
+518 TRIGGER-BROADCAST tid:5 action:aarddict.android.DictionaryService.OPEN_STARTED component:0 intent:7 onRecLater:-1 state:ABC_SEND_BROADCAST
+519 NOP tid:34
+520 NATIVE-POST src:34 msg:25 dest:1
+521 THREADEXIT tid:34
+522 CALL tid:1 msg:24
+523 TRIGGER-BROADCAST tid:1 action:aarddict.android.DictionaryService.DISCOVERY_FINISHED component:1090919384 intent:6 onRecLater:450 state:ABC_ONRECEIVE
+524 READ-STATIC tid:1 class:Laarddict/android/BaseDictionaryActivity; field:171
+525 READ tid:1 obj:0x41061bd8 class:Laarddict/android/BaseDictionaryActivity$2; field:16
+526 READ tid:1 obj:0x41061bd8 class:Laarddict/android/BaseDictionaryActivity$2; field:16
+527 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091593120
+528 WRITE tid:1 obj:0x41061bd8 class:Laarddict/android/BaseDictionaryActivity$2; field:16
+529 RET tid:1 msg:24
+530 CALL tid:1 msg:25
+531 TRIGGER-BROADCAST tid:1 action:aarddict.android.DictionaryService.OPEN_STARTED component:1090919384 intent:7 onRecLater:457 state:ABC_ONRECEIVE
+532 READ-STATIC tid:1 class:Laarddict/android/BaseDictionaryActivity; field:171
+533 READ tid:1 obj:0x41061bd8 class:Laarddict/android/BaseDictionaryActivity$2; field:20
+534 WRITE tid:1 obj:0x41061bd8 class:Laarddict/android/BaseDictionaryActivity$2; field:20
+535 READ tid:1 obj:0x41061bd8 class:Laarddict/android/BaseDictionaryActivity$2; field:20
+536 READ tid:1 obj:0x41061bd8 class:Laarddict/android/BaseDictionaryActivity$2; field:20
+537 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091045512
+538 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091593120
+539 NOP tid:35
+540 NATIVE-POST src:35 msg:26 dest:1
+541 THREADEXIT tid:35
+542 RET tid:1 msg:25
+543 NOP tid:36
+544 THREADEXIT tid:36
+545 CALL tid:1 msg:26
+546 TRIGGER-WINDOW-FOCUS tid:1 windowHash:1091045512
+547 RET tid:1 msg:26
+548 NOP tid:37
+549 THREADEXIT tid:37
+550 NOP tid:2
+551 UI-POST src:2 msg:27 dest:1
+552 CALL tid:1 msg:27
+553 TRIGGER-EVENT tid:1 view:0 event:3
+554 ENABLE-LIFECYCLE tid:1 component:dummy id:1090916704 state:PAUSE-ACT
+555 ENABLE-LIFECYCLE tid:1 component:dummy id:1090916704 state:DESTROY-ACT
+556 NOP tid:38
+557 NATIVE-POST src:38 msg:28 dest:1
+558 THREADEXIT tid:38
+559 ENABLE-LIFECYCLE tid:1 component:dummy id:1090916704 state:PAUSE-ACT
+560 RET tid:1 msg:27
+561 CALL tid:1 msg:28
+562 TRIGGER-LIFECYCLE tid:1 component:dummy id:1090916704 state:PAUSE-ACT
+563 NOP tid:39
+564 NATIVE-POST src:39 msg:29 dest:1
+565 THREADEXIT tid:39
+566 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091045512
+567 ENABLE-LIFECYCLE tid:1 component:dummy id:0 state:RESUME-ACT
+568 RET tid:1 msg:28
+569 NOP tid:40
+570 THREADEXIT tid:40
+571 NOP tid:41
+572 THREADEXIT tid:41
+573 CALL tid:1 msg:29
+574 TRIGGER-WINDOW-FOCUS tid:1 windowHash:1091045512
+575 RET tid:1 msg:29
+576 NOP tid:42
+577 THREADEXIT tid:42
+578 NOP tid:43
+579 THREADEXIT tid:43
+580 NOP tid:44
+581 THREADEXIT tid:44
+582 NOP tid:45
+583 THREADEXIT tid:45
+584 NOP tid:46
+585 NATIVE-POST src:46 msg:30 dest:1
+586 THREADEXIT tid:46
+587 CALL tid:1 msg:30
+588 TRIGGER-LIFECYCLE tid:1 component:dummy id:1090916704 state:STOP-ACT
+589 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091045512
+590 TRIGGER-LIFECYCLE tid:1 component:dummy id:1090916704 state:DESTROY-ACT
+591 READ tid:1 obj:0x41061160 class:Laarddict/android/DictionariesActivity; field:212
+592 TRIGGER-BROADCAST tid:1 action: component:1090919384 intent:0 onRecLater:-1 state:ABC_UNREGISTER_RECEIVER
+593 READ tid:1 obj:0x41061160 class:Laarddict/android/DictionariesActivity; field:216
+594 TRIGGER-SERVICE tid:1 component: id:1090917208 state:REQUEST_UNBIND_SERVICE
+595 READ tid:1 obj:0x41061160 class:Laarddict/android/DictionariesActivity; field:228
+596 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091045512
+597 UNLOCK tid:5 lock-obj:0x410c0038
+598 RET tid:1 msg:30
+599 THREADEXIT tid:47
+600 THREADEXIT tid:2
+601 THREADEXIT tid:5
+
+End of trace!!

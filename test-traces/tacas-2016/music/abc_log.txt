@@ -1,0 +1,661 @@
+1 START
+2 THREADINIT tid:1
+3 ENABLE-LIFECYCLE tid:1 component: id:0 state:BIND-APP
+4 FORK par-tid:1	 child-tid:2
+5 THREADINIT tid:2
+6 ATTACH-Q tid:1	 queue:1090966032
+7 NATIVE-ENTRY tid:3thread-name:Binder Thread #1
+8 POST src:3 msg:1 dest:-1 delay:0
+9 NATIVE-EXIT tid:3thread-name:Binder Thread #1
+10 NATIVE-ENTRY tid:3thread-name:Binder Thread #1
+11 POST src:3 msg:2 dest:-1 delay:0
+12 NATIVE-EXIT tid:3thread-name:Binder Thread #1
+13 NATIVE-ENTRY tid:3thread-name:Binder Thread #1
+14 POST src:3 msg:3 dest:-1 delay:0
+15 NATIVE-EXIT tid:3thread-name:Binder Thread #1
+16 LOOP tid:1	 queue:1090966032
+17 CALL tid:1	 msg:1
+18 RET tid:1	 msg:1
+19 CALL tid:1	 msg:2
+20 TRIGGER-LIFECYCLE tid:1 component: id:0 state:BIND-APP
+21 ENABLE-LIFECYCLE tid:1 component: id:0 state:BINDAPP-DONE
+22 ENABLE-LIFECYCLE tid:1 component: id:1 state:LAUNCH-ACT
+23 RET tid:1	 msg:2
+24 CALL tid:1	 msg:3
+25 TRIGGER-LIFECYCLE tid:1 component: id:1 state:LAUNCH-ACT
+26 FORK par-tid:1	 child-tid:4
+27 LOCK tid:1	 lock-obj:0x410cd7d8
+28 UNLOCK tid:1	 lock-obj:0x410cd7d8
+29 THREADINIT tid:4
+30 NOTIFY tid:4 notifiedTid:1
+31 WAIT tid:1
+32 LOCK tid:1	 lock-obj:0x410cd7d8
+33 UNLOCK tid:1	 lock-obj:0x410cd7d8
+rwId:1 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:16
+34 THREADEXIT tid:4
+35 ACCESS tid:1	 accessId:1
+36 ENABLE-LIFECYCLE tid:1 component:MusicBrowserActivity id:1091347856 state:PAUSE-ACT
+37 NATIVE-ENTRY tid:5thread-name:Binder Thread #2
+38 POST src:5 msg:4 dest:-1 delay:0
+39 NATIVE-EXIT tid:5thread-name:Binder Thread #2
+40 LOCK tid:1	 lock-obj:0x410ca590
+41 UNLOCK tid:1	 lock-obj:0x410ca590
+42 ENABLE-LIFECYCLE tid:1 component:MusicBrowserActivity id:1091347856 state:PAUSE-ACT
+43 ENABLE-LIFECYCLE tid:1 component:MusicBrowserActivity id:1091347856 state:DESTROY-ACT
+44 INSTANCE-INTENT tid:1 instance:1091347856 intentId:1
+45 ADD_IDLE_HANDLER idler:1091367160 queue:1090966032
+46 RET tid:1	 msg:3
+47 CALL tid:1	 msg:4
+48 TRIGGER-LIFECYCLE tid:1 component:MusicBrowserActivity id:1091347856 state:PAUSE-ACT
+49 NATIVE-ENTRY tid:3thread-name:Binder Thread #1
+50 POST src:3 msg:5 dest:-1 delay:0
+51 NATIVE-EXIT tid:3thread-name:Binder Thread #1
+52 ENABLE-LIFECYCLE tid:1 component: id:2 state:LAUNCH-ACT
+53 ENABLE-LIFECYCLE tid:1 component: id:2 state:RESUME-ACT
+54 RET tid:1	 msg:4
+55 CALL tid:1	 msg:5
+56 TRIGGER-LIFECYCLE tid:1 component: id:2 state:LAUNCH-ACT
+57 TRIGGER-SERVICE tid:1 component:com.android.music.MediaPlaybackService id:3 state:REQUEST_START_SERVICE
+58 NATIVE-ENTRY tid:5thread-name:Binder Thread #2
+59 POST src:5 msg:6 dest:-1 delay:0
+60 NATIVE-EXIT tid:5thread-name:Binder Thread #2
+61 NATIVE-ENTRY tid:3thread-name:Binder Thread #1
+62 POST src:3 msg:7 dest:-1 delay:0
+63 NATIVE-EXIT tid:3thread-name:Binder Thread #1
+64 TRIGGER-SERVICE tid:1 component:com.android.music.MediaPlaybackService id:1091066824 state:REQUEST_BIND_SERVICE
+65 NATIVE-ENTRY tid:5thread-name:Binder Thread #2
+66 POST src:5 msg:8 dest:-1 delay:0
+67 NATIVE-EXIT tid:5thread-name:Binder Thread #2
+rwId:2 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:468
+rwId:3 WRITE tid:1 obj:0x410d08a8 class:Lcom/android/music/ArtistAlbumBrowserActivity; field:256
+rwId:4 READ tid:1 obj:0x410d08a8 class:Lcom/android/music/ArtistAlbumBrowserActivity; field:260
+68 ACCESS tid:1	 accessId:2
+69 TRIGGER-BROADCAST tid:1 action:android.intent.action.MEDIA_SCANNER_STARTED component:1091375440 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+70 TRIGGER-BROADCAST tid:1 action:android.intent.action.MEDIA_SCANNER_FINISHED component:1091375440 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+71 TRIGGER-BROADCAST tid:1 action:android.intent.action.MEDIA_UNMOUNTED component:1091375440 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+72 ENABLE-EVENT tid:1 view:1090919560 event:0
+73 ENABLE-EVENT tid:1 view:1091333728 event:0
+74 ENABLE-EVENT tid:1 view:1091319808 event:0
+75 ENABLE-EVENT tid:1 view:1091335600 event:0
+rwId:5 WRITE-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:461
+76 ACCESS tid:1	 accessId:3
+77 ENABLE-EVENT tid:1 view:1091075424 event:0
+78 ENABLE-EVENT tid:1 view:1090919560 event:1
+rwId:6 WRITE tid:1 obj:0x410d08a8 class:Lcom/android/music/ArtistAlbumBrowserActivity; field:224
+rwId:7 READ tid:1 obj:0x410d08a8 class:Lcom/android/music/ArtistAlbumBrowserActivity; field:224
+79 ACCESS tid:1	 accessId:4
+80 FORK par-tid:1	 child-tid:8
+81 THREADINIT tid:8
+82 ATTACH-Q tid:8	 queue:1091224120
+83 NOTIFY tid:8 notifiedTid:1
+84 WAIT tid:1
+85 LOOP tid:8	 queue:1091224120
+rwId:8 WRITE tid:1 obj:0x410d08a8 class:Lcom/android/music/ArtistAlbumBrowserActivity; field:224
+rwId:9 READ tid:1 obj:0x410d08a8 class:Lcom/android/music/ArtistAlbumBrowserActivity; field:224
+86 ACCESS tid:1	 accessId:5
+87 LOCK tid:1	 lock-obj:0x410d08a8
+88 UNLOCK tid:1	 lock-obj:0x410d08a8
+rwId:10 READ tid:1 obj:0x410d08a8 class:Lcom/android/music/ArtistAlbumBrowserActivity; field:224
+rwId:11 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:132
+rwId:12 READ-STATIC tid:1 class:Lcom/android/music/ArtistAlbumBrowserActivity; field:21
+89 ACCESS tid:1	 accessId:6
+90 POST src:1 msg:9 dest:-1 delay:0
+91 CALL tid:8	 msg:9
+92 POST src:8 msg:10 dest:-1 delay:0
+93 RET tid:8	 msg:9
+94 INSTANCE-INTENT tid:1 instance:1091373224 intentId:2
+95 TRIGGER-LIFECYCLE tid:1 component:ArtistAlbumBrowserActivity id:1091373224 state:RESUME-ACT
+rwId:13 READ tid:1 obj:0x410d08a8 class:Lcom/android/music/ArtistAlbumBrowserActivity; field:228
+96 ACCESS tid:1	 accessId:7
+97 TRIGGER-BROADCAST tid:1 action:com.android.music.metachanged component:1091374704 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+98 TRIGGER-BROADCAST tid:1 action:com.android.music.queuechanged component:1091374704 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+rwId:14 READ tid:1 obj:0x410d08a8 class:Lcom/android/music/ArtistAlbumBrowserActivity; field:228
+rwId:15 READ tid:1 obj:0x410d0e70 class:Lcom/android/music/ArtistAlbumBrowserActivity$1; field:16
+rwId:16 READ tid:1 obj:0x410d0e70 class:Lcom/android/music/ArtistAlbumBrowserActivity$1; field:16
+rwId:17 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:476
+99 ACCESS tid:1	 accessId:8
+100 ENABLE-EVENT tid:1 view:0 event:3
+101 ENABLE-EVENT tid:1 view:0 event:4
+102 ENABLE-EVENT tid:1 view:0 event:5
+103 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091314968
+104 POST src:1 msg:11 dest:-1 delay:0
+105 ADD_IDLE_HANDLER idler:1091265440 queue:1090966032
+106 ENABLE-LIFECYCLE tid:1 component:MusicBrowserActivity id:1091347856 state:STOP-ACT
+107 RET tid:1	 msg:5
+108 CALL tid:1	 msg:6
+109 LOCK tid:1	 lock-obj:0x410b76e0
+rwId:18 READ-STATIC tid:1 class:Lcom/android/music/MediaAppWidgetProvider; field:203
+rwId:19 WRITE-STATIC tid:1 class:Lcom/android/music/MediaAppWidgetProvider; field:203
+rwId:20 READ-STATIC tid:1 class:Lcom/android/music/MediaAppWidgetProvider; field:203
+110 ACCESS tid:1	 accessId:9
+111 UNLOCK tid:1	 lock-obj:0x410b76e0
+112 TRIGGER-SERVICE tid:1 component:com.android.music.MediaPlaybackService id:0 state:CREATE-SERVICE
+rwId:21 WRITE tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:48
+rwId:22 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:48
+113 ACCESS tid:1	 accessId:10
+114 FORK par-tid:1	 child-tid:9
+rwId:23 WRITE tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:104
+115 THREADINIT tid:9
+116 THREADEXIT tid:9
+rwId:24 WRITE tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:164
+rwId:25 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:88
+rwId:26 WRITE tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:88
+rwId:27 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:88
+117 ACCESS tid:1	 accessId:11
+118 TRIGGER-BROADCAST tid:1 action:android.intent.action.MEDIA_EJECT component:1091286616 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+119 TRIGGER-BROADCAST tid:1 action:android.intent.action.MEDIA_MOUNTED component:1091286616 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+rwId:28 WRITE tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:112
+rwId:29 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:112
+rwId:30 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:96
+rwId:31 WRITE tid:1 obj:0x410bbde0 class:Lcom/android/music/MediaPlaybackService$MultiPlayer; field:16
+rwId:32 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:164
+rwId:33 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:104
+120 ACCESS tid:1	 accessId:12
+121 LOCK tid:1	 lock-obj:0x410ba260
+122 UNLOCK tid:1	 lock-obj:0x410ba260
+rwId:34 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:164
+rwId:35 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:104
+123 ACCESS tid:1	 accessId:13
+124 LOCK tid:1	 lock-obj:0x410ba260
+125 UNLOCK tid:1	 lock-obj:0x410ba260
+126 LOCK tid:1	 lock-obj:0x410b6bf8
+rwId:36 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:116
+127 ACCESS tid:1	 accessId:14
+128 UNLOCK tid:1	 lock-obj:0x410b6bf8
+129 LOCK tid:1	 lock-obj:0x410b6bf8
+rwId:37 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:64
+130 ACCESS tid:1	 accessId:15
+131 UNLOCK tid:1	 lock-obj:0x410b6bf8
+132 LOCK tid:1	 lock-obj:0x410b6bf8
+rwId:38 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:64
+133 ACCESS tid:1	 accessId:16
+134 UNLOCK tid:1	 lock-obj:0x410b6bf8
+135 LOCK tid:1	 lock-obj:0x410b6bf8
+rwId:39 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:64
+136 ACCESS tid:1	 accessId:17
+137 UNLOCK tid:1	 lock-obj:0x410b6bf8
+rwId:40 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:160
+138 ACCESS tid:1	 accessId:18
+139 TRIGGER-BROADCAST tid:1 action:com.android.music.queuechanged component:0 intent:4 onRecLater:-1 state:ABC_SEND_STICKY_BROADCAST
+140 NATIVE-ENTRY tid:5thread-name:Binder Thread #2
+141 TRIGGER-BROADCAST tid:5 action:com.android.music.queuechanged component:1091374704 intent:4 onRecLater:-1 state:ABC_TRIGGER_ONRECIEVE_LATER
+142 NATIVE-EXIT tid:5thread-name:Binder Thread #2
+143 NATIVE-ENTRY tid:5thread-name:Binder Thread #2
+144 POST src:5 msg:12 dest:-1 delay:0
+145 NATIVE-EXIT tid:5thread-name:Binder Thread #2
+rwId:41 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:128
+rwId:42 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:104
+146 ACCESS tid:1	 accessId:19
+147 LOCK tid:1	 lock-obj:0x410ba260
+148 UNLOCK tid:1	 lock-obj:0x410ba260
+rwId:43 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:120
+149 ACCESS tid:1	 accessId:20
+150 LOCK tid:1	 lock-obj:0x410bd540
+151 UNLOCK tid:1	 lock-obj:0x410bd540
+rwId:44 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:164
+152 ACCESS tid:1	 accessId:21
+153 LOCK tid:1	 lock-obj:0x410bd540
+154 UNLOCK tid:1	 lock-obj:0x410bd540
+rwId:45 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:156
+rwId:46 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:116
+155 ACCESS tid:1	 accessId:22
+156 LOCK tid:1	 lock-obj:0x410bd540
+157 UNLOCK tid:1	 lock-obj:0x410bd540
+rwId:47 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:112
+rwId:48 READ tid:1 obj:0x410bbde0 class:Lcom/android/music/MediaPlaybackService$MultiPlayer; field:28
+rwId:49 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:144
+158 ACCESS tid:1	 accessId:23
+159 LOCK tid:1	 lock-obj:0x410bd540
+160 UNLOCK tid:1	 lock-obj:0x410bd540
+rwId:50 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:156
+161 ACCESS tid:1	 accessId:24
+162 LOCK tid:1	 lock-obj:0x410bd540
+163 UNLOCK tid:1	 lock-obj:0x410bd540
+rwId:51 READ-STATIC tid:1 class:Lcom/android/music/SharedPreferencesCompat; field:843
+rwId:52 READ-STATIC tid:1 class:Lcom/android/music/SharedPreferencesCompat; field:843
+164 ACCESS tid:1	 accessId:25
+165 FORK par-tid:1	 child-tid:10
+rwId:53 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:40
+166 THREADINIT tid:10
+167 ACCESS tid:1	 accessId:26
+168 LOCK tid:1	 lock-obj:0x410b6bf8
+rwId:54 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:116
+169 ACCESS tid:1	 accessId:27
+170 UNLOCK tid:1	 lock-obj:0x410b6bf8
+171 LOCK tid:1	 lock-obj:0x410b6bf8
+rwId:55 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:64
+172 ACCESS tid:1	 accessId:28
+173 UNLOCK tid:1	 lock-obj:0x410b6bf8
+174 LOCK tid:1	 lock-obj:0x410b6bf8
+rwId:56 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:64
+175 ACCESS tid:1	 accessId:29
+176 UNLOCK tid:1	 lock-obj:0x410b6bf8
+177 LOCK tid:1	 lock-obj:0x410b6bf8
+rwId:57 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:64
+178 ACCESS tid:1	 accessId:30
+179 UNLOCK tid:1	 lock-obj:0x410b6bf8
+rwId:58 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:160
+180 ACCESS tid:1	 accessId:31
+181 TRIGGER-BROADCAST tid:1 action:com.android.music.metachanged component:0 intent:5 onRecLater:-1 state:ABC_SEND_STICKY_BROADCAST
+182 NATIVE-ENTRY tid:3thread-name:Binder Thread #1
+183 TRIGGER-BROADCAST tid:3 action:com.android.music.metachanged component:1091374704 intent:5 onRecLater:-1 state:ABC_TRIGGER_ONRECIEVE_LATER
+184 NATIVE-EXIT tid:3thread-name:Binder Thread #1
+185 NATIVE-ENTRY tid:3thread-name:Binder Thread #1
+186 POST src:3 msg:13 dest:-1 delay:0
+187 NATIVE-EXIT tid:3thread-name:Binder Thread #1
+rwId:59 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:128
+rwId:60 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:104
+188 ACCESS tid:1	 accessId:32
+189 LOCK tid:1	 lock-obj:0x410ba260
+190 UNLOCK tid:1	 lock-obj:0x410ba260
+rwId:61 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:116
+191 ACCESS tid:1	 accessId:33
+192 LOCK tid:1	 lock-obj:0x410d6c68
+193 UNLOCK tid:1	 lock-obj:0x410d6c68
+rwId:62 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:112
+rwId:63 READ tid:1 obj:0x410bbde0 class:Lcom/android/music/MediaPlaybackService$MultiPlayer; field:28
+rwId:64 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:144
+194 ACCESS tid:1	 accessId:34
+195 LOCK tid:1	 lock-obj:0x410d6c68
+196 UNLOCK tid:1	 lock-obj:0x410d6c68
+rwId:65 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:156
+197 ACCESS tid:1	 accessId:35
+198 LOCK tid:1	 lock-obj:0x410d6c68
+199 UNLOCK tid:1	 lock-obj:0x410d6c68
+rwId:66 READ-STATIC tid:1 class:Lcom/android/music/SharedPreferencesCompat; field:843
+rwId:67 READ-STATIC tid:1 class:Lcom/android/music/SharedPreferencesCompat; field:843
+200 ACCESS tid:1	 accessId:36
+201 NOTIFY tid:1 notifiedTid:10
+202 WAIT tid:10
+rwId:68 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:40
+rwId:69 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:84
+203 ACCESS tid:1	 accessId:37
+204 TRIGGER-BROADCAST tid:1 action:com.android.music.musicservicecommand component:1091272632 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+205 TRIGGER-BROADCAST tid:1 action:com.android.music.musicservicecommand.togglepause component:1091272632 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+206 TRIGGER-BROADCAST tid:1 action:com.android.music.musicservicecommand.pause component:1091272632 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+207 TRIGGER-BROADCAST tid:1 action:com.android.music.musicservicecommand.next component:1091272632 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+208 TRIGGER-BROADCAST tid:1 action:com.android.music.musicservicecommand.previous component:1091272632 intent:0 onRecLater:-1 state:ABC_REGISTER_RECEIVER
+rwId:70 WRITE tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:60
+rwId:71 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:60
+rwId:72 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:72
+rwId:73 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:72
+209 ACCESS tid:1	 accessId:38
+210 POST src:1 msg:14 dest:-1 delay:60000
+211 RET tid:1	 msg:6
+212 CALL tid:1	 msg:7
+213 TRIGGER-SERVICE tid:1 component:com.android.music.MediaPlaybackService id:3 state:SERVICE-ARGS
+rwId:74 WRITE tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:152
+rwId:75 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:72
+rwId:76 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:475
+rwId:77 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:474
+rwId:78 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:474
+rwId:79 WRITE-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:474
+rwId:80 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:474
+rwId:81 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:475
+rwId:82 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:72
+rwId:83 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:72
+rwId:84 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:72
+214 ACCESS tid:1	 accessId:39
+215 POST src:1 msg:15 dest:-1 delay:60000
+216 RET tid:1	 msg:7
+217 CALL tid:1	 msg:8
+218 TRIGGER-SERVICE tid:1 component:com.android.music.MediaPlaybackService id:0 state:BIND-SERVICE
+rwId:85 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:72
+rwId:86 WRITE tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:148
+rwId:87 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:56
+219 NATIVE-ENTRY tid:5thread-name:Binder Thread #2
+220 POST src:5 msg:16 dest:-1 delay:0
+221 NATIVE-EXIT tid:5thread-name:Binder Thread #2
+222 ACCESS tid:1	 accessId:40
+223 RET tid:1	 msg:8
+224 CALL tid:1	 msg:10
+rwId:88 READ tid:1 obj:0x410ac008 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$QueryHandler; field:32
+rwId:89 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:88
+rwId:90 READ tid:1 obj:0x410d08a8 class:Lcom/android/music/ArtistAlbumBrowserActivity; field:224
+rwId:91 READ tid:1 obj:0x410d08a8 class:Lcom/android/music/ArtistAlbumBrowserActivity; field:224
+rwId:92 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:88
+rwId:93 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:88
+rwId:94 READ tid:1 obj:0x410d08a8 class:Lcom/android/music/ArtistAlbumBrowserActivity; field:232
+rwId:95 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:88
+rwId:96 WRITE tid:1 obj:0x410d08a8 class:Lcom/android/music/ArtistAlbumBrowserActivity; field:232
+rwId:97 WRITE tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:152
+rwId:98 WRITE tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:148
+rwId:99 WRITE tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:156
+rwId:100 WRITE tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:144
+rwId:101 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:140
+rwId:102 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:148
+rwId:103 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:128
+rwId:104 WRITE tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:140
+225 ACCESS tid:1	 accessId:41
+226 LOCK tid:1	 lock-obj:0x410ab3e8
+227 UNLOCK tid:1	 lock-obj:0x410ab3e8
+rwId:105 READ tid:1 obj:0x410d08a8 class:Lcom/android/music/ArtistAlbumBrowserActivity; field:232
+rwId:106 READ-STATIC tid:1 class:Lcom/android/music/ArtistAlbumBrowserActivity; field:124
+228 ACCESS tid:1	 accessId:42
+229 ENABLE-EVENT tid:1 view:1091333728 event:0
+230 ENABLE-EVENT tid:1 view:1091319808 event:0
+231 ENABLE-EVENT tid:1 view:1091335600 event:0
+rwId:107 WRITE-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:461
+232 ACCESS tid:1	 accessId:43
+233 ENABLE-EVENT tid:1 view:1091075424 event:0
+234 RET tid:1	 msg:10
+235 CALL tid:1	 msg:11
+236 POST src:1 msg:17 dest:-1 delay:1199
+237 POST src:1 msg:18 dest:-1 delay:1198
+238 NATIVE-ENTRY tid:3thread-name:Binder Thread #1
+239 POST src:3 msg:19 dest:-1 delay:0
+240 NATIVE-EXIT tid:3thread-name:Binder Thread #1
+241 NATIVE-ENTRY tid:5thread-name:Binder Thread #2
+242 POST src:5 msg:20 dest:-1 delay:0
+243 NATIVE-EXIT tid:5thread-name:Binder Thread #2
+rwId:108 WRITE tid:1 obj:0x410db418 class:Landroid/widget/RelativeLayout$LayoutParams; field:16
+rwId:109 WRITE tid:1 obj:0x410db418 class:Landroid/widget/RelativeLayout$LayoutParams; field:12
+rwId:110 WRITE tid:1 obj:0x410dd848 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:12
+rwId:111 WRITE tid:1 obj:0x410dd848 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:16
+rwId:112 WRITE tid:1 obj:0x410dd848 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:20
+rwId:113 WRITE tid:1 obj:0x410dd848 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:8
+rwId:114 READ tid:1 obj:0x410dd848 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:8
+rwId:115 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:148
+rwId:116 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:104
+rwId:117 READ tid:1 obj:0x410dd848 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:12
+rwId:118 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:156
+rwId:119 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:144
+rwId:120 READ tid:1 obj:0x410dd848 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:16
+rwId:121 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:476
+rwId:122 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:152
+rwId:123 READ tid:1 obj:0x410dd848 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:20
+244 ACCESS tid:1	 accessId:44
+245 POST src:1 msg:21 dest:-1 delay:0
+246 RET tid:1	 msg:11
+247 CALL tid:1	 msg:12
+248 TRIGGER-BROADCAST tid:1 action:com.android.music.queuechanged component:1091374704 intent:4 onRecLater:141 state:ABC_ONRECEIVE
+rwId:124 READ tid:1 obj:0x410d0e70 class:Lcom/android/music/ArtistAlbumBrowserActivity$1; field:16
+rwId:125 READ tid:1 obj:0x410d0e70 class:Lcom/android/music/ArtistAlbumBrowserActivity$1; field:16
+rwId:126 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:476
+249 ACCESS tid:1	 accessId:45
+250 RET tid:1	 msg:12
+251 CALL tid:1	 msg:13
+252 TRIGGER-BROADCAST tid:1 action:com.android.music.metachanged component:1091374704 intent:5 onRecLater:183 state:ABC_ONRECEIVE
+rwId:127 READ tid:1 obj:0x410d0e70 class:Lcom/android/music/ArtistAlbumBrowserActivity$1; field:16
+rwId:128 READ tid:1 obj:0x410d0e70 class:Lcom/android/music/ArtistAlbumBrowserActivity$1; field:16
+rwId:129 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:476
+253 ACCESS tid:1	 accessId:46
+254 RET tid:1	 msg:13
+255 CALL tid:1	 msg:16
+256 TRIGGER-SERVICE tid:1 component:com.android.music.MediaPlaybackService id:1091066824 state:SERVICE_CONNECT
+rwId:130 WRITE-STATIC tid:1 class:Lcom/android/music/MusicUtils$ServiceBinder; field:476
+rwId:131 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:476
+rwId:132 READ tid:1 obj:0x410b9378 class:Lcom/android/music/MediaPlaybackService$ServiceStub; field:20
+rwId:133 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:140
+rwId:134 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:463
+rwId:135 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:462
+257 ACCESS tid:1	 accessId:47
+258 LOCK tid:1	 lock-obj:0x410cbf88
+rwId:136 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:462
+259 ACCESS tid:1	 accessId:48
+260 UNLOCK tid:1	 lock-obj:0x410cbf88
+rwId:137 WRITE-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:463
+rwId:138 READ tid:1 obj:0x41085bc8 class:Lcom/android/music/MusicUtils$ServiceBinder; field:8
+rwId:139 READ tid:1 obj:0x41085bc8 class:Lcom/android/music/MusicUtils$ServiceBinder; field:8
+rwId:140 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:476
+rwId:141 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:476
+rwId:142 READ tid:1 obj:0x410b9378 class:Lcom/android/music/MediaPlaybackService$ServiceStub; field:20
+261 ACCESS tid:1	 accessId:49
+262 LOCK tid:1	 lock-obj:0x410b6bf8
+rwId:143 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:116
+263 ACCESS tid:1	 accessId:50
+264 UNLOCK tid:1	 lock-obj:0x410b6bf8
+265 RET tid:1	 msg:16
+266 CALL tid:1	 msg:19
+267 RET tid:1	 msg:19
+268 CALL tid:1	 msg:20
+269 TRIGGER-WINDOW-FOCUS tid:1 windowHash:1091314968
+270 POST src:1 msg:22 dest:-1 delay:0
+271 ENABLE-EVENT tid:1 view:1091432192 event:0
+272 ENABLE-EVENT tid:1 view:1091432192 event:2
+273 ENABLE-EVENT tid:1 view:1091432192 event:1
+274 NATIVE-ENTRY tid:3thread-name:Binder Thread #1
+275 POST src:3 msg:23 dest:-1 delay:0
+276 NATIVE-EXIT tid:3thread-name:Binder Thread #1
+277 NATIVE-ENTRY tid:5thread-name:Binder Thread #2
+278 POST src:5 msg:24 dest:-1 delay:0
+279 NATIVE-EXIT tid:5thread-name:Binder Thread #2
+280 NATIVE-ENTRY tid:3thread-name:Binder Thread #1
+281 POST src:3 msg:25 dest:-1 delay:0
+282 NATIVE-EXIT tid:3thread-name:Binder Thread #1
+283 ENABLE-EVENT tid:1 view:1091075424 event:0
+284 ENABLE-EVENT tid:1 view:1091335600 event:0
+285 ENABLE-EVENT tid:1 view:1091319808 event:0
+286 ENABLE-EVENT tid:1 view:1091333728 event:0
+287 ENABLE-EVENT tid:1 view:1090919560 event:0
+288 ENABLE-EVENT tid:1 view:1090919560 event:1
+289 RET tid:1	 msg:20
+290 CALL tid:1	 msg:21
+rwId:144 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:148
+rwId:145 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:104
+rwId:146 READ tid:1 obj:0x410dd848 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:12
+rwId:147 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:156
+rwId:148 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:144
+rwId:149 READ tid:1 obj:0x410dd848 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:16
+rwId:150 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:476
+rwId:151 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:476
+rwId:152 READ tid:1 obj:0x410b9378 class:Lcom/android/music/MediaPlaybackService$ServiceStub; field:20
+291 ACCESS tid:1	 accessId:51
+292 LOCK tid:1	 lock-obj:0x410b6bf8
+rwId:153 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:64
+293 ACCESS tid:1	 accessId:52
+294 UNLOCK tid:1	 lock-obj:0x410b6bf8
+rwId:154 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:152
+rwId:155 READ tid:1 obj:0x410dd848 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:20
+295 ACCESS tid:1	 accessId:53
+296 POST src:1 msg:26 dest:-1 delay:0
+297 RET tid:1	 msg:21
+298 CALL tid:1	 msg:22
+299 RET tid:1	 msg:22
+300 CALL tid:1	 msg:23
+301 RET tid:1	 msg:23
+302 CALL tid:1	 msg:24
+303 RET tid:1	 msg:24
+304 CALL tid:1	 msg:25
+305 RET tid:1	 msg:25
+306 CALL tid:1	 msg:26
+307 RET tid:1	 msg:26
+308 POST src:1 msg:27 dest:-1 delay:0
+309 POST src:1 msg:28 dest:-1 delay:0
+310 CALL tid:1	 msg:28
+311 QUEUE_IDLE tid:1 idler:1091367160 queue:1090966032
+312 NATIVE-ENTRY tid:5thread-name:Binder Thread #2
+313 POST src:5 msg:29 dest:-1 delay:0
+314 NATIVE-EXIT tid:5thread-name:Binder Thread #2
+315 RET tid:1	 msg:28
+316 REMOVE_IDLE_HANDLER idler:1091367160 queue:1090966032
+317 POST src:1 msg:30 dest:-1 delay:0
+318 CALL tid:1	 msg:30
+319 QUEUE_IDLE tid:1 idler:1091265440 queue:1090966032
+320 RET tid:1	 msg:30
+321 REMOVE_IDLE_HANDLER idler:1091265440 queue:1090966032
+322 CALL tid:1	 msg:18
+323 POST src:1 msg:31 dest:-1 delay:0
+324 RET tid:1	 msg:18
+325 CALL tid:1	 msg:27
+326 TRIGGER-EVENT tid:1 view:1090919560 event:0
+327 POST src:1 msg:32 dest:-1 delay:0
+328 POST src:1 msg:33 dest:-1 delay:180
+329 POST src:1 msg:34 dest:-1 delay:16
+330 POST src:1 msg:35 dest:-1 delay:125
+331 RET tid:1	 msg:27
+332 CALL tid:1	 msg:29
+333 TRIGGER-LIFECYCLE tid:1 component:MusicBrowserActivity id:1091347856 state:DESTROY-ACT
+rwId:156 READ tid:1 obj:0x410ca590 class:Lcom/android/music/MusicBrowserActivity; field:216
+334 ACCESS tid:1	 accessId:54
+335 POST src:1 msg:36 dest:-1 delay:0
+336 RET tid:1	 msg:29
+337 CALL tid:1	 msg:31
+338 POST src:1 msg:37 dest:-1 delay:0
+339 RET tid:1	 msg:31
+340 CALL tid:1	 msg:32
+341 RET tid:1	 msg:32
+342 CALL tid:1	 msg:36
+343 RET tid:1	 msg:36
+344 CALL tid:1	 msg:34
+345 POST src:1 msg:38 dest:-1 delay:15
+346 RET tid:1	 msg:34
+347 CALL tid:1	 msg:37
+348 POST src:1 msg:39 dest:-1 delay:0
+349 RET tid:1	 msg:37
+350 CALL tid:1	 msg:38
+351 POST src:1 msg:40 dest:-1 delay:16
+352 RET tid:1	 msg:38
+353 CALL tid:1	 msg:39
+354 POST src:1 msg:41 dest:-1 delay:0
+355 RET tid:1	 msg:39
+356 CALL tid:1	 msg:40
+357 POST src:1 msg:42 dest:-1 delay:16
+358 RET tid:1	 msg:40
+359 CALL tid:1	 msg:41
+360 POST src:1 msg:43 dest:-1 delay:0
+361 RET tid:1	 msg:41
+362 CALL tid:1	 msg:35
+363 POST src:1 msg:44 dest:-1 delay:15
+rwId:157 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:88
+rwId:158 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:148
+rwId:159 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:104
+364 ACCESS tid:1	 accessId:55
+365 RET tid:1	 msg:35
+366 CALL tid:1	 msg:43
+rwId:160 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:148
+rwId:161 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:104
+rwId:162 READ tid:1 obj:0x410dd848 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:12
+rwId:163 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:156
+rwId:164 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:144
+rwId:165 READ tid:1 obj:0x410dd848 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:16
+rwId:166 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:476
+rwId:167 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:476
+rwId:168 READ tid:1 obj:0x410b9378 class:Lcom/android/music/MediaPlaybackService$ServiceStub; field:20
+367 ACCESS tid:1	 accessId:56
+368 LOCK tid:1	 lock-obj:0x410b6bf8
+rwId:169 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:64
+369 ACCESS tid:1	 accessId:57
+370 UNLOCK tid:1	 lock-obj:0x410b6bf8
+rwId:170 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:152
+rwId:171 READ tid:1 obj:0x410dd848 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:20
+rwId:172 WRITE tid:1 obj:0x41112530 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:12
+rwId:173 WRITE tid:1 obj:0x41112530 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:16
+rwId:174 WRITE tid:1 obj:0x41112530 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:20
+rwId:175 WRITE tid:1 obj:0x41112530 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:8
+rwId:176 READ tid:1 obj:0x41112530 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:8
+rwId:177 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:112
+rwId:178 READ tid:1 obj:0x41112530 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:8
+rwId:179 READ tid:1 obj:0x4110da90 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$1MyCursorWrapper; field:20
+rwId:180 READ tid:1 obj:0x41112530 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:12
+rwId:181 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:96
+rwId:182 READ tid:1 obj:0x41112530 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:16
+rwId:183 READ tid:1 obj:0x41112530 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:8
+rwId:184 READ tid:1 obj:0x4110da90 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$1MyCursorWrapper; field:20
+rwId:185 READ tid:1 obj:0x410ab3e8 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field:112
+rwId:186 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:476
+rwId:187 READ-STATIC tid:1 class:Lcom/android/music/MusicUtils; field:476
+rwId:188 READ tid:1 obj:0x410b9378 class:Lcom/android/music/MediaPlaybackService$ServiceStub; field:20
+371 ACCESS tid:1	 accessId:58
+372 LOCK tid:1	 lock-obj:0x410b6bf8
+rwId:189 READ tid:1 obj:0x410b6bf8 class:Lcom/android/music/MediaPlaybackService; field:64
+373 ACCESS tid:1	 accessId:59
+374 UNLOCK tid:1	 lock-obj:0x410b6bf8
+rwId:190 READ tid:1 obj:0x41112530 class:Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter$ViewHolder; field:20
+375 ACCESS tid:1	 accessId:60
+376 POST src:1 msg:45 dest:-1 delay:0
+377 RET tid:1	 msg:43
+378 CALL tid:1	 msg:44
+379 POST src:1 msg:46 dest:-1 delay:15
+380 RET tid:1	 msg:44
+381 CALL tid:1	 msg:45
+382 RET tid:1	 msg:45
+383 CALL tid:1	 msg:46
+384 POST src:1 msg:47 dest:-1 delay:16
+385 POST src:1 msg:48 dest:-1 delay:0
+386 RET tid:1	 msg:46
+387 CALL tid:1	 msg:48
+388 RET tid:1	 msg:48
+389 CALL tid:1	 msg:47
+390 POST src:1 msg:49 dest:-1 delay:15
+391 POST src:1 msg:50 dest:-1 delay:0
+392 RET tid:1	 msg:47
+393 CALL tid:1	 msg:49
+394 POST src:1 msg:51 dest:-1 delay:16
+395 RET tid:1	 msg:49
+396 CALL tid:1	 msg:50
+397 RET tid:1	 msg:50
+398 CALL tid:1	 msg:51
+399 POST src:1 msg:52 dest:-1 delay:0
+400 RET tid:1	 msg:51
+401 CALL tid:1	 msg:52
+402 RET tid:1	 msg:52
+ 
+ 
+ 
+ HB Graph 
+ 
+ 
+ HB Graph size : 376
+
+
+Races detected
+
+RACE rwId1:119 type - READ  obj - 0x410ab3e8  class - Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field -   fieldIdx - 144  dbPath -   tid - 1  accessId - 44
+     rwId2:100 type - WRITE  obj - 0x410ab3e8  class - Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field -   fieldIdx - 144  dbPath -   tid - 1  accessId - 41
+
+RACE rwId1:164 type - READ  obj - 0x410ab3e8  class - Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field -   fieldIdx - 144  dbPath -   tid - 1  accessId - 56
+     rwId2:100 type - WRITE  obj - 0x410ab3e8  class - Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field -   fieldIdx - 144  dbPath -   tid - 1  accessId - 41
+
+RACE rwId1:115 type - READ  obj - 0x410ab3e8  class - Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field -   fieldIdx - 148  dbPath -   tid - 1  accessId - 44
+     rwId2:98 type - WRITE  obj - 0x410ab3e8  class - Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field -   fieldIdx - 148  dbPath -   tid - 1  accessId - 41
+
+RACE rwId1:158 type - READ  obj - 0x410ab3e8  class - Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field -   fieldIdx - 148  dbPath -   tid - 1  accessId - 55
+     rwId2:98 type - WRITE  obj - 0x410ab3e8  class - Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field -   fieldIdx - 148  dbPath -   tid - 1  accessId - 41
+
+RACE rwId1:122 type - READ  obj - 0x410ab3e8  class - Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field -   fieldIdx - 152  dbPath -   tid - 1  accessId - 44
+     rwId2:97 type - WRITE  obj - 0x410ab3e8  class - Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field -   fieldIdx - 152  dbPath -   tid - 1  accessId - 41
+
+RACE rwId1:170 type - READ  obj - 0x410ab3e8  class - Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field -   fieldIdx - 152  dbPath -   tid - 1  accessId - 58
+     rwId2:97 type - WRITE  obj - 0x410ab3e8  class - Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field -   fieldIdx - 152  dbPath -   tid - 1  accessId - 41
+
+RACE rwId1:118 type - READ  obj - 0x410ab3e8  class - Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field -   fieldIdx - 156  dbPath -   tid - 1  accessId - 44
+     rwId2:99 type - WRITE  obj - 0x410ab3e8  class - Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field -   fieldIdx - 156  dbPath -   tid - 1  accessId - 41
+
+RACE rwId1:163 type - READ  obj - 0x410ab3e8  class - Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field -   fieldIdx - 156  dbPath -   tid - 1  accessId - 56
+     rwId2:99 type - WRITE  obj - 0x410ab3e8  class - Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter; field -   fieldIdx - 156  dbPath -   tid - 1  accessId - 41
+
+
+
+Categorization of detected races
+
+Multithreaded races
+
+Async races (on single thread)
+
+Races due to a delayed post in ancestor asyncblocks
+class: Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter;  field:144
+class: Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter;  field:148
+class: Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter;  field:152
+class: Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter;  field:156
+
+Races due to cross thread post in ancestor asyncblocks
+class: Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter;  field:144
+class: Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter;  field:148
+class: Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter;  field:152
+class: Lcom/android/music/ArtistAlbumBrowserActivity$ArtistAlbumListAdapter;  field:156
+
+Races due to co-enabled events
+
+
+ Uncategorized races
+
+
+Memory used for race detection
+
+AbcTrace         : 376 * 36
+AbcAsyncMap      : 47 * 36
+ReadWriteMap     : 190 * 32
+ThreadBookKeepMap: 6 * 20
+LockMap          : 10 * 32
+Graph size       : 376 * 376 * 1
