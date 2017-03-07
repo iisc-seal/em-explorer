@@ -1,0 +1,33 @@
+1 START
+2 THREADINIT tid:1
+3 ATTACH-Q tid:1 queue:1
+4 FORK par-tid:1 child-tid:2
+5 FORK par-tid:1 child-tid:3
+6 FORK par-tid:1 child-tid:4
+7 LOOP tid:1 queue:1
+8 THREADINIT tid:2
+9 THREADINIT tid:3
+10 THREADINIT tid:4
+11 POST src:2 msg:1 dest:1
+12 POST src:2 msg:2 dest:1
+13 POST src:3 msg:3 dest:1
+14 POST src:3 msg:4 dest:1
+15 CALL tid:1 msg:1
+16 WRITE tid:1 obj:0x11 class:a; field:224
+17 RET tid:1 msg:1
+18 CALL tid:1 msg:2
+19 READ tid:1 obj:0x22 class:b; field:2
+20 RET tid:1 msg:2
+21 CALL tid:1 msg:3
+22 RET tid:1 msg:3
+23 CALL tid:1 msg:4
+24 FORK par-tid:1 child-tid:5
+25 RET tid:1 msg:4
+26 POST src:4 msg:5 dest:1
+27 CALL tid:1 msg:5
+28 FORK par-tid:1 child-tid:6
+29 RET tid:1 msg:5
+30 THREADINIT tid:5
+31 WRITE tid:5 obj:0x11 class:a; field:224
+32 THREADINIT tid:6
+33 WRITE tid:6 obj:0x22 class:b; field:2

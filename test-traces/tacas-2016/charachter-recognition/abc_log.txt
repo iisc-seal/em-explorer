@@ -1,0 +1,779 @@
+1 START
+2 THREADINIT tid:1
+3 ENABLE-LIFECYCLE tid:1 component: id:0 state:BIND-APP
+4 FORK par-tid:1	 child-tid:2
+5 THREADINIT tid:2
+6 ATTACH-Q tid:1	 queue:1090963792
+7 NATIVE-ENTRY tid:3thread-name:Binder Thread #1
+8 POST src:3 msg:1 dest:-1 delay:0
+9 NATIVE-EXIT tid:3thread-name:Binder Thread #1
+10 NATIVE-ENTRY tid:3thread-name:Binder Thread #1
+11 POST src:3 msg:2 dest:-1 delay:0
+12 NATIVE-EXIT tid:3thread-name:Binder Thread #1
+13 NATIVE-ENTRY tid:3thread-name:Binder Thread #1
+14 POST src:3 msg:3 dest:-1 delay:0
+15 NATIVE-EXIT tid:3thread-name:Binder Thread #1
+16 LOOP tid:1	 queue:1090963792
+17 CALL tid:1	 msg:1
+18 RET tid:1	 msg:1
+19 CALL tid:1	 msg:2
+20 TRIGGER-LIFECYCLE tid:1 component: id:0 state:BIND-APP
+21 ENABLE-LIFECYCLE tid:1 component: id:0 state:BINDAPP-DONE
+22 ENABLE-LIFECYCLE tid:1 component: id:1 state:LAUNCH-ACT
+23 RET tid:1	 msg:2
+24 CALL tid:1	 msg:3
+25 TRIGGER-LIFECYCLE tid:1 component: id:1 state:LAUNCH-ACT
+rwId:1 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:312
+rwId:2 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:288
+26 ACCESS tid:1	 accessId:1
+27 ENABLE-EVENT tid:1 view:1091056032 event:0
+28 ENABLE-EVENT tid:1 view:1091033880 event:0
+29 ENABLE-EVENT tid:1 view:1091028432 event:0
+30 ENABLE-EVENT tid:1 view:1091275488 event:0
+31 ENABLE-EVENT tid:1 view:1091282744 event:0
+32 ENABLE-EVENT tid:1 view:1091291824 event:0
+rwId:3 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:504
+rwId:4 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:496
+rwId:5 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:500
+rwId:6 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:504
+rwId:7 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:496
+rwId:8 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:500
+rwId:9 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:504
+rwId:10 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:496
+rwId:11 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:500
+rwId:12 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:504
+rwId:13 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:496
+rwId:14 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:500
+rwId:15 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:504
+rwId:16 READ-STATIC tid:1 class:Lorg/atai/TessUI/ImageWithDrawingView; field:5
+rwId:17 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:496
+rwId:18 READ-STATIC tid:1 class:Lorg/atai/TessUI/ImageWithDrawingView; field:5
+rwId:19 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:500
+rwId:20 READ-STATIC tid:1 class:Lorg/atai/TessUI/ImageWithDrawingView; field:5
+33 ACCESS tid:1	 accessId:2
+34 ENABLE-EVENT tid:1 view:1091271824 event:0
+35 ENABLE-EVENT tid:1 view:1091314384 event:0
+36 ENABLE-EVENT tid:1 view:1091314384 event:2
+37 ENABLE-EVENT tid:1 view:1091314384 event:1
+38 ENABLE-EVENT tid:1 view:1091066808 event:0
+rwId:21 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:316
+rwId:22 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:316
+rwId:23 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:320
+rwId:24 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:248
+rwId:25 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:240
+rwId:26 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:240
+rwId:27 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:14
+rwId:28 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:240
+rwId:29 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:244
+rwId:30 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:244
+rwId:31 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:244
+rwId:32 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:292
+rwId:33 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:304
+rwId:34 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:304
+39 ACCESS tid:1	 accessId:3
+40 ENABLE-EVENT tid:1 view:1091275488 event:0
+rwId:35 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:232
+rwId:36 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:236
+rwId:37 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:236
+41 ACCESS tid:1	 accessId:4
+42 ENABLE-EVENT tid:1 view:1091282744 event:0
+rwId:38 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:284
+rwId:39 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:284
+43 ACCESS tid:1	 accessId:5
+44 ENABLE-EVENT tid:1 view:1091291824 event:0
+rwId:40 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:256
+rwId:41 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:220
+rwId:42 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:220
+rwId:43 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:256
+rwId:44 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:220
+rwId:45 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:256
+rwId:46 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+45 ACCESS tid:1	 accessId:6
+46 FORK par-tid:1	 child-tid:5
+rwId:47 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:272
+rwId:48 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:272
+rwId:49 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+47 ACCESS tid:1	 accessId:7
+48 LOCK tid:1	 lock-obj:0x410677f0
+49 THREADINIT tid:5
+50 UNLOCK tid:1	 lock-obj:0x410677f0
+51 NOTIFY tid:5 notifiedTid:1
+52 WAIT tid:1
+53 LOCK tid:1	 lock-obj:0x410677f0
+54 UNLOCK tid:1	 lock-obj:0x410677f0
+rwId:50 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:51 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:340
+rwId:52 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:53 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:340
+rwId:54 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:55 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:56 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:272
+rwId:57 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+55 ACCESS tid:1	 accessId:8
+56 LOCK tid:1	 lock-obj:0x410677f0
+57 THREADEXIT tid:5
+58 UNLOCK tid:1	 lock-obj:0x410677f0
+rwId:58 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:59 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:60 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:61 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:62 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:63 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:64 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:65 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:66 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:67 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:68 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:69 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:70 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:71 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:72 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:73 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:74 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:75 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:76 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:77 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:78 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:79 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:80 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:81 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:82 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:83 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:84 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:85 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:86 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:87 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:336
+rwId:88 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:89 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:90 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:91 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:92 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:93 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:94 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:95 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:96 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:97 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:98 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:99 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:100 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:101 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:102 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:103 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:104 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:105 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:106 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:107 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:108 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:109 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:110 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:111 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:112 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:113 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:114 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:115 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:116 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:117 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:118 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:119 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:120 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:121 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:122 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:123 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:124 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:125 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:126 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:127 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:128 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:129 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:130 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:131 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:132 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:133 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:134 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:135 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:136 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:137 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:138 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:139 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:140 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:141 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:142 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:143 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:144 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:145 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:146 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:147 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:148 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:149 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:150 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:151 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:152 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:153 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:154 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:155 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:156 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:157 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:158 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:159 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:160 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:161 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:162 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:163 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:164 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:165 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:166 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:167 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:168 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:169 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:170 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:171 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:172 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:173 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:174 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:175 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:176 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:177 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:178 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:179 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:180 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:181 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:147
+rwId:182 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:332
+rwId:183 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:184 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:336
+rwId:185 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:340
+rwId:186 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:292
+rwId:187 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:292
+rwId:188 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:296
+rwId:189 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:300
+rwId:190 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:296
+59 ACCESS tid:1	 accessId:9
+60 ENABLE-EVENT tid:1 view:1090919608 event:0
+rwId:191 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:300
+61 ACCESS tid:1	 accessId:10
+62 ENABLE-EVENT tid:1 view:1090922608 event:0
+rwId:192 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:324
+rwId:193 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:324
+63 ACCESS tid:1	 accessId:11
+64 ENABLE-EVENT tid:1 view:1091271824 event:0
+rwId:194 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:268
+rwId:195 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:264
+rwId:196 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:272
+65 ACCESS tid:1	 accessId:12
+66 LOCK tid:1	 lock-obj:0x410677f0
+67 UNLOCK tid:1	 lock-obj:0x410677f0
+rwId:197 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:240
+rwId:198 WRITE tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:516
+rwId:199 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:268
+rwId:200 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:264
+rwId:201 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:240
+rwId:202 READ tid:1 obj:0x410ba408 class:Lorg/atai/TessUI/VScrollView; field:628
+68 ACCESS tid:1	 accessId:13
+69 LOCK tid:1	 lock-obj:0x410bddf8
+70 UNLOCK tid:1	 lock-obj:0x410bddf8
+rwId:203 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:320
+rwId:204 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:228
+rwId:205 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:228
+rwId:206 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:228
+rwId:207 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:224
+rwId:208 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:228
+rwId:209 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:320
+rwId:210 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:224
+rwId:211 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:320
+rwId:212 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:224
+rwId:213 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:320
+rwId:214 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:224
+71 ACCESS tid:1	 accessId:14
+72 FORK par-tid:1	 child-tid:6
+rwId:215 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:312
+rwId:216 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:288
+73 THREADINIT tid:6
+rwId:217 READ tid:6 obj:0x410b2558 class:Lorg/atai/TessUI/TessUIActivity$copy_asset_task; field:24
+rwId:218 READ tid:6 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:228
+rwId:219 READ tid:6 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:224
+rwId:220 READ tid:6 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:320
+74 ACCESS tid:6	 accessId:16
+75 LOCK tid:6	 lock-obj:0x4107d0b8
+76 UNLOCK tid:6	 lock-obj:0x4107d0b8
+rwId:221 READ tid:6 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:224
+rwId:222 READ tid:6 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:320
+77 ACCESS tid:6	 accessId:17
+78 LOCK tid:6	 lock-obj:0x4107d0b8
+79 UNLOCK tid:6	 lock-obj:0x4107d0b8
+rwId:223 READ tid:6 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:224
+rwId:224 READ tid:6 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:320
+80 ACCESS tid:1	 accessId:15
+81 ENABLE-EVENT tid:1 view:1092681248 event:0
+82 ENABLE-EVENT tid:1 view:1092685840 event:0
+83 ENABLE-EVENT tid:1 view:1092689872 event:0
+84 ENABLE-EVENT tid:1 view:1092689872 event:0
+85 ENABLE-EVENT tid:1 view:1092681248 event:0
+86 ACCESS tid:6	 accessId:18
+87 LOCK tid:6	 lock-obj:0x4107d0b8
+88 ENABLE-EVENT tid:1 view:1092685840 event:0
+89 UNLOCK tid:6	 lock-obj:0x4107d0b8
+90 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091267504
+91 POST src:1 msg:4 dest:-1 delay:0
+92 NATIVE-ENTRY tid:7thread-name:Binder Thread #2
+93 POST src:7 msg:5 dest:-1 delay:0
+94 NATIVE-EXIT tid:7thread-name:Binder Thread #2
+rwId:225 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:276
+95 ACCESS tid:1	 accessId:19
+96 INSTANCE-INTENT tid:1 instance:1091305656 intentId:1
+97 TRIGGER-LIFECYCLE tid:1 component:TessUIActivity id:1091305656 state:RESUME-ACT
+98 POST src:6 msg:6 dest:-1 delay:0
+rwId:226 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:248
+rwId:227 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:240
+rwId:228 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:244
+rwId:229 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:272
+rwId:230 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+99 ACCESS tid:1	 accessId:20
+100 LOCK tid:1	 lock-obj:0x410677f0
+101 UNLOCK tid:1	 lock-obj:0x410677f0
+rwId:231 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:232 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:313
+rwId:233 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:234 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:256
+rwId:235 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:313
+rwId:236 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:237 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:238 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:320
+rwId:239 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:240 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:276
+rwId:241 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:276
+rwId:242 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:336
+rwId:243 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:336
+rwId:244 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:336
+rwId:245 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:336
+rwId:246 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:336
+rwId:247 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:336
+rwId:248 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:336
+rwId:249 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:336
+rwId:250 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:336
+rwId:251 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:336
+rwId:252 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:336
+rwId:253 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:336
+rwId:254 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:340
+102 ACCESS tid:1	 accessId:21
+103 ENABLE-EVENT tid:1 view:0 event:3
+104 ENABLE-EVENT tid:1 view:0 event:4
+105 ENABLE-EVENT tid:1 view:0 event:5
+106 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091309968
+107 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091267504
+108 POST src:1 msg:7 dest:-1 delay:0
+109 ADD_IDLE_HANDLER idler:1091011872 queue:1090963792
+110 RET tid:1	 msg:3
+111 CALL tid:1	 msg:4
+112 POST src:1 msg:8 dest:-1 delay:1200
+113 POST src:1 msg:9 dest:-1 delay:0
+114 POST src:1 msg:10 dest:-1 delay:0
+115 NATIVE-ENTRY tid:3thread-name:Binder Thread #1
+116 POST src:3 msg:11 dest:-1 delay:0
+117 NATIVE-EXIT tid:3thread-name:Binder Thread #1
+118 POST src:1 msg:12 dest:-1 delay:0
+119 RET tid:1	 msg:4
+120 CALL tid:1	 msg:5
+121 TRIGGER-WINDOW-FOCUS tid:1 windowHash:1091267504
+122 RET tid:1	 msg:5
+123 CALL tid:1	 msg:6
+rwId:255 READ tid:1 obj:0x410b2558 class:Lorg/atai/TessUI/TessUIActivity$copy_asset_task; field:24
+rwId:256 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:276
+124 ACCESS tid:1	 accessId:22
+125 POST src:1 msg:13 dest:-1 delay:0
+126 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091309968
+rwId:257 READ tid:1 obj:0x410b2558 class:Lorg/atai/TessUI/TessUIActivity$copy_asset_task; field:24
+rwId:258 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:276
+rwId:259 READ tid:1 obj:0x410b2558 class:Lorg/atai/TessUI/TessUIActivity$copy_asset_task; field:24
+rwId:260 READ tid:1 obj:0x410b2558 class:Lorg/atai/TessUI/TessUIActivity$copy_asset_task; field:24
+rwId:261 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:272
+rwId:262 READ tid:1 obj:0x410b2558 class:Lorg/atai/TessUI/TessUIActivity$copy_asset_task; field:24
+rwId:263 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+127 ACCESS tid:1	 accessId:23
+128 LOCK tid:1	 lock-obj:0x410677f0
+129 UNLOCK tid:1	 lock-obj:0x410677f0
+rwId:264 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:265 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:313
+rwId:266 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:267 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:256
+rwId:268 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:313
+rwId:269 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:270 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:271 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:320
+rwId:272 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:273 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:276
+rwId:274 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:276
+130 ACCESS tid:1	 accessId:24
+131 RET tid:1	 msg:6
+132 CALL tid:1	 msg:7
+133 POST src:1 msg:14 dest:-1 delay:1200
+134 POST src:1 msg:15 dest:-1 delay:1197
+135 POST src:1 msg:16 dest:-1 delay:1200
+136 POST src:1 msg:17 dest:-1 delay:1199
+137 POST src:1 msg:18 dest:-1 delay:1199
+138 POST src:1 msg:19 dest:-1 delay:1186
+139 POST src:1 msg:20 dest:-1 delay:0
+140 POST src:1 msg:21 dest:-1 delay:0
+141 NATIVE-ENTRY tid:3thread-name:Binder Thread #1
+142 POST src:3 msg:22 dest:-1 delay:0
+143 NATIVE-EXIT tid:3thread-name:Binder Thread #1
+144 POST src:1 msg:23 dest:-1 delay:0
+145 POST src:1 msg:24 dest:-1 delay:0
+146 POST src:1 msg:25 dest:-1 delay:0
+147 POST src:1 msg:26 dest:-1 delay:0
+148 POST src:1 msg:27 dest:-1 delay:0
+149 RET tid:1	 msg:7
+150 CALL tid:1	 msg:9
+151 RET tid:1	 msg:9
+152 CALL tid:1	 msg:10
+153 RET tid:1	 msg:10
+154 CALL tid:1	 msg:11
+155 RET tid:1	 msg:11
+156 CALL tid:1	 msg:12
+157 POST src:1 msg:28 dest:-1 delay:0
+158 POST src:1 msg:29 dest:-1 delay:0
+159 POST src:1 msg:30 dest:-1 delay:0
+160 POST src:1 msg:31 dest:-1 delay:0
+161 POST src:1 msg:32 dest:-1 delay:0
+162 POST src:1 msg:33 dest:-1 delay:0
+163 POST src:1 msg:34 dest:-1 delay:0
+164 POST src:1 msg:35 dest:-1 delay:0
+165 POST src:1 msg:36 dest:-1 delay:0
+166 POST src:1 msg:37 dest:-1 delay:0
+167 POST src:1 msg:38 dest:-1 delay:0
+168 POST src:1 msg:39 dest:-1 delay:0
+169 POST src:1 msg:40 dest:-1 delay:0
+170 POST src:1 msg:41 dest:-1 delay:0
+171 POST src:1 msg:42 dest:-1 delay:0
+172 POST src:1 msg:43 dest:-1 delay:0
+173 POST src:1 msg:44 dest:-1 delay:0
+174 POST src:1 msg:45 dest:-1 delay:0
+175 POST src:1 msg:46 dest:-1 delay:0
+176 POST src:1 msg:47 dest:-1 delay:0
+177 POST src:1 msg:48 dest:-1 delay:0
+178 POST src:1 msg:49 dest:-1 delay:0
+179 POST src:1 msg:50 dest:-1 delay:0
+180 POST src:1 msg:51 dest:-1 delay:0
+181 POST src:1 msg:52 dest:-1 delay:0
+182 POST src:1 msg:53 dest:-1 delay:0
+183 POST src:1 msg:54 dest:-1 delay:0
+184 POST src:1 msg:55 dest:-1 delay:0
+185 POST src:1 msg:56 dest:-1 delay:0
+186 POST src:1 msg:57 dest:-1 delay:0
+187 POST src:1 msg:58 dest:-1 delay:0
+188 POST src:1 msg:59 dest:-1 delay:0
+189 POST src:1 msg:60 dest:-1 delay:33
+190 RET tid:1	 msg:12
+191 CALL tid:1	 msg:13
+192 POST src:1 msg:61 dest:-1 delay:0
+193 NATIVE-ENTRY tid:7thread-name:Binder Thread #2
+194 POST src:7 msg:62 dest:-1 delay:0
+195 NATIVE-EXIT tid:7thread-name:Binder Thread #2
+196 RET tid:1	 msg:13
+197 CALL tid:1	 msg:20
+198 RET tid:1	 msg:20
+199 CALL tid:1	 msg:21
+200 RET tid:1	 msg:21
+201 CALL tid:1	 msg:22
+202 RET tid:1	 msg:22
+203 CALL tid:1	 msg:23
+204 RET tid:1	 msg:23
+205 CALL tid:1	 msg:24
+206 RET tid:1	 msg:24
+207 CALL tid:1	 msg:25
+rwId:275 READ tid:1 obj:0x410aff08 class:Lorg/atai/TessUI/TessUIActivity$translation_lang_select_listener; field:8
+rwId:276 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:336
+208 ACCESS tid:1	 accessId:25
+209 RET tid:1	 msg:25
+210 CALL tid:1	 msg:26
+rwId:277 READ tid:1 obj:0x41067320 class:Lorg/atai/TessUI/TessUIActivity$lang_select_listener; field:8
+rwId:278 READ-STATIC tid:1 class:Lorg/atai/TessUI/TessUIActivity; field:313
+rwId:279 WRITE tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:280 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:281 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:320
+rwId:282 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:252
+rwId:283 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:276
+rwId:284 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:276
+211 ACCESS tid:1	 accessId:26
+212 RET tid:1	 msg:26
+213 CALL tid:1	 msg:27
+rwId:285 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:516
+rwId:286 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:508
+214 NATIVE-ENTRY tid:3thread-name:Binder Thread #1
+215 POST src:3 msg:63 dest:-1 delay:0
+216 NATIVE-EXIT tid:3thread-name:Binder Thread #1
+217 ACCESS tid:1	 accessId:27
+218 RET tid:1	 msg:27
+219 CALL tid:1	 msg:28
+220 RET tid:1	 msg:28
+221 CALL tid:1	 msg:29
+222 RET tid:1	 msg:29
+223 CALL tid:1	 msg:30
+224 RET tid:1	 msg:30
+225 CALL tid:1	 msg:31
+226 RET tid:1	 msg:31
+227 CALL tid:1	 msg:32
+228 RET tid:1	 msg:32
+229 CALL tid:1	 msg:33
+230 RET tid:1	 msg:33
+231 CALL tid:1	 msg:34
+232 RET tid:1	 msg:34
+233 CALL tid:1	 msg:35
+234 RET tid:1	 msg:35
+235 CALL tid:1	 msg:36
+236 RET tid:1	 msg:36
+237 CALL tid:1	 msg:37
+238 RET tid:1	 msg:37
+239 CALL tid:1	 msg:38
+240 RET tid:1	 msg:38
+241 CALL tid:1	 msg:39
+242 RET tid:1	 msg:39
+243 CALL tid:1	 msg:40
+244 RET tid:1	 msg:40
+245 CALL tid:1	 msg:41
+246 RET tid:1	 msg:41
+247 CALL tid:1	 msg:42
+248 RET tid:1	 msg:42
+249 CALL tid:1	 msg:43
+250 RET tid:1	 msg:43
+251 CALL tid:1	 msg:44
+252 RET tid:1	 msg:44
+253 CALL tid:1	 msg:45
+254 RET tid:1	 msg:45
+255 CALL tid:1	 msg:46
+256 RET tid:1	 msg:46
+257 CALL tid:1	 msg:47
+258 RET tid:1	 msg:47
+259 CALL tid:1	 msg:48
+260 RET tid:1	 msg:48
+261 CALL tid:1	 msg:49
+262 RET tid:1	 msg:49
+263 CALL tid:1	 msg:50
+264 RET tid:1	 msg:50
+265 CALL tid:1	 msg:51
+266 RET tid:1	 msg:51
+267 CALL tid:1	 msg:52
+268 RET tid:1	 msg:52
+269 CALL tid:1	 msg:53
+270 RET tid:1	 msg:53
+271 CALL tid:1	 msg:54
+272 RET tid:1	 msg:54
+273 CALL tid:1	 msg:55
+274 RET tid:1	 msg:55
+275 CALL tid:1	 msg:56
+276 RET tid:1	 msg:56
+277 CALL tid:1	 msg:57
+278 RET tid:1	 msg:57
+279 CALL tid:1	 msg:58
+280 RET tid:1	 msg:58
+281 CALL tid:1	 msg:59
+282 RET tid:1	 msg:59
+283 CALL tid:1	 msg:62
+284 TRIGGER-WINDOW-FOCUS tid:1 windowHash:1091309968
+285 POST src:1 msg:64 dest:-1 delay:0
+286 POST src:1 msg:65 dest:-1 delay:0
+287 NATIVE-ENTRY tid:7thread-name:Binder Thread #2
+288 POST src:7 msg:66 dest:-1 delay:0
+289 NATIVE-EXIT tid:7thread-name:Binder Thread #2
+290 NATIVE-ENTRY tid:3thread-name:Binder Thread #1
+291 POST src:3 msg:67 dest:-1 delay:0
+292 NATIVE-EXIT tid:3thread-name:Binder Thread #1
+293 NATIVE-ENTRY tid:7thread-name:Binder Thread #2
+294 POST src:7 msg:68 dest:-1 delay:0
+295 NATIVE-EXIT tid:7thread-name:Binder Thread #2
+296 ENABLE-EVENT tid:1 view:1091275488 event:0
+297 ENABLE-EVENT tid:1 view:1091282744 event:0
+298 ENABLE-EVENT tid:1 view:1091291824 event:0
+299 ENABLE-EVENT tid:1 view:1091285368 event:0
+300 ENABLE-EVENT tid:1 view:1091271824 event:0
+301 ENABLE-EVENT tid:1 view:1091272688 event:0
+302 ENABLE-EVENT tid:1 view:1091314384 event:0
+303 ENABLE-EVENT tid:1 view:1091314384 event:1
+304 ENABLE-EVENT tid:1 view:1091314384 event:2
+305 ENABLE-EVENT tid:1 view:1090914512 event:0
+306 ENABLE-EVENT tid:1 view:1090919608 event:0
+307 ENABLE-EVENT tid:1 view:1090922608 event:0
+308 ENABLE-EVENT tid:1 view:1091066808 event:0
+309 RET tid:1	 msg:62
+310 CALL tid:1	 msg:8
+311 RET tid:1	 msg:8
+312 CALL tid:1	 msg:15
+313 RET tid:1	 msg:15
+314 CALL tid:1	 msg:17
+315 RET tid:1	 msg:17
+316 CALL tid:1	 msg:19
+317 RET tid:1	 msg:19
+318 CALL tid:1	 msg:63
+319 RET tid:1	 msg:63
+320 CALL tid:1	 msg:64
+rwId:287 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:516
+rwId:288 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:508
+321 ACCESS tid:1	 accessId:28
+322 POST src:1 msg:69 dest:-1 delay:0
+323 RET tid:1	 msg:64
+324 CALL tid:1	 msg:65
+325 RET tid:1	 msg:65
+326 CALL tid:1	 msg:66
+327 RET tid:1	 msg:66
+328 CALL tid:1	 msg:67
+329 RET tid:1	 msg:67
+330 CALL tid:1	 msg:68
+331 RET tid:1	 msg:68
+332 CALL tid:1	 msg:69
+rwId:289 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:516
+rwId:290 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:508
+333 ACCESS tid:1	 accessId:29
+334 POST src:1 msg:70 dest:-1 delay:0
+335 RET tid:1	 msg:69
+336 CALL tid:1	 msg:70
+rwId:291 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:516
+rwId:292 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:508
+337 ACCESS tid:1	 accessId:30
+338 POST src:1 msg:71 dest:-1 delay:0
+339 RET tid:1	 msg:70
+340 CALL tid:1	 msg:71
+rwId:293 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:516
+rwId:294 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:508
+341 ACCESS tid:1	 accessId:31
+342 POST src:1 msg:72 dest:-1 delay:0
+343 RET tid:1	 msg:71
+344 CALL tid:1	 msg:72
+rwId:295 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:516
+rwId:296 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:508
+345 ACCESS tid:1	 accessId:32
+346 RET tid:1	 msg:72
+347 POST src:1 msg:73 dest:-1 delay:0
+348 POST src:1 msg:74 dest:-1 delay:0
+349 CALL tid:1	 msg:74
+350 QUEUE_IDLE tid:1 idler:1091011872 queue:1090963792
+351 RET tid:1	 msg:74
+352 REMOVE_IDLE_HANDLER idler:1091011872 queue:1090963792
+353 CALL tid:1	 msg:73
+354 TRIGGER-EVENT tid:1 view:1091314384 event:2
+355 POST src:1 msg:75 dest:-1 delay:180
+356 POST src:1 msg:76 dest:-1 delay:0
+357 POST src:1 msg:77 dest:-1 delay:750
+358 POST src:1 msg:78 dest:-1 delay:500
+359 POST src:1 msg:79 dest:-1 delay:0
+360 POST src:1 msg:80 dest:-1 delay:124
+361 NATIVE-ENTRY tid:3thread-name:Binder Thread #1
+362 POST src:3 msg:81 dest:-1 delay:0
+363 NATIVE-EXIT tid:3thread-name:Binder Thread #1
+364 POST src:1 msg:82 dest:-1 delay:499
+365 RET tid:1	 msg:73
+366 CALL tid:1	 msg:76
+rwId:297 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:516
+rwId:298 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:508
+367 NATIVE-ENTRY tid:7thread-name:Binder Thread #2
+368 POST src:7 msg:83 dest:-1 delay:0
+369 NATIVE-EXIT tid:7thread-name:Binder Thread #2
+370 ACCESS tid:1	 accessId:33
+371 RET tid:1	 msg:76
+372 CALL tid:1	 msg:79
+373 RET tid:1	 msg:79
+374 CALL tid:1	 msg:81
+375 RET tid:1	 msg:81
+376 CALL tid:1	 msg:80
+377 RET tid:1	 msg:80
+378 CALL tid:1	 msg:83
+379 POST src:1 msg:84 dest:-1 delay:0
+380 RET tid:1	 msg:83
+381 CALL tid:1	 msg:84
+382 RET tid:1	 msg:84
+383 POST src:1 msg:85 dest:-1 delay:0
+384 CALL tid:1	 msg:82
+385 POST src:1 msg:86 dest:-1 delay:0
+386 POST src:1 msg:87 dest:-1 delay:499
+387 RET tid:1	 msg:82
+388 CALL tid:1	 msg:77
+389 RET tid:1	 msg:77
+390 CALL tid:1	 msg:85
+391 TRIGGER-EVENT tid:1 view:1091066808 event:0
+392 POST src:1 msg:88 dest:-1 delay:179
+393 POST src:1 msg:89 dest:-1 delay:0
+394 POST src:1 msg:90 dest:-1 delay:125
+395 RET tid:1	 msg:85
+396 CALL tid:1	 msg:86
+rwId:299 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:516
+rwId:300 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:508
+397 ACCESS tid:1	 accessId:34
+398 POST src:1 msg:91 dest:-1 delay:0
+399 RET tid:1	 msg:86
+400 CALL tid:1	 msg:89
+rwId:301 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:268
+rwId:302 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:240
+rwId:303 WRITE tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:516
+rwId:304 READ tid:1 obj:0x410c00b8 class:Lorg/atai/TessUI/TessUIActivity; field:272
+401 ACCESS tid:1	 accessId:35
+402 LOCK tid:1	 lock-obj:0x410677f0
+403 UNLOCK tid:1	 lock-obj:0x410677f0
+404 LOCK tid:1	 lock-obj:0x41273370
+405 UNLOCK tid:1	 lock-obj:0x41273370
+406 LOCK tid:1	 lock-obj:0x41273370
+407 UNLOCK tid:1	 lock-obj:0x41273370
+408 RET tid:1	 msg:89
+409 CALL tid:1	 msg:91
+rwId:305 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:516
+410 ACCESS tid:1	 accessId:36
+411 POST src:1 msg:92 dest:-1 delay:0
+412 RET tid:1	 msg:91
+413 CALL tid:1	 msg:90
+414 RET tid:1	 msg:90
+415 CALL tid:1	 msg:92
+rwId:306 READ tid:1 obj:0x410bb178 class:Lorg/atai/TessUI/ImageWithDrawingView; field:516
+416 ACCESS tid:1	 accessId:37
+417 POST src:1 msg:93 dest:-1 delay:0
+418 RET tid:1	 msg:92
+419 CALL tid:1	 msg:93
+420 RET tid:1	 msg:93
+ 
+ 
+ 
+ HB Graph 
+ 
+ 
+ HB Graph size : 374
+
+
+Races detected
+
+RACE rwId1:291 type - READ  obj - 0x410bb178  class - Lorg/atai/TessUI/ImageWithDrawingView; field -   fieldIdx - 516  dbPath -   tid - 1  accessId - 30
+     rwId2:303 type - WRITE  obj - 0x410bb178  class - Lorg/atai/TessUI/ImageWithDrawingView; field -   fieldIdx - 516  dbPath -   tid - 1  accessId - 35
+
+RACE rwId1:297 type - READ  obj - 0x410bb178  class - Lorg/atai/TessUI/ImageWithDrawingView; field -   fieldIdx - 516  dbPath -   tid - 1  accessId - 33
+     rwId2:303 type - WRITE  obj - 0x410bb178  class - Lorg/atai/TessUI/ImageWithDrawingView; field -   fieldIdx - 516  dbPath -   tid - 1  accessId - 35
+
+RACE rwId1:263 type - READ  obj - 0x410c00b8  class - Lorg/atai/TessUI/TessUIActivity; field -   fieldIdx - 252  dbPath -   tid - 1  accessId - 23
+     rwId2:279 type - WRITE  obj - 0x410c00b8  class - Lorg/atai/TessUI/TessUIActivity; field -   fieldIdx - 252  dbPath -   tid - 1  accessId - 26
+
+RACE rwId1:283 type - READ  obj - 0x410c00b8  class - Lorg/atai/TessUI/TessUIActivity; field -   fieldIdx - 276  dbPath -   tid - 1  accessId - 26
+     rwId2:258 type - WRITE  obj - 0x410c00b8  class - Lorg/atai/TessUI/TessUIActivity; field -   fieldIdx - 276  dbPath -   tid - 1  accessId - 23
+
+
+
+Categorization of detected races
+
+Multithreaded races
+
+Async races (on single thread)
+
+Races due to a delayed post in ancestor asyncblocks
+
+Races due to cross thread post in ancestor asyncblocks
+class: Lorg/atai/TessUI/TessUIActivity;  field:252
+class: Lorg/atai/TessUI/TessUIActivity;  field:276
+
+Races due to co-enabled events
+
+object: 0x410bb178  field:516 co-enabled trigger opIds:354, 391
+
+ Uncategorized races
+class: Lorg/atai/TessUI/ImageWithDrawingView;  field:516
+
+
+Memory used for race detection
+
+AbcTrace         : 374 * 36
+AbcAsyncMap      : 84 * 36
+ReadWriteMap     : 306 * 32
+ThreadBookKeepMap: 5 * 20
+LockMap          : 4 * 32
+Graph size       : 374 * 374 * 1

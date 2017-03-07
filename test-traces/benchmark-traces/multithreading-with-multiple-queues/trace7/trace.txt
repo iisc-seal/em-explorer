@@ -1,0 +1,66 @@
+1 START
+2 THREADINIT tid:1
+3 FORK par-tid:1 child-tid:2
+4 FORK par-tid:1 child-tid:3
+5 FORK par-tid:1 child-tid:4
+6 FORK par-tid:1 child-tid:5
+7 FORK par-tid:1 child-tid:6
+8 FORK par-tid:1 child-tid:7
+9 ATTACH-Q tid:1 queue:1
+10 LOOP tid:1 queue:1
+11 THREADINIT tid:2
+12 THREADINIT tid:3
+13 THREADINIT tid:4
+14 THREADINIT tid:5
+15 THREADINIT tid:6
+16 THREADINIT tid:7
+17 ATTACH-Q tid:2 queue:2
+18 LOOP tid:2 queue:2
+19 ATTACH-Q tid:3 queue:3
+20 ATTACH-Q tid:4 queue:4
+21 ATTACH-Q tid:5 queue:5
+22 LOOP tid:3 queue:3
+23 LOOP tid:4 queue:4
+24 LOOP tid:5 queue:5
+25 POST src:6 msg:333 dest:5
+26 POST src:6 msg:444 dest:4
+27 POST src:7 msg:111 dest:4
+28 POST src:7 msg:222 dest:5
+29 CALL tid:5 msg:333
+30 POST src:5 msg:33 dest:2
+31 RET tid:5 msg:333
+32 CALL tid:5 msg:222
+33 POST src:5 msg:22 dest:3
+34 RET tid:5 msg:222
+35 CALL tid:4 msg:444
+36 POST src:4 msg:44 dest:3
+37 RET tid:4 msg:444
+38 CALL tid:4 msg:111
+39 POST src:4 msg:11 dest:2
+40 RET tid:4 msg:111
+41 CALL tid:2 msg:33
+42 POST src:2 msg:3 dest:1
+43 RET tid:2 msg:33
+44 CALL tid:2 msg:11
+45 POST src:2 msg:1 dest:1
+46 RET tid:2 msg:11
+47 CALL tid:3 msg:22
+48 POST src:3 msg:2 dest:1
+49 RET tid:3 msg:22
+50 CALL tid:3 msg:44
+51 POST src:3 msg:4 dest:1
+52 RET tid:3 msg:44
+53 CALL tid:1 msg:3
+54 READ tid:1 obj:2 class:y; field:1
+55 WRITE tid:1 obj:3 class:z; field:1
+56 RET tid:1 msg:3
+57 CALL tid:1 msg:1
+58 WRITE tid:1 obj:1 class:x; field:1
+59 RET tid:1 msg:1
+60 CALL tid:1 msg:2
+61 READ tid:1 obj:1 class:x; field:1
+62 WRITE tid:1 obj:2 class:y; field:1
+63 RET tid:1 msg:2
+64 CALL tid:1 msg:4
+65 READ tid:1 obj:3 class:z; field:1
+66 RET tid:1 msg:4

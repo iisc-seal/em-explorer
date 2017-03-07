@@ -1,0 +1,445 @@
+1 START
+2 THREADINIT tid:1
+3 FORK par-tid:1 child-tid:5
+4 THREADINIT tid:5
+5 FORK par-tid:1 child-tid:6
+6 THREADINIT tid:6
+7 FORK par-tid:1 child-tid:7
+8 THREADINIT tid:7
+9 FORK par-tid:1 child-tid:8
+10 THREADINIT tid:8
+11 FORK par-tid:1 child-tid:9
+12 THREADINIT tid:9
+13 FORK par-tid:1 child-tid:10
+14 THREADINIT tid:10
+15 FORK par-tid:1 child-tid:11
+16 THREADINIT tid:11
+17 FORK par-tid:1 child-tid:12
+18 THREADINIT tid:12
+19 FORK par-tid:1 child-tid:13
+20 THREADINIT tid:13
+21 FORK par-tid:1 child-tid:14
+22 THREADINIT tid:14
+23 FORK par-tid:1 child-tid:15
+24 THREADINIT tid:15
+25 ENABLE-LIFECYCLE tid:1 component:dummy id:0 state:BIND-APP
+26 FORK par-tid:1 child-tid:2
+27 THREADINIT tid:2
+28 ATTACH-Q tid:1 queue:1090947360
+29 NOP tid:5
+30 THREADEXIT tid:5
+31 NOP tid:6
+32 NATIVE-POST src:6 msg:1 dest:1
+33 THREADEXIT tid:6
+34 NOP tid:7
+35 NATIVE-POST src:7 msg:2 dest:1
+36 THREADEXIT tid:7
+37 LOOP tid:1
+38 CALL tid:1 msg:1
+39 TRIGGER-LIFECYCLE tid:1 component:dummy id:0 state:BIND-APP
+40 FORK par-tid:1 child-tid:3
+41 THREADINIT tid:3
+42 NOTIFY tid:3 notifiedTid:1
+43 WAIT tid:1
+44 THREADEXIT tid:3
+45 FORK par-tid:1 child-tid:4
+46 THREADINIT tid:4
+47 THREADEXIT tid:4
+48 WRITE-STATIC tid:1 class:Lcom/appsrox/remindme/RemindMe; field:4326
+49 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+50 READ tid:1 obj:0x410a3db8 class:[Ljava/lang/Object; field:0
+51 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+52 READ tid:1 obj:0x410a3db8 class:[Ljava/lang/Object; field:1
+53 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+54 READ tid:1 obj:0x410a3db8 class:[Ljava/lang/Object; field:2
+55 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+56 READ tid:1 obj:0x410a3db8 class:[Ljava/lang/Object; field:3
+57 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+58 READ tid:1 obj:0x410a3db8 class:[Ljava/lang/Object; field:4
+59 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+60 READ tid:1 obj:0x410a3db8 class:[Ljava/lang/Object; field:5
+61 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+62 READ tid:1 obj:0x410a3db8 class:[Ljava/lang/Object; field:6
+63 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+64 READ tid:1 obj:0x410a3db8 class:[Ljava/lang/Object; field:7
+65 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+66 READ tid:1 obj:0x410a3db8 class:[Ljava/lang/Object; field:8
+67 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+68 READ tid:1 obj:0x410a3db8 class:[Ljava/lang/Object; field:9
+69 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+70 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+71 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+72 READ tid:1 obj:0x410680e0 class:[Ljava/lang/Object; field:0
+73 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+74 READ tid:1 obj:0x410680e0 class:[Ljava/lang/Object; field:1
+75 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+76 READ tid:1 obj:0x410680e0 class:[Ljava/lang/Object; field:2
+77 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+78 READ tid:1 obj:0x410680e0 class:[Ljava/lang/Object; field:3
+79 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+80 READ tid:1 obj:0x410680e0 class:[Ljava/lang/Object; field:4
+81 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+82 READ tid:1 obj:0x410680e0 class:[Ljava/lang/Object; field:5
+83 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+84 READ tid:1 obj:0x410680e0 class:[Ljava/lang/Object; field:6
+85 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+86 READ tid:1 obj:0x410680e0 class:[Ljava/lang/Object; field:7
+87 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+88 READ tid:1 obj:0x410680e0 class:[Ljava/lang/Object; field:8
+89 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+90 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+91 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+92 READ tid:1 obj:0x410d0428 class:[Ljava/lang/Object; field:0
+93 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+94 READ tid:1 obj:0x410d0428 class:[Ljava/lang/Object; field:1
+95 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+96 READ tid:1 obj:0x410d0428 class:[Ljava/lang/Object; field:2
+97 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+98 READ tid:1 obj:0x410d0428 class:[Ljava/lang/Object; field:3
+99 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+100 READ tid:1 obj:0x410d0428 class:[Ljava/lang/Object; field:4
+101 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+102 READ tid:1 obj:0x410d0428 class:[Ljava/lang/Object; field:5
+103 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+104 READ tid:1 obj:0x410d0428 class:[Ljava/lang/Object; field:6
+105 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+106 READ tid:1 obj:0x410d0428 class:[Ljava/lang/Object; field:7
+107 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+108 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+109 WRITE-STATIC tid:1 class:Lcom/appsrox/remindme/RemindMe; field:4325
+110 READ-STATIC tid:1 class:Lcom/appsrox/remindme/RemindMe; field:4325
+111 LOCK tid:1 lock-obj:0x410a3b00
+112 UNLOCK tid:1 lock-obj:0x410a3b00
+113 WRITE-STATIC tid:1 class:Lcom/appsrox/remindme/RemindMe; field:4324
+114 ENABLE-LIFECYCLE tid:1 component:dummy id:0 state:BINDAPP-DONE
+115 ENABLE-LIFECYCLE tid:1 component:dummy id:1 state:LAUNCH-ACT
+116 RET tid:1 msg:1
+117 CALL tid:1 msg:2
+118 TRIGGER-LIFECYCLE tid:1 component:dummy id:1 state:LAUNCH-ACT
+119 WRITE tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:272
+120 WRITE tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:276
+121 WRITE tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:264
+122 WRITE tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:288
+123 READ-STATIC tid:1 class:Lcom/appsrox/remindme/MainActivity; field:4324
+124 WRITE tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:244
+125 WRITE tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:292
+126 WRITE tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:260
+127 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:264
+128 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:260
+129 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:292
+130 WRITE tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:280
+131 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:292
+132 WRITE tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:268
+133 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:292
+134 WRITE tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:284
+135 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:272
+136 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:272
+137 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:276
+138 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:284
+139 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:276
+140 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:240
+141 READ-STATIC tid:1 class:Lcom/appsrox/remindme/RemindMe; field:4326
+142 LOCK tid:1 lock-obj:0x4109a8b8
+143 UNLOCK tid:1 lock-obj:0x4109a8b8
+144 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:240
+145 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:240
+146 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:240
+147 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:240
+148 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:240
+149 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:240
+150 WRITE tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:296
+151 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:272
+152 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:296
+153 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:296
+154 WRITE tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:248
+155 TRIGGER-LIFECYCLE tid:1 component:dummy id:1090922728 state:RESUME-ACT
+156 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:248
+157 READ-STATIC tid:1 class:Lcom/appsrox/remindme/RemindMe; field:4326
+158 LOCK tid:1 lock-obj:0x4109a8b8
+159 UNLOCK tid:1 lock-obj:0x4109a8b8
+160 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:300
+161 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:276
+162 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:264
+163 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:272
+164 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:276
+165 WRITE tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:252
+166 READ-STATIC tid:1 class:Lcom/appsrox/remindme/MainActivity; field:4325
+167 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:244
+168 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:240
+169 WRITE tid:1 obj:0x410ea4d0 class:[I field:0
+170 READ tid:1 obj:0x410ea4d0 class:[I field:0
+171 READ-STATIC tid:1 class:Lcom/appsrox/remindme/RemindMe; field:4326
+172 LOCK tid:1 lock-obj:0x4109a8b8
+173 UNLOCK tid:1 lock-obj:0x4109a8b8
+174 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:240
+175 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:240
+176 WRITE tid:1 obj:0x410ea650 class:[I field:0
+177 READ tid:1 obj:0x410ea650 class:[I field:0
+178 READ-STATIC tid:1 class:Lcom/appsrox/remindme/RemindMe; field:4326
+179 LOCK tid:1 lock-obj:0x4109a8b8
+180 UNLOCK tid:1 lock-obj:0x4109a8b8
+181 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:240
+182 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:252
+183 READ tid:1 obj:0x410ea3e8 class:[Ljava/lang/String; field:0
+184 READ tid:1 obj:0x410ea3e8 class:[Ljava/lang/String; field:0
+185 READ tid:1 obj:0x410ea3e8 class:[Ljava/lang/String; field:1
+186 READ tid:1 obj:0x410ea3e8 class:[Ljava/lang/String; field:1
+187 READ tid:1 obj:0x410ea3e8 class:[Ljava/lang/String; field:2
+188 READ tid:1 obj:0x410a3b00 class:Lcom/appsrox/remindme/model/DbHelper; field:40
+189 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+190 READ tid:1 obj:0x410eace0 class:[Ljava/lang/Object; field:0
+191 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+192 READ tid:1 obj:0x410eace0 class:[Ljava/lang/Object; field:1
+193 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+194 READ tid:1 obj:0x410eace0 class:[Ljava/lang/Object; field:2
+195 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+196 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+197 LOCK tid:1 lock-obj:0x4107f4d8
+198 UNLOCK tid:1 lock-obj:0x4107f4d8
+199 LOCK tid:1 lock-obj:0x4107f4d8
+200 UNLOCK tid:1 lock-obj:0x4107f4d8
+201 LOCK tid:1 lock-obj:0x4107f4d8
+202 UNLOCK tid:1 lock-obj:0x4107f4d8
+203 LOCK tid:1 lock-obj:0x4107f4d8
+204 UNLOCK tid:1 lock-obj:0x4107f4d8
+205 LOCK tid:1 lock-obj:0x4107f4d8
+206 UNLOCK tid:1 lock-obj:0x4107f4d8
+207 LOCK tid:1 lock-obj:0x410628e8
+208 UNLOCK tid:1 lock-obj:0x410628e8
+209 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:288
+210 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:240
+211 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:240
+212 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:240
+213 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:256
+214 READ-STATIC tid:1 class:Lcom/appsrox/remindme/RemindMe; field:4326
+215 LOCK tid:1 lock-obj:0x4109a8b8
+216 UNLOCK tid:1 lock-obj:0x4109a8b8
+217 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:280
+218 READ tid:1 obj:0x410e62b8 class:[Ljava/lang/String; field:12
+219 READ tid:1 obj:0x410ec9d0 class:[I field:0
+220 READ tid:1 obj:0x410ec9d0 class:[I field:1
+221 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:240
+222 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:240
+223 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:280
+224 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:240
+225 READ tid:1 obj:0x410e62b8 class:[Ljava/lang/String; field:12
+226 READ tid:1 obj:0x410eca80 class:[I field:0
+227 READ tid:1 obj:0x410eca80 class:[I field:1
+228 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:240
+229 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091005656
+230 POST src:1 msg:3 dest:1
+231 RET tid:1 msg:2
+232 CALL tid:1 msg:3
+233 NOP tid:8
+234 THREADEXIT tid:8
+235 NOP tid:9
+236 NATIVE-POST src:9 msg:4 dest:1
+237 THREADEXIT tid:9
+238 READ tid:1 obj:0x410ec6a8 class:Lcom/appsrox/remindme/MainActivity$3; field:8
+239 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:256
+240 READ tid:1 obj:0x410ec6a8 class:Lcom/appsrox/remindme/MainActivity$3; field:8
+241 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:256
+242 READ tid:1 obj:0x410ec6a8 class:Lcom/appsrox/remindme/MainActivity$3; field:8
+243 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:256
+244 READ tid:1 obj:0x410ec6a8 class:Lcom/appsrox/remindme/MainActivity$3; field:8
+245 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:280
+246 READ tid:1 obj:0x410ec6a8 class:Lcom/appsrox/remindme/MainActivity$3; field:8
+247 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:256
+248 READ tid:1 obj:0x410e62b8 class:[Ljava/lang/String; field:12
+249 READ tid:1 obj:0x410ec6a8 class:Lcom/appsrox/remindme/MainActivity$3; field:8
+250 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:256
+251 READ tid:1 obj:0x410ec6a8 class:Lcom/appsrox/remindme/MainActivity$3; field:8
+252 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:256
+253 READ tid:1 obj:0x410ec6a8 class:Lcom/appsrox/remindme/MainActivity$3; field:8
+254 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:256
+255 READ-STATIC tid:1 class:Lcom/appsrox/remindme/RemindMe; field:4326
+256 LOCK tid:1 lock-obj:0x4109a8b8
+257 UNLOCK tid:1 lock-obj:0x4109a8b8
+258 READ tid:1 obj:0x410ec6a8 class:Lcom/appsrox/remindme/MainActivity$3; field:8
+259 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:256
+260 READ tid:1 obj:0x410ec6a8 class:Lcom/appsrox/remindme/MainActivity$3; field:8
+261 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:256
+262 READ-STATIC tid:1 class:Lcom/appsrox/remindme/RemindMe; field:4326
+263 LOCK tid:1 lock-obj:0x4109a8b8
+264 UNLOCK tid:1 lock-obj:0x4109a8b8
+265 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+266 READ tid:1 obj:0x4107e080 class:[Ljava/lang/Object; field:0
+267 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+268 READ tid:1 obj:0x4107e080 class:[Ljava/lang/Object; field:1
+269 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+270 READ tid:1 obj:0x4107e080 class:[Ljava/lang/Object; field:2
+271 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+272 READ tid:1 obj:0x4107e080 class:[Ljava/lang/Object; field:3
+273 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+274 READ-STATIC tid:1 class:Lcom/appsrox/remindme/Util; field:4341
+275 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:56
+276 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:60
+277 READ tid:1 obj:0x410ea810 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+278 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:52
+279 READ tid:1 obj:0x410ea810 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+280 READ tid:1 obj:0x410ea810 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+281 WRITE tid:1 obj:0x410ea810 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+282 READ tid:1 obj:0x410ea810 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+283 READ-STATIC tid:1 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:4410
+284 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:56
+285 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:60
+286 READ tid:1 obj:0x410e79f0 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+287 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:52
+288 READ tid:1 obj:0x410e79f0 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+289 READ tid:1 obj:0x410e79f0 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+290 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:56
+291 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:60
+292 READ tid:1 obj:0x41062eb8 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+293 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:52
+294 READ tid:1 obj:0x41062eb8 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+295 READ tid:1 obj:0x41062eb8 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+296 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:56
+297 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:60
+298 READ tid:1 obj:0x410ec260 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+299 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:52
+300 READ tid:1 obj:0x410ec260 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+301 READ tid:1 obj:0x410ec260 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+302 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:56
+303 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:60
+304 READ tid:1 obj:0x410a0100 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+305 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:52
+306 READ tid:1 obj:0x410a0100 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+307 READ tid:1 obj:0x410a0100 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+308 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:56
+309 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:60
+310 READ tid:1 obj:0x410a1788 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+311 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:52
+312 READ tid:1 obj:0x410a1788 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+313 READ tid:1 obj:0x410a1788 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+314 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:56
+315 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:60
+316 READ tid:1 obj:0x410e6928 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+317 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:52
+318 READ tid:1 obj:0x410e6928 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+319 READ tid:1 obj:0x410e6928 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+320 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:56
+321 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:60
+322 READ tid:1 obj:0x410d43e8 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+323 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:52
+324 READ tid:1 obj:0x410d43e8 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+325 READ tid:1 obj:0x410d43e8 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+326 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:56
+327 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:60
+328 READ tid:1 obj:0x410a6280 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+329 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:52
+330 READ tid:1 obj:0x410a6280 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+331 READ tid:1 obj:0x410a6280 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+332 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:56
+333 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:60
+334 READ tid:1 obj:0x410626d8 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+335 READ tid:1 obj:0x410e7cf0 class:Lcom/appsrox/remindme/ui/NavAdapter; field:52
+336 READ tid:1 obj:0x410626d8 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+337 READ tid:1 obj:0x410626d8 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+338 POST src:1 msg:5 dest:1
+339 RET tid:1 msg:3
+340 CALL tid:1 msg:4
+341 TRIGGER-WINDOW-FOCUS tid:1 windowHash:1091005656
+342 NOP tid:10
+343 THREADEXIT tid:10
+344 NOP tid:11
+345 THREADEXIT tid:11
+346 NOP tid:12
+347 THREADEXIT tid:12
+348 READ tid:1 obj:0x410ea810 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+349 READ-STATIC tid:1 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:4410
+350 READ tid:1 obj:0x410e79f0 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+351 READ tid:1 obj:0x41062eb8 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+352 READ tid:1 obj:0x410ec260 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+353 READ tid:1 obj:0x410a0100 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+354 READ tid:1 obj:0x410a1788 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+355 READ tid:1 obj:0x410e6928 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+356 READ tid:1 obj:0x410d43e8 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+357 READ tid:1 obj:0x410a6280 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+358 READ tid:1 obj:0x410626d8 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+359 ENABLE-EVENT tid:1 view:1091444064 event:0
+360 RET tid:1 msg:4
+361 CALL tid:1 msg:5
+362 READ tid:1 obj:0x410ea810 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+363 READ tid:1 obj:0x410e79f0 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+364 READ tid:1 obj:0x41062eb8 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+365 READ tid:1 obj:0x410ec260 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+366 READ tid:1 obj:0x410a0100 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+367 READ tid:1 obj:0x410a1788 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+368 READ tid:1 obj:0x410e6928 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+369 READ tid:1 obj:0x410d43e8 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+370 READ tid:1 obj:0x410a6280 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+371 READ tid:1 obj:0x410626d8 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+372 RET tid:1 msg:5
+373 NOP tid:2
+374 UI-POST src:2 msg:6 dest:1
+375 CALL tid:1 msg:6
+376 TRIGGER-EVENT tid:1 view:1091444064 event:0
+377 READ tid:1 obj:0x410e8bf8 class:Lcom/appsrox/remindme/MainActivity$2; field:8
+378 READ tid:1 obj:0x410e8bf8 class:Lcom/appsrox/remindme/MainActivity$2; field:8
+379 FORK par-tid:1 child-tid:16
+380 THREADINIT tid:16
+381 DELAY-POST src:16 msg:7 dest:1
+382 RET tid:1 msg:6
+383 CALL tid:1 msg:7
+384 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:236
+385 READ tid:1 obj:0x41108640 class:Landroid/widget/AdapterView$AdapterContextMenuInfo; field:16
+386 WRITE tid:1 obj:0x410762e8 class:Lcom/appsrox/remindme/model/AlarmMsg; field:8
+387 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:236
+388 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:244
+389 READ tid:1 obj:0x410762e8 class:Lcom/appsrox/remindme/model/AlarmMsg; field:8
+390 LOCK tid:1 lock-obj:0x4107f4d8
+391 UNLOCK tid:1 lock-obj:0x4107f4d8
+392 LOCK tid:1 lock-obj:0x4107f4d8
+393 UNLOCK tid:1 lock-obj:0x4107f4d8
+394 LOCK tid:1 lock-obj:0x4107f4d8
+395 UNLOCK tid:1 lock-obj:0x4107f4d8
+396 LOCK tid:1 lock-obj:0x4107f4d8
+397 UNLOCK tid:1 lock-obj:0x4107f4d8
+398 LOCK tid:1 lock-obj:0x4107f4d8
+399 UNLOCK tid:1 lock-obj:0x4107f4d8
+400 LOCK tid:1 lock-obj:0x4111bdb0
+401 UNLOCK tid:1 lock-obj:0x4111bdb0
+402 LOCK tid:1 lock-obj:0x4111bdb0
+403 UNLOCK tid:1 lock-obj:0x4111bdb0
+404 WRITE tid:1 obj:0x410762e8 class:Lcom/appsrox/remindme/model/AlarmMsg; field:8
+405 WRITE tid:1 obj:0x410762e8 class:Lcom/appsrox/remindme/model/AlarmMsg; field:32
+406 WRITE tid:1 obj:0x410762e8 class:Lcom/appsrox/remindme/model/AlarmMsg; field:24
+407 WRITE tid:1 obj:0x410762e8 class:Lcom/appsrox/remindme/model/AlarmMsg; field:16
+408 WRITE tid:1 obj:0x410762e8 class:Lcom/appsrox/remindme/model/AlarmMsg; field:8
+409 WRITE tid:1 obj:0x410762e8 class:Lcom/appsrox/remindme/model/AlarmMsg; field:32
+410 WRITE tid:1 obj:0x410762e8 class:Lcom/appsrox/remindme/model/AlarmMsg; field:24
+411 WRITE tid:1 obj:0x410762e8 class:Lcom/appsrox/remindme/model/AlarmMsg; field:16
+412 LOCK tid:1 lock-obj:0x4111bdb0
+413 UNLOCK tid:1 lock-obj:0x4111bdb0
+414 READ tid:1 obj:0x410628e8 class:Lcom/appsrox/remindme/MainActivity; field:236
+415 READ tid:1 obj:0x410762e8 class:Lcom/appsrox/remindme/model/AlarmMsg; field:24
+416 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091464272
+417 ENABLE-WINDOW-FOCUS tid:1 windowHash:1091005656
+418 NOP tid:13
+419 NATIVE-POST src:13 msg:8 dest:1
+420 THREADEXIT tid:13
+421 RET tid:1 msg:7
+422 NOP tid:14
+423 THREADEXIT tid:14
+424 CALL tid:1 msg:8
+425 TRIGGER-WINDOW-FOCUS tid:1 windowHash:1091464272
+426 RET tid:1 msg:8
+427 NOP tid:15
+428 NATIVE-POST src:15 msg:9 dest:1
+429 THREADEXIT tid:15
+430 CALL tid:1 msg:9
+431 TRIGGER-WINDOW-FOCUS tid:1 windowHash:1091005656
+432 READ tid:1 obj:0x410ea810 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+433 READ-STATIC tid:1 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:4410
+434 READ tid:1 obj:0x410e79f0 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+435 READ tid:1 obj:0x41062eb8 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+436 READ tid:1 obj:0x410ec260 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+437 READ tid:1 obj:0x410a0100 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+438 READ tid:1 obj:0x410a1788 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+439 READ tid:1 obj:0x410e6928 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+440 READ tid:1 obj:0x410d43e8 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+441 READ tid:1 obj:0x410a6280 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+442 READ tid:1 obj:0x410626d8 class:Lcom/appsrox/remindme/ui/CheckedImageView; field:464
+443 RET tid:1 msg:9
+444 THREADEXIT tid:2
+445 THREADEXIT tid:16
