@@ -1,5 +1,310 @@
 LICENSE
-emdpor-tool is available under the Apache License, version 2.0. Please see the 
+-------
+EM-Explorer is available under the Apache License, version 2.0. Please see the 
 LICENSE file for details.
+
+
+
+1. Tool Description
+-------------------
+EM-Explorer is a proof-of-concept stateless model checker which simulates the 
+concurrency behaviour of Android applications which are event-driven multi-threaded 
+programs. Given an execution trace of an Android app, containing concurrency 
+relevant operations such as read-write, fork-join, posting and dequeuing of events 
+etc., EM-Explorer systematically explores all interleaving of operations in 
+the input trace permitted under the concurrency semantics of Android apps.
+Instead of performing a brute-force exploration of all permissible interleavings 
+EM-Explorer employs partial order reduction (POR) technique to prune redundant
+interleavings, thus exploring only a subset of interleavings under the guidance
+of POR algorithm. We have integrated the following POR algorithms with EM-Explorer:
+
+1. EM-DPOR - The 'master' branch of this repository contains implementation of
+   the EM-DPOR algorithm integrated with the stateless model-checker. EM-DPOR
+   has been implemented with the help of the following reference papers:
+   (i)  Partial Order Reduction for Event-driven Multi-threaded Programs,
+        Pallavi Maiya, Rahul Gupta, Aditya Kanade and Rupak Majumdar, TACAS 2016.
+        http://www.iisc-seal.net/pubs-by-topic
+   (ii) A Partial Order Reduction Technique for Event-driven Multi-threaded Programs,
+        Pallavi Maiya, Rahul Gupta, Aditya Kanade and Rupak Majumdar, 2015.
+        https://arxiv.org/abs/1511.03213
+   The EM-DPOR algorithm can be found in Section 4 of (ii). 
+
+2. DPOR - The implementation of DPOR algorithm can be found in the 'dpor' branch of
+   the repository. This is implemented by consulting the DPOR algorithm presented in
+   Dynamic Partial-Order Reduction for Model Checking Software, Cormac Flanagan and
+   Patrice Godefroid, POPL 2005.
+
+The results reported for EM-DPOR and DPOR in the evaluation section of the EM-DPOR 
+related papers are obtained using the implementation in src folder of the master and
+dpor branches respectively. The Android app traces on which the two algorithms were 
+evaluated can be found in test-traces/tacas-2016 directory.
+
+Note that EM-Explorer is only a prototype model checker developed to test out various 
+POR techniques. It does not directly explore a program, and only explores various 
+interleavings of an "execution trace" from a program. EM-Explorer has been implemented 
+to explore interleavings of execution traces of Android apps obtained by running
+Android apps using a tool called DroidRacer (http://www.iisc-seal.net/droidracer).
+
+
+
+2. Downloading the repository
+-----------------------------
+Open a terminal and issue the following command to clone the repository. This will
+download the master branch of the repository.
+$ git clone https://hppulse@bitbucket.org/hppulse/em-explorer.git
+
+To download the dpor branch issue the following command from the em-explorer directory
+after performing the above step.
+<path-to-em-explorer>$ git fetch && git checkout dpor
+
+The above command checks out the dpor branch and also switches to it. To go back to
+the master branch which contains EM-DPOR algorithm perform the following:
+<path-to-em-explorer>$ git checkout master
+
+
+
+3. Compiling the tool source code
+---------------------------------
+Note that EM-Explorer is a standalone C++ program which only contains C++98 compliant 
+features. Any compatible version of g++ can be used to compile EM-Explorer's source.
+
+The Makefile to build the tool can be found in the root of the repository. It takes an 
+argument called 'EXE' which indicates the name of the executable to be generated. From 
+the em-explorer directory issue:
+<path-to-em-explorer>$ make EXE="execname"
+
+The executable execname can then be found in the generated bin folder.
+
+To obtain various debug information such as progress made by EM-Explorer periodically,
+interleavings (traces) explored and so on, appropriate flags will have to be set in
+src/Headers/Debug.h before compiling the source. Refer to the inline comments in
+Debug.h for further information on this. Among all the flags, we have found it useful 
+to set the following flags to 1:
+#define EXPLORED_FILE_WRITING_ENABLED 1       
+#define FREQUENT_REPORTING_ENABLED 1     
+
+
+
+4. Running the tool
+-------------------
+EM-Explorer takes a file config.cfg as input which indicates the execution trace to be
+taken as input for further exploration. You can find sample config.cfg files in various 
+folders inside test-traces directory. A config.cfg file should be populated with 
+following kind of key value pairs:
+
+trace:<absolute-path-to-trace-folder>/trace.txt
+dependence:<absolute-path-to-trace-folder>/dependence.txt
+exploredTracesFile:<absolute-path-to-result-folder>/exploredTraces.txt
+exploredTracesFolder:<absolute-path-to-result-folder>/exploredTracesFolder
+fileOrFolder:1
+whichConfig:3
+report:<absolute-path-to-result-folder>/report.txt
+reportingFrequencyInMinutes:2
+
+1. trace - Indicates the execution trace of an Android app obtained by running the app
+   using DroidRacer. DroidRacer outputs this trace as 'trace.txt'. Refer Section 7 of
+   this document for information on how to obtain trace.txt of an app using DroidRacer.
+
+2. dependence - Indicates the 'dependence.txt' file corresponding to the trace.txt 
+   file generated for an app trace by DroidRacer. Android apps interact heavily with
+   their environment resulting in events being posted to the app by the environment. 
+   DroidRacer uses an environment model to infer the ordering between a few environment
+   events which cannot be established by the application of happens-before rules such as 
+   fork happens-before threadinit, post happens-before dequeue etc. The file 
+   dependence.txt captures such explicitly established ordering between environement
+   events. This is supplied only to prevent EM-Explorer from exploring invalid
+   interleavings. Section 7 describes the procedure to obtain dependence.txt.
+
+3. exploredTracesFile - Indicates path of the file to which explored interleavings
+   of input trace should be output. Note that the explored traces are output only
+   if EXPLORED_FILE_WRITING_ENABLED flag in src/Headers/Debug.h is set to 1.
+
+4. exploredTracesFolder - Instead of writing all traces to a single file you can
+   opt each explored trace to be stored as an individual file in the folder 
+   indicated against this key. This folder should be created before running EM-Explorer.
+
+5. fileOrFolder - setting this to 1 writes explored traces to file indicated against
+   exploredTracesFile key, and setting this to 2 stores traces as files in the folder
+   path indicated in exploredTracesFolder.
+
+6. whichConfig - Set this to a value 2 or 3. Earlier 2 indicated EM-Explorer to use
+   DPOR algorithm and 3 indicated EM-Explorer to use EM-DPOR algorithm. However, currently
+   the POR algorithm to be used is decided by the branch in which the source code resides.
+   Hence, the value indicated here is effectively ignored.
+ 
+7. report - Path of a file 'report.txt' to which stats such as traces explored, 
+   transitions (operations) explored and time taken are output. If the flag 
+   FREQUENT_REPORTING_ENABLED in src/Headers/Debug.h is set to 1 then the periodic
+   exploration reports are written to the file indicated here. 
+
+8. reportingFrequencyInMinutes - The interval in which periodic reports must be emitted.
+
+
+Assume that the executable compiled to bin directory is named emdpor. Then, EM-Explorer
+can be run as follows:
+<path-to-em-explorer>$ bin/emdpor <path-to-config.cfg> 
+
+Progress of exploration can be monitored by checking report.txt, explored traces printed to 
+file or any debug info printed to console based on Debug flags set in src/Headers/Debug.h.
+
+
+
+5. Sample input traces
+----------------------
+We have included numerous sample inputs comprising of config.cfg, trace.txt and dependence.txt
+in sub-directories of the test-traces folder in the root of em-explorer repository. 
+The traces included in test-traces/tacas-2016 folder correspond to those reported in
+EM-DPOR related papers. You can reproduce the results reported in our paper by running
+em-dpor and dpor versions of EM-Explorer with config.cfg files found in test-traces/tacas-2016 
+as input. However, make sure to supply absolute paths wherever required in config.cfg files.
+
+We have also provided many hand-constructed traces to understand various aspects of the
+EM-DPOR algorithm. These traces and the purpose served by them can be found in various 
+readme.txt files in test-traces/benchmark-traces folder. Make sure to provide absolute
+paths in config.cfg files. Also, explore these traces by setting EXPLORED_FILE_WRITING_ENABLED 
+flag in src/Headers/Debug.h to 1, so that you can observe how EM-DPOR identifies dependent
+operations and uses various systematic strategy to reorder them.
+
+
+
+6. EM-DPOR Source code
+----------------------
+The EM-DPOR enabled EM-Explorer implementation can be found in src folder of master
+branch. From the main() function in Explore.cpp the control flow of the algorithm
+implementation can be followed. We have annotated important functions and code blocks 
+with detailed comments mapping to the algorithm lines, any implementation deviation from 
+the algorithm presented in the paper or any non-trivial aspects of implementation. 
+Also, the beginning of header files in src/Headers folder include comments indicating
+the contents of the corresponding .h file whenever the contents are not apparent from
+the name of the .h file. 
+
+
+
+7. Obtaining input trace from an Android app using DroidRacer
+-------------------------------------------------------------
+Refer readme-droidRacer.txt which can be obtained at https://bitbucket.org/hppulse/droidracer
+and setup DroidRacer. Cloning the repository at https://bitbucket.org/hppulse/droidracer
+will only download pldi-2014 branch of DroidRacer. The branch of DroidRacer which generates
+trace.txt and dependence.txt taken as input by EM-Explorer is called androidPOR-trace. 
+After cloning droidracer repo do the following from droidracer folder to download and switch 
+to branch androidPOR-trace.
+<path-to-droidracer>$ git fetch && git checkout androidPOR-trace
+
+Follow instructions in readme-droidRacer.txt in root of droidracer for info on how to
+run an app using DroidRacer. You will need ModelCheckingServer tool mentioned in 
+DroidRacer's readme only if you want to collect multiple execution traces of the same app
+in an automated manner. To collect a random execution trace of an app you only need to
+click on the app icon in the Android emulator after setting up DroidRacer and following
+steps related to setting up the configuration file indicating the app to be tested etc.
+
+You can download trace.txt and dependence.txt generated for an app whose process name 
+for example is com.example.app by using an Android SDK tool called adb (Android SDK
+can be obtained at https://developer.android.com/studio/index.html). Issue the following
+command when the Android emulator on which DroidRacer is installed is running, and after
+the app corresponding to com.example.app is explored by DroidRacer.
+$<path-to-adb-folder>/adb pull /data/data/com.example.app/trace.txt <path-to-destination-folder>/trace.txt 
+$<path-to-adb-folder>/adb pull /data/data/com.example.app/dependence.txt <path-to-destination-folder>/dependence.txt 
+
+The file trace.txt is a processed version of the original execution trace stored in a 
+file called abc_log.txt which can be downloaded from Android emulator as follows:
+$<path-to-adb-folder>/adb pull /data/data/com.example.app/abc_log.txt <path-to-destination-folder>/abc_log.txt 
+
+Files abc_log.txt and trace.txt are basically logs of concurrency operations such as FORK,
+THREADINIT, NOTIFY, POST etc. executed by the app run using DroidRacer.
+Compared to abc_log.txt you will observe that trace.txt has many more threads but far lesser
+number of event handlers (demarcated using operations CALL and RET respectively indicating
+dequeue and completion of execution of an event handler). This is because EM-Explorer does
+not handle events (indicated as msg in abc_log.txt and trace.txt) posted with delay (indicated 
+by non zero value of delay field of a line in abc_log.txt corresponding to POST operation).
+Instead events with greater than zero delays are modeled as events posted without delays 
+(i.e. delay = 0) but posted non-deterministically from a different thread. Hence, in trace.txt 
+you will find a thread corresponding to every delay post in abc_log.txt. These threads execute a 
+DELAY-POST and exit. 
+Also, in abc_log.txt you will see a few threads perform POST operation within blocks called 
+NATIVE-ENTRY and NATIVE-EXIT. These operations are performed by system threads due to events 
+triggered by the app's environment. In trace.txt posts from system threads are modeled as 
+non-deterministic posts called NATIVE-POST from additional threads each created per POST 
+by a system thread in abc_log.txt. Such additional threads exit after executing a NATIVE-POST
+operation. The orderings indicated in dependence.txt establish happens-before ordering
+between a few NATIVE-POST operations. The HB ordering indicated in dependence.txt also order 
+special operations called ENABLE and TRIGGER. 
+In addition to POST, DELAY-POST and NATIVE-POST you will find a type of post called
+UI-POST in trace.txt but not present in abc_log.txt. UI-POST is a modeling of an operation 
+posting a UI event to the main thread (tid:1). All the UI-POST operations are executed by a
+thread with tid:2 which is a special thread created in trace.txt, and all the UI-POST
+operations are totally ordered. 
+The number of events (msg) in trace.txt is lesser than the number of events in abc_log.txt
+because DroidRacer recursively removes event handlers and their corresponding posts which 
+do not perform any concurrency operation such as shared memory access, fork a new thread etc.
+We did this preprocessing since DPOR would unnecessarily explore reorderings even between 
+such empty event handlers. Note that EM-DPOR however is immune to such event handlers due
+to its novel dependence relation (refer EM-DPOR paper).
+
+Operation NOP is a special operation emitted prior to every NATIVE-POST and UI-POST operation
+to aid in unblocking the corresponding NATIVE-POST or UI-POST operation 'op' only after all
+the operations which are indicated to happen-before 'op' in dependence.txt are executed. 
+NOP is executed in trace.txt to overcome a technical glitch related to executing
+a NATIVE-POST or UI-POST only after all the operations that happen-before it are executed.
+
+
+
+8. Additional processing of trace.txt and dependence.txt downloaded from DroidRacer
+-----------------------------------------------------------------------------------
+Dynamic POR algorithms compute happens-before relation over explored traces. Both 
+DPOR and EM-DPOR implementation use vector clocks data structure to compute happens-before
+relation over explored traces. The size of the vector allocated for vector clocks are decided
+by looking at the highest thread ID and event (msg) ID. Hence, it is essential to allocate
+consecutive unique IDs to threads and messages to reduce space allocated for vector clocks.
+However, the trace.txt generated by DroidRacer may not have consecutive IDs for threads and
+events. We provide a helper tool called renumber-tool which can be found in 
+helper-tools/renumber-thread-task-tool/bin. 
+
+Follow the following steps to renumber threads and events in trace.txt generated by DroidRacer:
+1. Copy trace.txt into a file called input_trace.txt.
+2. Move input_trace.txt to helper-tools/renumber-thread-task-tool/bin.
+3. Run the foll. command:  <path-to-helper-tools/renumber-thread-task-tool/bin>$ ./renumber-tool
+4. Output trace can be found in a file called trace.txt in helper-tools/renumber-thread-task-tool/bin. 
+
+The source code and Makefile of renumber-tool can be found in helper-tools/renumber-thread-task-tool.
+To compile source issue:
+<path-to-helper-tools/renumber-thread-task-tool>$ make EXE=renumber-tool
+
+
+Since we model delay post and post of UI events as non-deterministic posts from threads
+which were not in the original trace (abc_log.txt), the trace.txt file generated by DroidRacer
+may get malformed at times. We provide the following helper tools which can be found in
+helper-tools/ui-delay-fix-tools/bin folder to make trace.txt well-formed:
+-> DelayPostFix
+-> UiPostFix
+
+After renumbering threads and events, pass the trace.txt and dependence.txt through these two 
+tools before providing them as input to EM-Explorer.
+
+Follow the following steps to correct any ill-formedness due to DELAY-POST and UI-POST:
+1. Copy trace.txt into a file called input_trace.txt.
+2. Copy dependence.txt into a file called input_dependence.txt.
+2. Move input_trace.txt and input_dependence.txt to helper-tools/ui-delay-fix-tools/bin.
+3. Run the foll. command: <path-to-helper-tools/ui-delay-fix-tools/bin>$ ./DelayPostFix
+4. Output can be found in files called trace.txt and dependence.txt in 
+   helper-tools/ui-delay-fix-tools/bin folder.
+5. Copy the trace.txt and dependence.txt generated by Step 4 into input_trace.txt and
+   input_dependence.txt in the same folder.
+6. Run the foll. command: <path-to-helper-tools/ui-delay-fix-tools/bin>$ ./UiPostFix
+7. Output can be found in files called trace.txt and dependence.txt in 
+   helper-tools/ui-delay-fix-tools/bin folder.
+
+The source code and Makefile of DelayPostFix and UiPostFix tools can be found in 
+helper-tools/ui-delay-fix-tools folder. Uncommenting line "if(op->getOpId() == UI_POST)"
+and commenting line "if(op->getOpId() == DELAY_POST)" in function fixTrace() of 
+helper-tools/ui-delay-fix-tools/src/TraceProcessor.h and compiling using Makefile will
+generate UiPostFix, whereas doing vice versa will generate DelayPostFix.
+Note that the executable name should be passed as argument to 'EXE' variable of Makefile
+in both the cases.
+
+
+Store the trace.txt and dependence.txt obtained after running renumber-tool, DelayPostFix
+and UiPostFix into some folder where you want to run experiments, and indicate this path
+against appropriate keys of config.cfg which is passed as input to EM-Explorer.
+
 
 
