@@ -30,7 +30,7 @@ struct Sets{
 
 private:
 	set<int> backtrackingSet;
-	set<int> sleepSet;
+	set<int> sleepSet; //we do not maintain/use sleep sets for this branch
 	set<int> doneSet;
 	bool dporRunStatus;
 	set<pair<int, int> > reorderedPosts;

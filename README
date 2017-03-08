@@ -51,7 +51,7 @@ Android apps using a tool called DroidRacer (http://www.iisc-seal.net/droidracer
 -----------------------------
 Open a terminal and issue the following command to clone the repository. This will
 download the master branch of the repository.
-$ git clone https://hppulse@bitbucket.org/hppulse/em-explorer.git
+$ git clone https://bitbucket.org/iiscseal/em-explorer.git
 
 To download the dpor branch issue the following command from the em-explorer directory
 after performing the above step.
