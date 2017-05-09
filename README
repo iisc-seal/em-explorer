@@ -308,3 +308,14 @@ against appropriate keys of config.cfg which is passed as input to EM-Explorer.
 
 
 
+9. Acknowledgments
+------------------
+This work is supported by Google India through a PhD Fellowship in Programming 
+Languages and Compilers awarded to Pallavi Maiya. This research was also funded
+in part by the Indo-German Max Planck Center in Computer Science (IMPECS).
+
+
+10. Contact
+-----------
+In case of any queries write to pallavi.maiya@csa.iisc.ernet.in
+
